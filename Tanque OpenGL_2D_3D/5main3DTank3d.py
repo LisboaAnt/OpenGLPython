@@ -62,7 +62,8 @@ def draw_tank(x, y, z, width, height, length):
     half_length = length / 2
 
     glBegin(GL_QUADS)
-    glColor3f(0.5, 0.5, 0.5)  # Cor cinza
+    glColor3f(0.0, 0.5, 0.0); # Cor verde
+
 
     # Face frontal
     glVertex3f(x - half_width, y - half_height, z + half_length)

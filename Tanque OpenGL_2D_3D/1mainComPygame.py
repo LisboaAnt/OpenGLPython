@@ -3,13 +3,12 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 import math
-
 # Inicialização do Pygame
 pygame.init()
 width, height = 800, 600
 pygame.display.set_mode((width, height), DOUBLEBUF | OPENGL)
 pygame.display.set_caption("Trabalho de Álgebra")
-icone = pygame.image.load("icone.png")
+icone = pygame.image.load("./icone.png")
 pygame.display.set_icon(icone)
 # Configurações de OpenGL
 glMatrixMode(GL_PROJECTION)
@@ -29,7 +28,7 @@ def draw_sand_background():
     
 # Função para carregar a textura do tanque com transparência preservada
 def load_texture():
-    texture_surface = pygame.image.load("tank.png").convert_alpha()  # Convertendo para suportar transparência
+    texture_surface = pygame.image.load("./tank.png").convert_alpha()  # Convertendo para suportar transparência
     texture_data = pygame.image.tostring(texture_surface, "RGBA", 1)
     width = texture_surface.get_width()
     height = texture_surface.get_height()
