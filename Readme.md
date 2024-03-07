@@ -38,7 +38,7 @@ Para executar qualquer um dos projetos, navegue até o diretório do projeto des
 ```bash
 cd Tanque OpenGL_2D_3D/v4
 python main.py
-
+```
 ## Contato
 Para mais informações sobre o projeto ou qualquer dúvida, entre em contato:
 - Email: antoniol.carvalho49@gmail.com
