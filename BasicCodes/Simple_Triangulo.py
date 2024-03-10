@@ -1,6 +1,22 @@
 import glfw
 from OpenGL.GL import *
 
+def draw_triangle():
+    glBegin(GL_TRIANGLES)  
+    # Vértice 1 (inferior esquerdo) - cor vermelha
+    glColor3f(1, 0, 0)#R,G,B
+    glVertex2f(-0.5, -0.5)  
+
+    # Vértice 2 (inferior direito) - cor verde
+    glColor3f(0, 1, 0)
+    glVertex2f(0.5, -0.5) #x,y 
+
+    # Vértice 3 (superior) - cor azul
+    glColor3f(0, 0, 1)
+    glVertex2f(0., 0.5)  
+
+    glEnd()
+
 def main():
     glfw.init()
 
@@ -17,12 +33,7 @@ def main():
         glClearColor(0.2, 0.3, 0.3, 1)
         glClear(GL_COLOR_BUFFER_BIT)
 
-        glColor3f(1, 0, 0)  # habilitando a cor vermelha
-        glBegin(GL_TRIANGLES)  # definindo a primitiva GL_TRIANGLES (triângulo)
-        glVertex2f(-0.5, -0.5)  # coordenada do vértice inferior esquerdo
-        glVertex2f(0.5, -0.5)  # coordenada do vértice inferior direito
-        glVertex2f(0., 0.5)  # coordenada do vértice superior
-        glEnd()
+        draw_triangle()  # Chamando a função para desenhar o triângulo
 
         # invertendo os buffers (backbuffer e frontbuffer)
         glfw.swap_buffers(window)
