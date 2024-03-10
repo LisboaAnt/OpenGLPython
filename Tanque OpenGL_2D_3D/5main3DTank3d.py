@@ -4,7 +4,6 @@ from OpenGL.GLU import *
 import math
 from PIL import Image
 import numpy as np
-from numpy import cos, sin
 
 # Inicialização do GLFW
 if not glfw.init():
