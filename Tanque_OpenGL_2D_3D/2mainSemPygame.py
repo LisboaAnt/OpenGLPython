@@ -50,10 +50,10 @@ def load_texture(filename):
     return texture
 
 # Variáveis de controle do tanque
-tank_texture = load_texture("tank.png")
+tank_texture = load_texture("pixil-frame-0.png")
 tank_angle = 0.0
 tank_position = [width / 2, height / 2]
-tank_speed = 0.06
+tank_speed = 0.1
 
 # Loop principal do jogo
 while not glfw.window_should_close(window):
