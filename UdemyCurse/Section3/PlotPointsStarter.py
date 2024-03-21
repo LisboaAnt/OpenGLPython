@@ -18,7 +18,7 @@ pygame.display.set_caption('Graphs in PyOpenGL')
 def init_ortho():
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    gluOrtho2D(0, 4, -1, 1)
+    gluOrtho2D(0,4, -1, 1)
 
 
 def plot_graph():
