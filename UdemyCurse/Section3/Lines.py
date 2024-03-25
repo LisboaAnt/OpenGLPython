@@ -30,17 +30,28 @@ def plot_point():
         glVertex2f(p[0], p[1])
     glEnd()
 
+def plot_lines():
+    glBegin(GL_LINE_STRIP) ## GL_LINE_LOOP TODAS AS LINHAS FICAM LIGADAS
+    for p in points:
+        glVertex2f(p[0], p[1])
+    glEnd()
+
 
 done = False
 init_ortho()
 glPointSize(5)
 points = []
+mouse_down = False
 while not done:
     p = None
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        elif event.type == MOUSEMOTION: #MOUSEMOTION registrar as coordenadas apenas quando o mouse é movido
+        elif event.type == MOUSEBUTTONDOWN:
+            mouse_down = True
+        elif event.type == MOUSEBUTTONUP:
+            mouse_down = False
+        elif event.type == MOUSEMOTION and mouse_down: #MOUSEMOTION registrar as coordenadas apenas quando o mouse é movido// MOUSEBUTTONDOWN PARA CLICK
             p = pygame.mouse.get_pos()
             points.append((map_value(0,screen_width, 0, orth_width,p[0]),
                            (map_value(0, screen_height, orth_height, 0, p[1])
@@ -49,7 +60,7 @@ while not done:
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
-    plot_point()
+    plot_lines()
     pygame.display.flip()
-    pygame.time.wait(100)
+    #pygame.time.wait(100)
 pygame.quit()
