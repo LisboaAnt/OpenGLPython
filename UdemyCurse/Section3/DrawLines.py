@@ -24,19 +24,38 @@ def init_ortho():
     gluOrtho2D(0,orth_width, 0, orth_height)
 
 
-def plot_point():
-    glBegin(GL_POINTS)
-    for p in points:
-        glVertex2f(p[0], p[1])
-    glEnd()
-
-
 def plot_lines():
     for l in points:
         glBegin(GL_LINE_STRIP) ## GL_LINE_LOOP TODAS AS LINHAS FICAM LIGADAS
         for coords in l:
             glVertex2f(coords[0], coords[1])
         glEnd()
+
+#Salavndo as linhas
+def save_drawing():
+    f = open("drawing.txt", "w")
+    f.write(str(len(points)) + "\n")
+    for l in points:
+        f.write(str(len(l)) + "\n")
+        for coords in l:
+            f.write(str(coords[0]) + " "+str(coords[1]) + "\n")
+    f.close()
+    print("Drawing Saved")
+
+def load_drawing():
+    f = open("drawing.txt", "r")
+    num_of_lines = int(f.readline())
+    global points
+    global line
+    points = []
+    for l in range(num_of_lines):
+        line = []
+        points.append(line)
+        num_of_coords = int(f.readline())
+        for coord_number in range(num_of_coords):
+            px,py = [float(value) for value in next(f).split()]
+            line.append((px,py))
+            print(str(px) + "," + str(py))
 
 
 done = False
@@ -50,6 +69,13 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_s:
+                save_drawing()
+            elif event.key == pygame.K_l:
+                load_drawing()
+            elif event.key == pygame.K_SPACE:
+                points = []
         elif event.type == MOUSEBUTTONDOWN:
             mouse_down = True
             line = []

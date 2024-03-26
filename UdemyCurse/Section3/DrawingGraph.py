@@ -24,14 +24,6 @@ def init_ortho():
     glLoadIdentity()
     gluOrtho2D(ortho_left, ortho_right, ortho_top, ortho_bottom)
 
-
-def plot_point():
-    glBegin(GL_POINTS)
-    for p in points:
-        glVertex2f(p[0], p[1])
-    glEnd()
-
-
 def plot_graph():
     glBegin(GL_LINE_STRIP)
     px: GL_DOUBLE
@@ -41,13 +33,6 @@ def plot_graph():
         glVertex2f(px, py)
     glEnd()
 
-
-def plot_lines():
-    for l in points:
-        glBegin(GL_LINE_STRIP)
-        for coords in l:
-            glVertex2f(coords[0], coords[1])
-        glEnd()
 
 done = False
 init_ortho()
