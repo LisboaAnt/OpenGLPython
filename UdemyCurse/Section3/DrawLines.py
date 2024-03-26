@@ -30,6 +30,7 @@ def plot_point():
         glVertex2f(p[0], p[1])
     glEnd()
 
+
 def plot_lines():
     for l in points:
         glBegin(GL_LINE_STRIP) ## GL_LINE_LOOP TODAS AS LINHAS FICAM LIGADAS
