@@ -1,6 +1,6 @@
 ### SECTION 3
 ### DrawingGraph.py
-- Este script demonstra como desenhar um gráfico usando a funcionalidade de strip. Ele utiliza o PyOpenGL para renderizar o gráfico na tela.
+-  Este script demonstra como desenhar um gráfico usando a funcionalidade de strip. Ele utiliza o PyOpenGL para renderizar o gráfico na tela.
 
 ### DrawLines.py
 - DrawLines.py permite que os usuários desenhem linhas na tela usando o mouse. Ele fornece funcionalidades para salvar, carregar e limpar desenhos. Os desenhos são salvos em um arquivo chamado `drawing.txt`.
