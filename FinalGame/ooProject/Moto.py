@@ -33,23 +33,36 @@ class Moto:
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera acima do tanque
 
-    def movimento(self, window):
-        # Atualiza a posição do tanque com base nas teclas pressionadas
-        if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
-            self.tank_angle += 0.05  # Gira o tanque para a esquerda
-        if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
-            self.tank_angle -= 0.05  # Gira o tanque para a direita
-        if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
-            self.tank_position[0] += self.tank_speed * math.cos(math.radians(self.tank_angle))
-            self.tank_position[1] += self.tank_speed * math.sin(math.radians(self.tank_angle))
-        if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
-            self.tank_position[0] -= self.tank_speed * math.cos(math.radians(self.tank_angle))
-            self.tank_position[1] -= self.tank_speed * math.sin(math.radians(self.tank_angle))
+    def movimento(self, window, dois):
+        if (dois):
+            # Atualiza a posição do tanque com base nas teclas pressionadas
+            if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:
+                self.tank_angle += 0.05  # Gira o tanque para a esquerda
+            if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:
+                self.tank_angle -= 0.05  # Gira o tanque para a direita
+            if glfw.get_key(window, glfw.KEY_UP) == glfw.PRESS:
+                self.tank_position[0] += self.tank_speed * math.cos(math.radians(self.tank_angle))
+                self.tank_position[1] += self.tank_speed * math.sin(math.radians(self.tank_angle))
+            if glfw.get_key(window, glfw.KEY_DOWN) == glfw.PRESS:
+                self.tank_position[0] -= self.tank_speed * math.cos(math.radians(self.tank_angle))
+                self.tank_position[1] -= self.tank_speed * math.sin(math.radians(self.tank_angle))
+        else:
+            # Atualiza a posição do tanque com base nas teclas pressionadas
+            if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
+                self.tank_angle += 0.05  # Gira o tanque para a esquerda
+            if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
+                self.tank_angle -= 0.05  # Gira o tanque para a direita
+            if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
+                self.tank_position[0] += self.tank_speed * math.cos(math.radians(self.tank_angle))
+                self.tank_position[1] += self.tank_speed * math.sin(math.radians(self.tank_angle))
+            if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
+                self.tank_position[0] -= self.tank_speed * math.cos(math.radians(self.tank_angle))
+                self.tank_position[1] -= self.tank_speed * math.sin(math.radians(self.tank_angle))
 
     def desenha(self):
         # Desenha o tanque
         glPushMatrix()
-        glTranslatef(self.tank_position[0], self.tank_position[1], 0)
+        glTranslatef(self.tank_position[0], self.tank_position[1], 1)
         glRotatef(self.tank_angle, 0, 0, 1)
         glBindTexture(GL_TEXTURE_2D, self.tank_texture)
 
@@ -65,3 +78,14 @@ class Moto:
         glEnd()
 
         glPopMatrix()
+
+    def calculate_camera_params(self):
+        self.camera_angle = self.tank_angle
+        # Calcula os parâmetros da câmera com base nos atributos da instância de Moto
+        camera_x = self.tank_position[0] + self.camera_distance * math.cos(math.radians(self.camera_angle))
+        camera_y = self.tank_position[1] + self.camera_distance * math.sin(math.radians(self.camera_angle))
+        camera_z = self.camera_height
+        look_x, look_y, look_z = self.tank_position[0], self.tank_position[1], 0
+        return (camera_x, camera_y, camera_z,
+                look_x, look_y, look_z,
+                0, 0, 1)

@@ -4,6 +4,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from Cube import *
 from LoadMesh import *
+from Camera import *
 
 pygame.init()
 
@@ -15,8 +16,9 @@ drawing_color = (1, 1, 1, 1)
 
 screen = pygame.display.set_mode((screen_width, screen_height), DOUBLEBUF | OPENGL)
 pygame.display.set_caption('OpenGL in Python')
-cube = Cube(GL_POLYGON)
+cube = Cube(GL_LINE_LOOP)
 mesh = LoadMesh("./Resources/teapot.obj", GL_LINE_LOOP)
+camera = Camera()
 
 
 def initialise():
@@ -28,27 +30,85 @@ def initialise():
     glLoadIdentity()
     gluPerspective(60, (screen_width / screen_height), 0.1, 1000.0)
 
+def camera_init():
     # modelview
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
     glViewport(0, 0, screen.get_width(), screen.get_height())
     glEnable(GL_DEPTH_TEST)
+    camera.update(screen.get_width(), screen.get_height())
+
+def draw_world_axes():
+    glLineWidth(4)
+    glBegin(GL_LINES)
+    glColor(1, 0, 0)
+    glVertex3d(-1000, 0, 0)
+    glVertex3d(1000, 0, 0)
+
+    glColor(0, 1, 0)
+    glVertex3d(0, -1000, 0)
+    glVertex3d(0, 1000, 0)
+
+    glColor(0, 0, 1)
+    glVertex3d(0, 0,-1000)
+    glVertex3d(0, 0, 1000)
+    glEnd()
+
+
+    sphere = gluNewQuadric()
+
+    # x pos sphere
+    glColor(1, 0, 0)
+    glPushMatrix()
+    glTranslated(1, 0, 0)
+    gluSphere(sphere, 0.05, 10, 10)
+    glPopMatrix()
+
+    # y pos sphere
+    glColor(0, 1, 0)
+    glPushMatrix()
+    glTranslated(0, 1, 0)
+    gluSphere(sphere, 0.05, 10, 10)
+    glPopMatrix()
+
+    # z pos sphere
+    glColor(0, 0, 1)
+    glPushMatrix()
+    glTranslated(0, 0, 1)
+    gluSphere(sphere, 0.05, 10, 10)
+    glPopMatrix()
+
+    glLineWidth(1)
+    glColor(1, 1, 1)
 
 
 def display():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    glPushMatrix()
-    mesh.draw()
-    glPopMatrix()
+    camera_init()
+    draw_world_axes()
+    #glPushMatrix()
+    cube.draw()
+    #mesh.draw()
+    #glPopMatrix()
 
 
 done = False
 initialise()
+pygame.event.set_grab(True)
+pygame.mouse.set_visible(False)
+
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        if event.type == KEYDOWN:
+            if event.key == K_ESCAPE:
+                pygame.mouse.set_visible(True)
+                pygame.event.set_grab(False)
+            if event.key == K_SPACE:
+                pygame.mouse.set_visible(False)
+                pygame.event.set_grab(True)
     display()
     pygame.display.flip()
-    # pygame.time.wait(30);
+    #pygame.time.wait(60);
 pygame.quit()
