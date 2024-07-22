@@ -194,7 +194,6 @@ while not glfw.window_should_close(window):
     desenhar_cubo(50,50,10,50, 0,1,0, 10)
     #cubo2
 
-    desenhar_cubo(700,500,10,50, 0,1,1, 10)
 
 
     # Atualiza a posição do tanque com base nas teclas pressionadas
