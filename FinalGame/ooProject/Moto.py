@@ -1,10 +1,9 @@
-import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import *
 import math
 from PIL import Image
 import numpy as np
-
+import glfw
 
 class Moto:
     width, height = 800, 600
@@ -24,28 +23,34 @@ class Moto:
 
         return texture
 
-    def __init__(self):
+    def __init__(self, x=width / 2, y=height / 2):
         self.tank_texture = Moto.load_texture("pixil-frame-0.png")
         self.tank_angle = 0.0
-        self.tank_position = [self.width / 2, self.height / 2]
+        self.tank_position = [x, y]
         self.tank_speed = 0.1  # Velocidade do tanque
         self.camera_distance = -200.0  # Distância da câmera ao tanque
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera acima do tanque
 
-    def movimento(self, window, dois):
-        if (dois):
+    def movimento(self, window, dois, obstacles):
+        if dois:
             # Atualiza a posição do tanque com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:
                 self.tank_angle += 0.05  # Gira o tanque para a esquerda
             if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:
                 self.tank_angle -= 0.05  # Gira o tanque para a direita
             if glfw.get_key(window, glfw.KEY_UP) == glfw.PRESS:
-                self.tank_position[0] += self.tank_speed * math.cos(math.radians(self.tank_angle))
-                self.tank_position[1] += self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.tank_position[0] + self.tank_speed * math.cos(math.radians(self.tank_angle))
+                new_y = self.tank_position[1] + self.tank_speed * math.sin(math.radians(self.tank_angle))
+                if not self.check_collision(new_x, new_y, obstacles):
+                    self.tank_position[0] = new_x
+                    self.tank_position[1] = new_y
             if glfw.get_key(window, glfw.KEY_DOWN) == glfw.PRESS:
-                self.tank_position[0] -= self.tank_speed * math.cos(math.radians(self.tank_angle))
-                self.tank_position[1] -= self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.tank_position[0] - self.tank_speed * math.cos(math.radians(self.tank_angle))
+                new_y = self.tank_position[1] - self.tank_speed * math.sin(math.radians(self.tank_angle))
+                if not self.check_collision(new_x, new_y, obstacles):
+                    self.tank_position[0] = new_x
+                    self.tank_position[1] = new_y
         else:
             # Atualiza a posição do tanque com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
@@ -53,11 +58,24 @@ class Moto:
             if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
                 self.tank_angle -= 0.05  # Gira o tanque para a direita
             if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
-                self.tank_position[0] += self.tank_speed * math.cos(math.radians(self.tank_angle))
-                self.tank_position[1] += self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.tank_position[0] + self.tank_speed * math.cos(math.radians(self.tank_angle))
+                new_y = self.tank_position[1] + self.tank_speed * math.sin(math.radians(self.tank_angle))
+                if not self.check_collision(new_x, new_y, obstacles):
+                    self.tank_position[0] = new_x
+                    self.tank_position[1] = new_y
             if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
-                self.tank_position[0] -= self.tank_speed * math.cos(math.radians(self.tank_angle))
-                self.tank_position[1] -= self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.tank_position[0] - self.tank_speed * math.cos(math.radians(self.tank_angle))
+                new_y = self.tank_position[1] - self.tank_speed * math.sin(math.radians(self.tank_angle))
+                if not self.check_collision(new_x, new_y, obstacles):
+                    self.tank_position[0] = new_x
+                    self.tank_position[1] = new_y
+
+    def check_collision(self, new_x, new_y, obstacles):
+        for obstacle in obstacles:
+            if (new_x >= obstacle[0] and new_x <= obstacle[0] + obstacle[2] and
+                new_y >= obstacle[1] and new_y <= obstacle[1] + obstacle[3]):
+                return True
+        return False
 
     def desenha(self):
         # Desenha o tanque

@@ -4,7 +4,9 @@ from OpenGL.GLU import *
 import math
 import numpy as np
 
-from Moto import *  #Class moto
+from Moto import Moto
+from Obstacles import Obstacle
+from Cube import Cube  # Importando a classe Cube
 
 # Inicialização do GLFW
 
@@ -28,13 +30,22 @@ def draw_sand_background():
     glVertex2f(width, 0)
     glVertex2f(width, height)
     glVertex2f(0, height)
-glEnd()
+    glEnd()
 
 
 # Loop principal do jogo
 
-moto1 = Moto()
+moto1 = Moto(100, 200)
 moto2 = Moto()
+
+# Obstacles
+obstacles = [
+    Obstacle(300, 300, 100, 100, color=(1.0, 0.0, 0.0)),  # Vermelho
+    Obstacle(500, 200, 60, 60, color=(1.0, 0.0, 0.0))  # Vermelho
+]
+
+cube = Cube(400, 400, 25, 50, color=(0.0, 1.0, 0.0))
+obstacles.append(cube)
 
 while not glfw.window_should_close(window):
     glfw.poll_events()
@@ -59,12 +70,18 @@ while not glfw.window_should_close(window):
     glEnable(GL_BLEND)  # Habilita o blending para suportar transparência
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  # Define a função de blending
 
+    # Adicionar as posições das motos como obstáculos uma da outra
+    moto1_obstacles = obstacles + [Obstacle(moto2.tank_position[0] - 100, moto2.tank_position[1] - 100, 200, 200)]
     # Desenha e move 1
-    moto1.movimento(window, False)
+    moto1.movimento(window, False, [(o.x, o.y, o.width, o.height) for o in moto1_obstacles])
     moto1.desenha()
 
     # Desenha moto 2
     moto2.desenha()
+
+    # Desenha Obstaculos
+    for obstacle in obstacles:
+        obstacle.desenha()
 
     # Desabilita o blending e desativa a textura
 
@@ -88,12 +105,20 @@ while not glfw.window_should_close(window):
     glEnable(GL_BLEND)  # Habilita o blending para suportar transparência
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  # Define a função de blending
 
+    # Adicionar as posições das motos como obstáculos uma da outra
+    moto2_obstacles = obstacles + [Obstacle(moto1.tank_position[0] - 100, moto1.tank_position[1] - 100, 200, 200)]
+
     # Movimento e Desenho MOTO 2
-    moto2.movimento(window, True)
+    moto2.movimento(window, True, [(o.x, o.y, o.width, o.height) for o in moto2_obstacles])
     moto2.desenha()
 
     # Desenha MOTO 1
     moto1.desenha()
+
+    # Desenha Obstaculos
+    for obstacle in obstacles:
+        obstacle.desenha()
+
     # Desabilita o blending e desativa a textura
     glDisable(GL_BLEND)
     glDisable(GL_TEXTURE_2D)
