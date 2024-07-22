@@ -4,10 +4,10 @@ from OpenGL.GLU import *
 import math
 import numpy as np
 
-from cubo import Cubo
+from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
-from background import draw_sand_background
+from Background import draw_sand_background
 
 from PIL import Image
 
@@ -16,7 +16,7 @@ if not glfw.init():
     raise Exception("Falha ao inicializar o GLFW")
 
 width, height = 800, 600
-window = glfw.create_window(width * 2, height, "Trabalho de Álgebra", None, None)  # Janela dividida
+window = glfw.create_window(width * 2, height, "TRON - OpenGL", None, None)  # Janela dividida
 
 if not window:
     glfw.terminate()
@@ -44,13 +44,18 @@ glfw.make_context_current(window)
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
 cubo.transladar(200.0, 200.0, 20.0)
 
+#Cubo
+cubo2 = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
+cubo2.transladar(500.0, 500.0, 20.0)
+
 #Moto
 moto1 = Moto(100, 200, x_size=100, y_size=100, id=1)
 moto2 = Moto(id=2)
 
 
 # Obstacles
-obstacles = [Obstacle(cubo.posicao[0]-cubo.tamanho, cubo.posicao[1]-cubo.tamanho, cubo.tamanho*2, cubo.tamanho*2)]
+obstacles = [Obstacle(cubo.posicao[0]-cubo.tamanho, cubo.posicao[1]-cubo.tamanho, cubo.tamanho*2, cubo.tamanho*2)
+             ,Obstacle(cubo2.posicao[0]-cubo2.tamanho, cubo2.posicao[1]-cubo2.tamanho, cubo2.tamanho*2, cubo2.tamanho*2)]
 # Adiciona as motos como obstáculos
 obstacles.append(Obstacle(moto1.tank_position[0] - moto1.x_size/2, moto1.tank_position[1] - moto1.y_size/2, moto1.x_size, moto1.y_size, id=moto1.id))
 obstacles.append(Obstacle(moto2.tank_position[0] - moto2.x_size/2, moto2.tank_position[1] - moto2.y_size/2, moto2.x_size, moto2.y_size, id=moto2.id))
@@ -76,6 +81,7 @@ while not glfw.window_should_close(window):
 
     # Desenha o cubo
     cubo.desenhar()
+    cubo2.desenhar()
 
     #Hit box
     for obstacle in obstacles:
@@ -111,6 +117,7 @@ while not glfw.window_should_close(window):
 
     # Desenha o cubo
     cubo.desenhar()
+    cubo2.desenhar()
 
     glEnable(GL_TEXTURE_2D)
     glEnable(GL_BLEND)  # Habilita o blending para suportar transparência
