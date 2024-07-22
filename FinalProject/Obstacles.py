@@ -12,7 +12,7 @@ class Obstacle:
 
     def desenha(self):
         glPushMatrix()
-        glTranslatef(self.x, self.y, 2)
+        glTranslatef(self.x, self.y, 0.5)
 
         # Define a cor do obstáculo
         glColor3f(*self.color)

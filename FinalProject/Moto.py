@@ -4,10 +4,10 @@ import math
 from PIL import Image
 import numpy as np
 import glfw
+
 from Obstacles import Obstacle
 class Moto:
     width, height = 800, 600
-
     @staticmethod
     def load_texture(filename):
         image = Image.open(filename)
@@ -102,6 +102,7 @@ class Moto:
         glRotatef(self.tank_angle, 0, 0, 1)
         glBindTexture(GL_TEXTURE_2D, self.tank_texture)
 
+        glColor3f(1, 1, 1)
         glBegin(GL_QUADS)
         glTexCoord2f(0, 0)
         glVertex2f(-50, -30)
