@@ -27,6 +27,17 @@ if not window:
 icon_path = "./imgs/icon.png"  # Substitua pelo caminho para sua imagem de ícone
 glfw.set_window_icon(window, 1, Image.open(icon_path))
 
+def framebuffer_size_callback(window, fb_width, fb_height):
+    global width, height
+    width, height = fb_width // 2, fb_height
+    glViewport(0, 0, fb_width, fb_height)
+    if glfw.get_window_attrib(window, glfw.MAXIMIZED):
+        primary_monitor = glfw.get_primary_monitor()
+        mode = glfw.get_video_mode(primary_monitor)
+        glfw.set_window_size(window, mode.size.width, mode.size.height)
+
+glfw.set_framebuffer_size_callback(window, framebuffer_size_callback)
+
 
 # Criar o menu inicial
 menu = MainMenu(window)
