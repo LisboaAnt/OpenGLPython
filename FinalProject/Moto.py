@@ -29,7 +29,9 @@ class Moto:
         self.moto_texture = Moto.load_texture("./imgs/pixil-frame-0.png")  # Renomeado para moto_texture
         self.moto_angle = 0.0  # Renomeado para moto_angle
         self.moto_position = [x, y]  # Renomeado para moto_position
-        self.moto_speed = 0.2  # Renomeado para moto_speed
+
+        self.moto_speed = 0.5  # Renomeado para moto_speed
+        self.moto_speed_angle = 0.1
         self.camera_distance = -200.0  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera acima do moto
@@ -44,9 +46,9 @@ class Moto:
         if dois:
             # Atualiza a posição da moto com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:
-                self.moto_angle += 0.05  # Gira a moto para a esquerda
+                self.moto_angle += self.moto_speed_angle  # Gira a moto para a esquerda
             if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:
-                self.moto_angle -= 0.05  # Gira a moto para a direita
+                self.moto_angle -= self.moto_speed_angle  # Gira a moto para a direita
             if glfw.get_key(window, glfw.KEY_UP) == glfw.PRESS:
                 new_x = self.moto_position[0] + self.moto_speed * math.cos(math.radians(self.moto_angle))
                 new_y = self.moto_position[1] + self.moto_speed * math.sin(math.radians(self.moto_angle))
@@ -64,9 +66,9 @@ class Moto:
         else:
             # Atualiza a posição da moto com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
-                self.moto_angle += 0.05  # Gira a moto para a esquerda
+                self.moto_angle += self.moto_speed_angle  # Gira a moto para a esquerda
             if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
-                self.moto_angle -= 0.05  # Gira a moto para a direita
+                self.moto_angle -= self.moto_speed_angle  # Gira a moto para a direita
             if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
                 new_x = self.moto_position[0] + self.moto_speed * math.cos(math.radians(self.moto_angle))
                 new_y = self.moto_position[1] + self.moto_speed * math.sin(math.radians(self.moto_angle))

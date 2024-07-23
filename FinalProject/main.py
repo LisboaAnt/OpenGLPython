@@ -8,7 +8,9 @@ from PIL import Image
 from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
+
 from Background import TronBackground
+from Skybox import Skybox
 
 from Menu import MainMenu  # Importa a classe MainMenu
 
@@ -17,7 +19,7 @@ from Menu import MainMenu  # Importa a classe MainMenu
 if not glfw.init():
     raise Exception("Falha ao inicializar o GLFW")
 width, height = 800, 600
-window = glfw.create_window(width * 2, height, "TRON - OpenGL", None, None)  # Janela dividida
+window = glfw.create_window(width , height, "TRON - OpenGL", None, None)  # Janela dividida
 if not window:
     glfw.terminate()
     raise Exception("Falha ao criar a janela GLFW")
@@ -38,10 +40,8 @@ def framebuffer_size_callback(window, fb_width, fb_height):
 
 glfw.set_framebuffer_size_callback(window, framebuffer_size_callback)
 
-
 # Criar o menu inicial
 menu = MainMenu(window)
-
 
 # Configurar o contexto da janela criada
 glfw.make_context_current(window)
@@ -81,7 +81,7 @@ while not glfw.window_should_close(window):
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
     if not menu.game_started:
-        glClearColor(1.0, 1.0, 1.0, 1.0)  #branco
+        glClearColor(1.0, 1.0, 1.0, 1)  #branco
         glEnable(GL_TEXTURE_2D)
         glEnable(GL_BLEND)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  # Configuração para blending
@@ -159,6 +159,7 @@ while not glfw.window_should_close(window):
         # Desenha MOTO 1
         moto1.desenha()
 
+        menu.paused()
         # Desabilita o blending e desativa a textura
         glDisable(GL_BLEND)
         glDisable(GL_TEXTURE_2D)
