@@ -6,8 +6,10 @@ import numpy as np
 import glfw
 
 from Obstacles import Obstacle
+
 class Moto:
     width, height = 800, 600
+
     @staticmethod
     def load_texture(filename):
         image = Image.open(filename)
@@ -24,15 +26,15 @@ class Moto:
         return texture
 
     def __init__(self, x=width / 2, y=height / 2, x_size=100, y_size=100, id=None):
-        self.tank_texture = Moto.load_texture("pixil-frame-0.png")
-        self.tank_angle = 0.0
-        self.tank_position = [x, y]
-        self.tank_speed = 0.1  # Velocidade do tanque
-        self.camera_distance = -200.0  # Distância da câmera ao tanque
+        self.moto_texture = Moto.load_texture("./imgs/pixil-frame-0.png")  # Renomeado para moto_texture
+        self.moto_angle = 0.0  # Renomeado para moto_angle
+        self.moto_position = [x, y]  # Renomeado para moto_position
+        self.moto_speed = 0.2  # Renomeado para moto_speed
+        self.camera_distance = -200.0  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
-        self.camera_height = 80.0  # Altura da câmera acima do tanque
+        self.camera_height = 80.0  # Altura da câmera acima do moto
         self.id = id  # Identificador único para a moto
-        self.previous_position = list(self.tank_position)  # Adiciona o estado da posição anterior
+        self.previous_position = list(self.moto_position)  # Adiciona o estado da posição anterior
         self.x_size = x_size
         self.y_size = y_size
 
@@ -40,49 +42,49 @@ class Moto:
         moved = False  # Flag para indicar se a moto se moveu
 
         if dois:
-            # Atualiza a posição do tanque com base nas teclas pressionadas
+            # Atualiza a posição da moto com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:
-                self.tank_angle += 0.05  # Gira o tanque para a esquerda
+                self.moto_angle += 0.05  # Gira a moto para a esquerda
             if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:
-                self.tank_angle -= 0.05  # Gira o tanque para a direita
+                self.moto_angle -= 0.05  # Gira a moto para a direita
             if glfw.get_key(window, glfw.KEY_UP) == glfw.PRESS:
-                new_x = self.tank_position[0] + self.tank_speed * math.cos(math.radians(self.tank_angle))
-                new_y = self.tank_position[1] + self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.moto_position[0] + self.moto_speed * math.cos(math.radians(self.moto_angle))
+                new_y = self.moto_position[1] + self.moto_speed * math.sin(math.radians(self.moto_angle))
                 if not self.check_collision(new_x, new_y, obstacles):
-                    self.tank_position[0] = new_x
-                    self.tank_position[1] = new_y
+                    self.moto_position[0] = new_x
+                    self.moto_position[1] = new_y
                     moved = True
             if glfw.get_key(window, glfw.KEY_DOWN) == glfw.PRESS:
-                new_x = self.tank_position[0] - self.tank_speed * math.cos(math.radians(self.tank_angle))
-                new_y = self.tank_position[1] - self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.moto_position[0] - self.moto_speed * math.cos(math.radians(self.moto_angle))
+                new_y = self.moto_position[1] - self.moto_speed * math.sin(math.radians(self.moto_angle))
                 if not self.check_collision(new_x, new_y, obstacles):
-                    self.tank_position[0] = new_x
-                    self.tank_position[1] = new_y
+                    self.moto_position[0] = new_x
+                    self.moto_position[1] = new_y
                     moved = True
         else:
-            # Atualiza a posição do tanque com base nas teclas pressionadas
+            # Atualiza a posição da moto com base nas teclas pressionadas
             if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
-                self.tank_angle += 0.05  # Gira o tanque para a esquerda
+                self.moto_angle += 0.05  # Gira a moto para a esquerda
             if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
-                self.tank_angle -= 0.05  # Gira o tanque para a direita
+                self.moto_angle -= 0.05  # Gira a moto para a direita
             if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
-                new_x = self.tank_position[0] + self.tank_speed * math.cos(math.radians(self.tank_angle))
-                new_y = self.tank_position[1] + self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.moto_position[0] + self.moto_speed * math.cos(math.radians(self.moto_angle))
+                new_y = self.moto_position[1] + self.moto_speed * math.sin(math.radians(self.moto_angle))
                 if not self.check_collision(new_x, new_y, obstacles):
-                    self.tank_position[0] = new_x
-                    self.tank_position[1] = new_y
+                    self.moto_position[0] = new_x
+                    self.moto_position[1] = new_y
                     moved = True
             if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
-                new_x = self.tank_position[0] - self.tank_speed * math.cos(math.radians(self.tank_angle))
-                new_y = self.tank_position[1] - self.tank_speed * math.sin(math.radians(self.tank_angle))
+                new_x = self.moto_position[0] - self.moto_speed * math.cos(math.radians(self.moto_angle))
+                new_y = self.moto_position[1] - self.moto_speed * math.sin(math.radians(self.moto_angle))
                 if not self.check_collision(new_x, new_y, obstacles):
-                    self.tank_position[0] = new_x
-                    self.tank_position[1] = new_y
+                    self.moto_position[0] = new_x
+                    self.moto_position[1] = new_y
                     moved = True
 
         if moved:
             self.atualizar_obstaculos(obstacles)  # Atualiza obstáculos apenas se a moto se moveu
-            self.previous_position = list(self.tank_position)  # Atualiza a posição anterior
+            self.previous_position = list(self.moto_position)  # Atualiza a posição anterior
 
     def check_collision(self, new_x, new_y, obstacles):
         for obstacle in obstacles:
@@ -90,17 +92,17 @@ class Moto:
                 continue  # Ignora a colisão com a própria moto
 
             # Verifica a colisão com obstáculos
-            if (new_x + self.x_size/2 >= obstacle.x and new_x - self.x_size/2 <= obstacle.x + obstacle.width and
-                new_y + self.y_size/2 >= obstacle.y and new_y - self.y_size/2 <= obstacle.y + obstacle.height):
+            if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
+                new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
                 return True
         return False
 
     def desenha(self):
-        # Desenha o tanque
+        # Desenha a moto
         glPushMatrix()
-        glTranslatef(self.tank_position[0], self.tank_position[1], 1)
-        glRotatef(self.tank_angle, 0, 0, 1)
-        glBindTexture(GL_TEXTURE_2D, self.tank_texture)
+        glTranslatef(self.moto_position[0], self.moto_position[1], 1)
+        glRotatef(self.moto_angle, 0, 0, 1)
+        glBindTexture(GL_TEXTURE_2D, self.moto_texture)  # Renomeado para moto_texture
 
         glColor3f(1, 1, 1)
         glBegin(GL_QUADS)
@@ -117,23 +119,17 @@ class Moto:
         glPopMatrix()
 
     def calculate_camera_params(self):
-        self.camera_angle = self.tank_angle
+        self.camera_angle = self.moto_angle  # Renomeado para moto_angle
         # Calcula os parâmetros da câmera com base nos atributos da instância de Moto
-        camera_x = self.tank_position[0] + self.camera_distance * math.cos(math.radians(self.camera_angle))
-        camera_y = self.tank_position[1] + self.camera_distance * math.sin(math.radians(self.camera_angle))
+        camera_x = self.moto_position[0] + self.camera_distance * math.cos(math.radians(self.camera_angle))
+        camera_y = self.moto_position[1] + self.camera_distance * math.sin(math.radians(self.camera_angle))
         camera_z = self.camera_height
-        look_x, look_y, look_z = self.tank_position[0], self.tank_position[1], 0
+        look_x, look_y, look_z = self.moto_position[0], self.moto_position[1], 0
         return (camera_x, camera_y, camera_z,
                 look_x, look_y, look_z,
                 0, 0, 1)
 
     def atualizar_obstaculos(self, obstacles):
-        updated = False
         for i, obstacle in enumerate(obstacles):
             if obstacle.id == self.id:
-                obstacles[i] = Obstacle(self.tank_position[0] - self.x_size/2, self.tank_position[1] - self.y_size/2, self.x_size, self.y_size, id=self.id)
-                updated = True
-        if updated:
-            print("Obstáculos atualizados")
-        else:
-            print("Nenhum obstáculo foi atualizado")
+                obstacles[i] = Obstacle(self.moto_position[0] - self.x_size / 2, self.moto_position[1] - self.y_size / 2, self.x_size, self.y_size, id=self.id)
