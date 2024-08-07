@@ -1,13 +1,11 @@
 from OpenGL.GL import *
+import numpy as np
 
-class Cube:
-    def __init__(self):
-        self.display_list = glGenLists(1)
-        glNewList(self.display_list, GL_COMPILE)
-        self.build()
-        glEndList()
+class Cubo:
+    def __init__(self, inital_position=[0.0, 0.0, 0.0]):
+        self.position = inital_position
 
-    def build(self):
+    def draw(self, x, y, z):
         vertices = [
             [-0.5, -0.5, -0.5],
             [0.5, -0.5, -0.5],
@@ -29,16 +27,12 @@ class Cube:
         colors = [
             [1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 0], [1, 0, 1], [0, 1, 1], [0.5, 0.5, 0.5], [1, 0.5, 0]
         ]
-
+        glPushMatrix()
+        glTranslatef(self.position[0] + x, self.position[1] + y, self.position[2] + z)
         glBegin(GL_QUADS)
         for face in faces:
             for vertex in face:
                 glColor3fv(colors[vertex])
                 glVertex3fv(vertices[vertex])
         glEnd()
-
-    def draw(self, x, y, z):
-        glPushMatrix()
-        glTranslatef(x, y, z)
-        glCallList(self.display_list)
         glPopMatrix()
