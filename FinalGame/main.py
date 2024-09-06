@@ -70,7 +70,7 @@ def screen1():
     tank_position = [width / 2, height / 2]
     tank_speed = 0.1  # Velocidade do tanque
     self.camera_distance = -200.0  # Distância da câmera ao tanque
-    self.camera_angle = 45.0  # Ângulo de inclinação da câmera
+    self.camera_angle = 90.0  # Ângulo de inclinação da câmera
     self.camera_height = 80.0  # Altura da câmera acima do tanque
 
     camera_angle = tank_angle
@@ -99,7 +99,7 @@ tank_speed = 0.1  # Velocidade do tanque
 
 # Posição e ângulo inicial do tanque 2
 tank_angle2 = 0.0
-tank_position2 = [width / 2, height / 2]
+tank_position2 = [(width / 2),( height / 2)+150]
 tank_speed2 = 0.1  # Velocidade do tanque
 
 # Posição e ângulo inicial da câmera
