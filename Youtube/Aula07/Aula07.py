@@ -31,7 +31,7 @@ camera_front = np.array([0.0, 0.0, -1.0])
 camera_up = np.array([0.0, 1.0, 0.0])
 yaw, pitch = -90.0, 0.0  # Ângulos de orientação da câmera
 
-camera_speed = 0.001
+camera_speed = 0.005
 keys = {}
 
 #Variáveis Do Mause

@@ -17,7 +17,6 @@ class LoadMesh(Mesh):
             while line:
                 if line[:2] == "v ":
                     vx, vy, vz = [float(value) for value in line[2:].split()]
-                    # print((vx, vy, vz))
                     self.vertices.append((vx, vy, vz))
                 if line[:2] == "f ":
                     t1, t2, t3 = [value for value in line[2:].split()]

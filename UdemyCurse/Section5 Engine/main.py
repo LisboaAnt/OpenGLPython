@@ -16,7 +16,7 @@ drawing_color = (1, 1, 1, 1)
 screen = pygame.display.set_mode((screen_width, screen_height), DOUBLEBUF | OPENGL)
 pygame.display.set_caption('OpenGL in Python')
 cube = Cube(GL_POLYGON)
-mesh = LoadMesh("./Resources/donut.obj", GL_LINE_LOOP)
+mesh = LoadMesh("./Resources/donut.obj", GL_POLYGON)
 
 
 def initialise():
@@ -30,7 +30,7 @@ def initialise():
 
     # modelview
     glMatrixMode(GL_MODELVIEW)
-    glTranslate(0, 0, -5)
+    glTranslate(0, 0, -10)
     glLoadIdentity()
     glViewport(0, 0, screen.get_width(), screen.get_height())
     glEnable(GL_DEPTH_TEST)
@@ -39,7 +39,6 @@ def initialise():
 
 def display():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    glRotatef(1, 10, 2, 1)
     glPushMatrix()
     #cube.draw()
     mesh.draw()
