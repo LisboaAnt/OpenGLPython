@@ -7,6 +7,7 @@ import glfw
 
 from Obstacles import Obstacle
 
+
 class Moto:
     width, height = 800, 600
 
@@ -95,7 +96,7 @@ class Moto:
 
             # Verifica a colisão com obstáculos
             if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
-                new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
+                    new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
                 return True
         return False
 
@@ -134,4 +135,11 @@ class Moto:
     def atualizar_obstaculos(self, obstacles):
         for i, obstacle in enumerate(obstacles):
             if obstacle.id == self.id:
-                obstacles[i] = Obstacle(self.moto_position[0] - self.x_size / 2, self.moto_position[1] - self.y_size / 2, self.x_size, self.y_size, id=self.id)
+                obstacles[i] = Obstacle(self.moto_position[0] - self.x_size / 2,
+                                        self.moto_position[1] - self.y_size / 2, self.x_size, self.y_size, id=self.id)
+
+    def get_back_position(self):
+        half_size = self.y_size / 1.5
+        back_x = self.moto_position[0] - half_size * math.cos(math.radians(self.moto_angle))
+        back_y = self.moto_position[1] - half_size * math.sin(math.radians(self.moto_angle))
+        return back_x, back_y
