@@ -25,9 +25,8 @@ class Trajetoria:
 
     import numpy as np
 
-    def draw(self):
-        glColor3f(1, 0, 0)  # Cor do cubo
-        size = 2.5  # Metade do tamanho do cubo (5 pixels)
+    def draw(self, color):
+        glColor4f(color[0], color[1], color[2], 0.2)  # Cor do cubo
         z = 10  # Valor fixo para a coordenada Z
         thickness = 20  # Espessura da linha, define o tamanho do cubo
 
@@ -39,9 +38,8 @@ class Trajetoria:
             (x1, y1) = self.points[i]
             (x2, y2) = self.points[i + 1]
 
-            # Desenha o cubo
             glBegin(GL_QUADS)
-            # Cálculo dos vértices do cubo
+            # Cálculo dos vértices
             for j in range(-thickness // 2, thickness // 2, thickness):
                 for k in range(-thickness // 2, thickness // 2, thickness):
                     glVertex3f(x1 + j, y1 + k, z)
