@@ -9,6 +9,7 @@ from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
 
+# MAPA
 from Background import TronBackground
 from Skybox import Skybox
 
@@ -50,6 +51,9 @@ glfw.make_context_current(window)
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
 tron_background.create_background()
+skybox = Skybox(size=1000)
+
+
 #Cubo
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
 cubo.transladar(200.0, 200.0, 20.0)
@@ -96,12 +100,14 @@ while not glfw.window_should_close(window):
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
 
+        skybox.draw()
+
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 1000)
+        gluPerspective(45, width / height, 0.1, 5000)
         gluLookAt(*moto1.calculate_camera_params())
 
 
@@ -138,7 +144,7 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 1000)
+        gluPerspective(45, width / height, 0.1, 5000)
         gluLookAt(*moto2.calculate_camera_params())
 
         # Desenhar fundo
