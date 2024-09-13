@@ -100,7 +100,6 @@ while not glfw.window_should_close(window):
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
 
-        skybox.draw()
 
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
@@ -110,6 +109,8 @@ while not glfw.window_should_close(window):
         gluPerspective(45, width / height, 0.1, 5000)
         gluLookAt(*moto1.calculate_camera_params())
 
+        # Desenha a SkyBox
+        skybox.draw()
 
         # Desenhar fundo
         tron_background.draw()
@@ -146,6 +147,9 @@ while not glfw.window_should_close(window):
         glLoadIdentity()
         gluPerspective(45, width / height, 0.1, 5000)
         gluLookAt(*moto2.calculate_camera_params())
+
+        # Desenha a SkyBox
+        skybox.draw()
 
         # Desenhar fundo
         tron_background.draw()
