@@ -31,9 +31,9 @@ class Moto:
         self.moto_angle = 0.0  # Renomeado para moto_angle
         self.moto_position = [x, y]  # Renomeado para moto_position
 
-        self.moto_speed = 0.5  # Renomeado para moto_speed
-        self.moto_speed_angle = 0.1
-        self.camera_distance = -250  # Distância da câmera ao moto
+        self.moto_speed = 1  # Renomeado para moto_speed
+        self.moto_speed_angle = 0.3
+        self.camera_distance = -200.0  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera acima do moto
         self.id = id  # Identificador único para a moto
