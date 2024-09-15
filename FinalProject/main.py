@@ -122,7 +122,7 @@ while not glfw.window_should_close(window):
         # Desenhar fundo
         tron_background.draw()
 
-        trajetoria1.draw(color=[1, 0, 0])
+        trajetoria1.draw(color=[1, 1, 0])
         trajetoria2.draw(color=[0, 0, 1])
 
 
@@ -175,7 +175,7 @@ while not glfw.window_should_close(window):
         # Desenhar fundo
         tron_background.draw()
 
-        trajetoria1.draw(color=[1, 0, 0])
+        trajetoria1.draw(color=[1, 1, 0])
         trajetoria2.draw(color=[0, 0, 1])
 
         # Desenha o cubo
