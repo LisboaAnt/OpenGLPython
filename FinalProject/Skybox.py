@@ -33,8 +33,8 @@ class Skybox:
                         './imgs/skybox/skyboxBack.png',
                         './imgs/skybox/skyboxL.png',
                         './imgs/skybox/skyboxR.png', #R
-                        './imgs/skybox4.png', # 3
-                        './imgs/skybox5.png', # 4
+                        './imgs/skybox/skyboxB.png', # 3
+                        './imgs/skybox/skyboxT.png', # 4
                         ]
 
         image = Image.open(texture_path[number]).convert('RGBA')  # Converter para RGBA

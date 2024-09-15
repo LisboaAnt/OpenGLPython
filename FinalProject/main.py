@@ -13,6 +13,7 @@ from Obstacles import Obstacle
 from Background import TronBackground
 from Skybox import Skybox
 
+# Menu
 from Menu import MainMenu  # Importa a classe MainMenu
 
 
@@ -27,7 +28,7 @@ if not window:
 
 
 # Definir o ícone da janela
-icon_path = "./imgs/icon.png"  # Substitua pelo caminho para sua imagem de ícone
+icon_path = "./imgs/icon.png"
 glfw.set_window_icon(window, 1, Image.open(icon_path))
 
 def framebuffer_size_callback(window, fb_width, fb_height):
@@ -106,7 +107,7 @@ while not glfw.window_should_close(window):
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 20000)
+        gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto1.calculate_camera_params())
 
         # Desenha a SkyBox
@@ -145,7 +146,7 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 20000)
+        gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto2.calculate_camera_params())
 
         # Desenha a SkyBox
