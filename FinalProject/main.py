@@ -9,6 +9,8 @@ from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
 
+from Trajetoria import Trajetoria
+
 # MAPA
 from Background import TronBackground
 from Skybox import Skybox

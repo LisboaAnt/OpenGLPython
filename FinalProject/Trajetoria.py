@@ -27,8 +27,8 @@ class Trajetoria:
 
     def draw(self, color):
         glColor4f(color[0], color[1], color[2], 0.2)  # Cor do cubo
-        z = 10  # Valor fixo para a coordenada Z
-        thickness = 20  # Espessura da linha, define o tamanho do cubo
+        z = 0  # Valor fixo para a coordenada Z
+        thickness = 20  #  tamanho
 
         if len(self.points) < 2:
             return  # Não há pontos suficientes para formar uma linha
