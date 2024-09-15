@@ -1,132 +1,132 @@
 import glfw
 from OpenGL.GL import *
-from OpenGL.GLU import *
-import numpy as np
-from PIL import Image
-from obj_loader import ObjLoader  # Importando a classe ObjLoader
+import math
+import time
 
-# Inicialização e configuração da janela
-if not glfw.init():
-    raise Exception("Falha ao iniciar")
+# Inicializar a janela GLFW
+def init_window(width, height, title):
+    if not glfw.init():
+        return None
+    window = glfw.create_window(width, height, title, None, None)
+    if not window:
+        glfw.terminate()
+        return None
+    glfw.make_context_current(window)
+    return window
 
-width, height = 800, 600
-window = glfw.create_window(width, height, "Aula 8 - Carregando Modelos 3D", None, None)
-if not window:
-    raise Exception("Falha ao criar a janela")
+class Quadrado:
+    def __init__(self, x, y, size, speed):
+        self.x = x
+        self.y = y
+        self.size = size
+        self.speed = speed
+        self.angle = 0.0  # Ângulo de rotação em graus
+        self.rotation_speed = 0.05  # Velocidade de rotação
 
-icon = "icon.png"
-glfw.set_window_icon(window, 1, Image.open(icon))
-glfw.make_context_current(window)
+    def draw(self):
+        half_size = self.size / 2
+        glPushMatrix()
+        glTranslatef(self.x, self.y, 0)
+        glRotatef(self.angle, 0, 0, 1)  # Rotacionar em torno do centro do quadrado
+        glBegin(GL_QUADS)
+        glVertex2f(-half_size, -half_size)
+        glVertex2f(half_size, -half_size)
+        glVertex2f(half_size, half_size)
+        glVertex2f(-half_size, half_size)
+        glEnd()
+        glPopMatrix()
 
-# Configuração OpenGL
-glEnable(GL_DEPTH_TEST)
-glEnable(GL_TEXTURE_2D)
+    def move(self, window):
+        # Girar o quadrado com as teclas A e D
+        if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
+            self.angle += self.rotation_speed
+        if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
+            self.angle -= self.rotation_speed
 
-glMatrixMode(GL_PROJECTION)
-glLoadIdentity()
-gluPerspective(45, width / height, 0.1, 50.0)
-glMatrixMode(GL_MODELVIEW)
+        # Mover para frente ou para trás com as teclas W e S
+        if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
+            self.x += self.speed * math.cos(math.radians(self.angle))
+            self.y += self.speed * math.sin(math.radians(self.angle))
+        if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
+            self.x -= self.speed * math.cos(math.radians(self.angle))
+            self.y -= self.speed * math.sin(math.radians(self.angle))
 
-# Configuração da câmera
-camera_pos = np.array([0.0, 0.0, 3])
-camera_front = np.array([0.0, 0.0, -1.0])
-camera_up = np.array([0.0, 1.0, 0.0])
-yaw, pitch = -90.0, 0.0
-camera_speed = 0.005
-keys = {}
+    # Calcula a posição da parte de trás do quadrado
+    def get_back_position(self):
+        half_size = self.size / 1.5
+        back_x = self.x - half_size * math.cos(math.radians(self.angle))
+        back_y = self.y - half_size * math.sin(math.radians(self.angle))
+        return back_x, back_y
 
-first_mouse = True
-cursor_disabled = False
-esc_pressed = False
-sensitivity = 0.1
-last_x, last_y = width / 2, height / 2
+class Trajetoria:
+    def __init__(self, max_points, interval):
+        self.points = []
+        self.max_points = max_points
+        self.last_time = time.time()
+        self.interval = interval
 
-# Funções de manipulação da câmera
-def camera():
-    global camera_pos, camera_front, camera_up
-    glLoadIdentity()
-    camera_target = camera_pos + camera_front
-    gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2], camera_target[0], camera_target[1], camera_target[2], camera_up[0], camera_up[1], camera_up[2])
+    def add_point(self, x, y):
+        current_time = time.time()
+        # Adiciona o ponto se o intervalo de tempo entre pontos for respeitado
+        if (current_time - self.last_time) > self.interval:
+            self.points.append((x, y))
+            self.last_time = current_time
 
-def key_callback(window, key, scancode, action, mods):
-    if action == glfw.PRESS:
-        keys[key] = True
-    elif action == glfw.RELEASE:
-        keys[key] = False
+        # Remove o ponto mais antigo se exceder o número máximo de pontos
+        if len(self.points) > self.max_points:
+            self.points.pop(0)
 
-def process_input():
-    global camera_pos, camera_front, camera_up, camera_speed, cursor_disabled, esc_pressed, first_mouse
-    if keys.get(glfw.KEY_W, False):
-        camera_pos += camera_speed * camera_front
-    if keys.get(glfw.KEY_S, False):
-        camera_pos -= camera_speed * camera_front
-    if keys.get(glfw.KEY_A, False):
-        camera_pos -= np.cross(camera_front, camera_up) * camera_speed
-    if keys.get(glfw.KEY_D, False):
-        camera_pos += np.cross(camera_front, camera_up) * camera_speed
+    def draw(self):
+        glBegin(GL_LINE_STRIP)
+        for (x, y) in self.points:
+            glVertex2f(x, y)
+        glEnd()
 
-    if glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.PRESS and not esc_pressed:
-        cursor_disabled = not cursor_disabled
-        mode = glfw.CURSOR_DISABLED if cursor_disabled else glfw.CURSOR_NORMAL
-        glfw.set_input_mode(window, glfw.CURSOR, mode)
-        esc_pressed = True
-        first_mouse = cursor_disabled
-        if not cursor_disabled:
-            glfw.set_cursor_pos(window, last_x, last_y)
-    elif glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.RELEASE:
-        esc_pressed = False
+    def check_collision(self, square_x, square_y, square_size):
+        half_size = square_size / 2
+        for (x, y) in self.points[:-1]:  # Não verificar o ponto atual
+            if (square_x - half_size <= x <= square_x + half_size) and (square_y - half_size <= y <= square_y + half_size):
+                return True
+        return False
 
-def mouse_callback(window, xpos, ypos):
-    global yaw, pitch, last_x, last_y, first_mouse, camera_front, cursor_disabled, sensitivity
-
-    if not cursor_disabled:
+# Função principal
+def main():
+    window = init_window(800, 600, "OpenGL Square and Line Collision")
+    if not window:
         return
 
-    if first_mouse:
-        last_x = xpos
-        last_y = ypos
-        first_mouse = False
+    glClearColor(0.0, 0.0, 0.0, 1.0)
 
-    xoffset = xpos - last_x
-    yoffset = last_y - ypos
+    # Inicializar o quadrado e a trajetória
+    quadrado = Quadrado(0.0, 0.0, 0.1, 0.0001)
+    trajetoria = Trajetoria(max_points=30, interval=0.1)
 
-    last_x = xpos
-    last_y = ypos
+    # Loop principal
+    while not glfw.window_should_close(window):
+        glClear(GL_COLOR_BUFFER_BIT)
 
-    xoffset *= sensitivity
-    yoffset *= sensitivity
+        # Mover e desenhar o quadrado
+        quadrado.move(window)
+        glColor3f(1.0, 0.0, 0.0)
+        quadrado.draw()
 
-    yaw += xoffset
-    pitch += yoffset
+        # Adicionar o ponto da parte de trás do quadrado na trajetória
+        back_x, back_y = quadrado.get_back_position()
+        trajetoria.add_point(back_x, back_y)
 
-    pitch = max(-89.0, min(89.0, pitch))
+        # Desenhar a trajetória
+        glColor3f(0.0, 0.0, 1.0)
+        trajetoria.draw()
 
-    front = np.array([
-        np.cos(np.radians(yaw)) * np.cos(np.radians(pitch)),
-        np.sin(np.radians(pitch)),
-        np.sin(np.radians(yaw)) * np.cos(np.radians(pitch))
-    ])
-    camera_front = front / np.linalg.norm(front)
+        # Verificar colisão do quadrado com a trajetória
+        if trajetoria.check_collision(quadrado.x, quadrado.y, quadrado.size):
+            print("Colisão detectada!")
 
-glfw.set_key_callback(window, key_callback)
-glfw.set_cursor_pos_callback(window, mouse_callback)
+        # Trocar os buffers
+        glfw.swap_buffers(window)
+        glfw.poll_events()
 
-# Carregar o modelo OBJ
-obj_loader = ObjLoader('house_obj.obj')
-obj_loader.load()
+    glfw.terminate()
 
-# Loop principal
-while not glfw.window_should_close(window):
-    process_input()
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-
-    glLoadIdentity()
-    camera()
-
-    # Renderizar o objeto carregado
-    obj_loader.render()
-
-    glfw.swap_buffers(window)
-    glfw.poll_events()
-
-glfw.terminate()
+if __name__ == "__main__":
+    main()

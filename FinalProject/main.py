@@ -9,6 +9,8 @@ from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
 
+from Trajetoria import Trajetoria
+
 # MAPA
 from Background import TronBackground
 from Skybox import Skybox
@@ -52,8 +54,9 @@ glfw.make_context_current(window)
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
 tron_background.create_background()
-skybox = Skybox(size=10000)
 
+# Instancia o Skybox
+skybox = Skybox(size=10000)
 
 #Cubo
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
@@ -67,6 +70,9 @@ cubo2.transladar(500.0, 500.0, 20.0)
 moto1 = Moto(100, 200, x_size=100, y_size=100, id=1)
 moto2 = Moto(id=2)
 
+#Trajetoria
+trajetoria1 = Trajetoria(max_points=30, interval=0.1)
+trajetoria2 = Trajetoria(max_points=30, interval=0.1)
 
 # Obstacles
 obstacles = []
@@ -116,6 +122,10 @@ while not glfw.window_should_close(window):
         # Desenhar fundo
         tron_background.draw()
 
+        trajetoria1.draw(color=[1, 0, 0])
+        trajetoria2.draw(color=[0, 0, 1])
+
+
         # Desenha o cubo
         cubo.desenhar()
         cubo2.desenhar()
@@ -134,8 +144,18 @@ while not glfw.window_should_close(window):
         moto1.movimento(window, False, obstacles)
         moto1.desenha()
 
+        # Adicionar o ponto da parte de trás do quadrado na trajetória
+        back_x, back_y = moto1.get_back_position()
+        trajetoria1.add_point(back_x, back_y)
+
         # Desenha moto 2
         moto2.desenha()
+
+        # Verificar colisão do quadrado com a trajetória
+        if trajetoria1.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
+            print("Colisão detectada 1!")
+        if trajetoria2.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
+            print("Colisão detectada 1!")
 
         # Desabilita o blending e desativa a textura
         glDisable(GL_BLEND)
@@ -155,6 +175,9 @@ while not glfw.window_should_close(window):
         # Desenhar fundo
         tron_background.draw()
 
+        trajetoria1.draw(color=[1, 0, 0])
+        trajetoria2.draw(color=[0, 0, 1])
+
         # Desenha o cubo
         cubo.desenhar()
         cubo2.desenhar()
@@ -167,8 +190,23 @@ while not glfw.window_should_close(window):
         moto2.movimento(window, True, obstacles)
         moto2.desenha()
 
+        # Adicionar o ponto da parte de trás do quadrado na trajetória
+        back_x, back_y = moto2.get_back_position()
+        trajetoria2.add_point(back_x, back_y)
+
         # Desenha MOTO 1
         moto1.desenha()
+
+        # Verificar colisão do quadrado com a trajetória
+        if trajetoria2.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
+            print("Colisão detectada 2!")
+
+        if trajetoria1.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
+            print("Colisão detectada 2!")
+
+
+
+
 
         menu.paused()
         # Desabilita o blending e desativa a textura

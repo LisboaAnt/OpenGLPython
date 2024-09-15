@@ -7,6 +7,7 @@ import glfw
 
 from Obstacles import Obstacle
 
+
 class Moto:
     width, height = 800, 600
 
@@ -30,13 +31,12 @@ class Moto:
         self.moto_angle = 0.0  # Renomeado para moto_angle
         self.moto_position = [x, y]  # Renomeado para moto_position
 
-        self.moto_speed = 0.5  # Renomeado para moto_speed
+        self.moto_speed = 1  # Renomeado para moto_speed
         self.moto_speed_angle = 0.1
         self.camera_distance = -250  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera acima do moto
         self.id = id  # Identificador único para a moto
-        self.previous_position = list(self.moto_position)  # Adiciona o estado da posição anterior
         self.x_size = x_size
         self.y_size = y_size
 
@@ -86,7 +86,6 @@ class Moto:
 
         if moved:
             self.atualizar_obstaculos(obstacles)  # Atualiza obstáculos apenas se a moto se moveu
-            self.previous_position = list(self.moto_position)  # Atualiza a posição anterior
 
     def check_collision(self, new_x, new_y, obstacles):
         for obstacle in obstacles:
@@ -95,7 +94,7 @@ class Moto:
 
             # Verifica a colisão com obstáculos
             if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
-                new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
+                    new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
                 return True
         return False
 
@@ -134,4 +133,11 @@ class Moto:
     def atualizar_obstaculos(self, obstacles):
         for i, obstacle in enumerate(obstacles):
             if obstacle.id == self.id:
-                obstacles[i] = Obstacle(self.moto_position[0] - self.x_size / 2, self.moto_position[1] - self.y_size / 2, self.x_size, self.y_size, id=self.id)
+                obstacles[i] = Obstacle(self.moto_position[0] - self.x_size / 2,
+                                        self.moto_position[1] - self.y_size / 2, self.x_size, self.y_size, id=self.id)
+
+    def get_back_position(self):
+        half_size = self.y_size / 1.5
+        back_x = self.moto_position[0] - half_size * math.cos(math.radians(self.moto_angle))
+        back_y = self.moto_position[1] - half_size * math.sin(math.radians(self.moto_angle))
+        return back_x, back_y
