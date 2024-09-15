@@ -17,8 +17,28 @@ class Skybox:
 
     def load_texture(self, number):
         # Carregar uma única textura para o Skybox (em vez de 6 imagens)
-        texture_path = ['./imgs/skybox0.png','./imgs/skybox1.png','./imgs/skybox2.png','./imgs/skybox3.png','./imgs/skybox4.png','./imgs/skybox5.png']
+        """
+        texture_path = [
+                        './imgs/Box_Right.bmp',  # R
+                        './imgs/Box_Back.bmp',
+                        './imgs/Box_Front.bmp',
+                        './imgs/Box_Left.bmp',
+                        './imgs/Box_Bottom.bmp', # 3
+                        './imgs/Box_Top.bmp', # 4
+                        ]
+
+        """
+        texture_path = [
+                        './imgs/skybox/skyboxF.png',
+                        './imgs/skybox/skyboxBack.png',
+                        './imgs/skybox/skyboxL.png',
+                        './imgs/skybox/skyboxR.png', #R
+                        './imgs/skybox4.png', # 3
+                        './imgs/skybox5.png', # 4
+                        ]
+
         image = Image.open(texture_path[number]).convert('RGBA')  # Converter para RGBA
+        image = image.rotate(-90*(number))
         img_data = np.array(list(image.getdata()), dtype=np.uint8)
 
         texture = glGenTextures(1)
@@ -36,91 +56,99 @@ class Skybox:
         return texture
 
     def draw(self):
-        # Direita
-        glPushMatrix()
-        glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, self.texture1)
-
-        glBegin(GL_QUADS)
-        glTexCoord2f(1, 0); glVertex3f(self.size, -self.size, -self.size)
-        glTexCoord2f(1, 1); glVertex3f(self.size, self.size, -self.size)
-        glTexCoord2f(0, 1); glVertex3f(self.size, self.size, self.size)
-        glTexCoord2f(0, 0); glVertex3f(self.size, -self.size, self.size)
-        glEnd()
-
-        glDisable(GL_TEXTURE_2D)
-        glPopMatrix()
-
-        #esquerda
-        glPushMatrix()
-        glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, self.texture2)
-
-        glBegin(GL_QUADS)
-        glTexCoord2f(1, 0); glVertex3f(-self.size, -self.size, self.size)
-        glTexCoord2f(1, 1); glVertex3f(-self.size, self.size, self.size)
-        glTexCoord2f(0, 1); glVertex3f(-self.size, self.size, -self.size)
-        glTexCoord2f(0, 0); glVertex3f(-self.size, -self.size, -self.size)
-
-        glEnd()
-        glDisable(GL_TEXTURE_2D)
-        glPopMatrix()
-
-        # Frente
-        glPushMatrix()
-        glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, self.texture3)
-
-        glBegin(GL_QUADS)
-        glTexCoord2f(0, 0); glVertex3f(-self.size, -self.size, -self.size)
-        glTexCoord2f(1, 0); glVertex3f(self.size, -self.size, -self.size)
-        glTexCoord2f(1, 1); glVertex3f(self.size, self.size, -self.size)
-        glTexCoord2f(0, 1); glVertex3f(-self.size, self.size, -self.size)
-
-        glEnd()
-        glDisable(GL_TEXTURE_2D)
-        glPopMatrix()
-
-        # Trás
-        glPushMatrix()
-        glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, self.texture4)
-
-        glBegin(GL_QUADS)
-        glTexCoord2f(1, 0); glVertex3f(self.size, -self.size, self.size)
-        glTexCoord2f(0, 0); glVertex3f(-self.size, -self.size, self.size)
-        glTexCoord2f(0, 1); glVertex3f(-self.size, self.size, self.size)
-        glTexCoord2f(1, 1); glVertex3f(self.size, self.size, self.size)
-
-        glEnd()
-        glDisable(GL_TEXTURE_2D)
-        glPopMatrix()
-
-        # Topo
-        glPushMatrix()
-        glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, self.texture5)
-
-        glBegin(GL_QUADS)
-        glTexCoord2f(0, 0); glVertex3f(-self.size, self.size, -self.size)
-        glTexCoord2f(1, 0); glVertex3f(self.size, self.size, -self.size)
-        glTexCoord2f(1, 1); glVertex3f(self.size, self.size, self.size)
-        glTexCoord2f(0, 1); glVertex3f(-self.size, self.size, self.size)
-
-        glEnd()
-        glDisable(GL_TEXTURE_2D)
-        glPopMatrix()
-
-        # Base
+        # Lado1
         glPushMatrix()
         glEnable(GL_TEXTURE_2D)
         glBindTexture(GL_TEXTURE_2D, self.texture0)
 
         glBegin(GL_QUADS)
-        glTexCoord2f(0, 0); glVertex3f(-self.size, -self.size, self.size)
-        glTexCoord2f(1, 0); glVertex3f(self.size, -self.size, self.size)
-        glTexCoord2f(1, 1); glVertex3f(self.size, -self.size, -self.size)
-        glTexCoord2f(0, 1); glVertex3f(-self.size, -self.size, -self.size)
+        glTexCoord2f(1, 0), glVertex3f(self.size, -self.size, -self.size)
+        glTexCoord2f(1, 1), glVertex3f(self.size, self.size, -self.size)
+        glTexCoord2f(0, 1), glVertex3f(self.size, self.size, self.size)
+        glTexCoord2f(0, 0), glVertex3f(self.size, -self.size, self.size)
+        glEnd()
+
+        glDisable(GL_TEXTURE_2D)
+        glPopMatrix()
+
+        # Lado2
+        glPushMatrix()
+        glEnable(GL_TEXTURE_2D)
+        glBindTexture(GL_TEXTURE_2D, self.texture1)
+
+        glBegin(GL_QUADS)
+        glTexCoord2f(1, 0), glVertex3f(-self.size, -self.size, self.size)
+        glTexCoord2f(1, 1), glVertex3f(-self.size, self.size, self.size)
+        glTexCoord2f(0, 1), glVertex3f(-self.size, self.size, -self.size)
+        glTexCoord2f(0, 0), glVertex3f(-self.size, -self.size, -self.size)
+
+        glEnd()
+        glDisable(GL_TEXTURE_2D)
+        glPopMatrix()
+
+        # Lado3
+        glPushMatrix()
+        glEnable(GL_TEXTURE_2D)
+        glBindTexture(GL_TEXTURE_2D, self.texture2)
+
+        glBegin(GL_QUADS)
+        glTexCoord2f(0, 0), glVertex3f(-self.size, self.size, -self.size)
+        glTexCoord2f(1, 0), glVertex3f(self.size, self.size, -self.size)
+        glTexCoord2f(1, 1), glVertex3f(self.size, self.size, self.size)
+        glTexCoord2f(0, 1), glVertex3f(-self.size, self.size, self.size)
+
+        glEnd()
+        glDisable(GL_TEXTURE_2D)
+        glPopMatrix()
+
+        # Lado4
+        glPushMatrix()
+        glEnable(GL_TEXTURE_2D)
+        glBindTexture(GL_TEXTURE_2D, self.texture3)
+
+        glBegin(GL_QUADS)
+        glTexCoord2f(0, 0), glVertex3f(-self.size, -self.size, self.size)
+        glTexCoord2f(1, 0), glVertex3f(self.size, -self.size, self.size)
+        glTexCoord2f(1, 1), glVertex3f(self.size, -self.size, -self.size)
+        glTexCoord2f(0, 1), glVertex3f(-self.size, -self.size, -self.size)
+
+        glEnd()
+        glDisable(GL_TEXTURE_2D)
+        glPopMatrix()
+
+        # Down
+        glPushMatrix()
+        glEnable(GL_TEXTURE_2D)
+        glBindTexture(GL_TEXTURE_2D, self.texture4)
+
+        glBegin(GL_QUADS)
+        glTexCoord2f(0, 0)
+        glVertex3f(-self.size, -self.size, -self.size)
+        glTexCoord2f(1, 0)
+        glVertex3f(self.size, -self.size, -self.size)
+        glTexCoord2f(1, 1)
+        glVertex3f(self.size, self.size, -self.size)
+        glTexCoord2f(0, 1)
+        glVertex3f(-self.size, self.size, -self.size)
+
+        glEnd()
+        glDisable(GL_TEXTURE_2D)
+        glPopMatrix()
+
+        # Up
+        glPushMatrix()
+        glEnable(GL_TEXTURE_2D)
+        glBindTexture(GL_TEXTURE_2D, self.texture5)
+
+        glBegin(GL_QUADS)
+        glTexCoord2f(1, 0)
+        glVertex3f(self.size, -self.size, self.size)
+        glTexCoord2f(0, 0)
+        glVertex3f(-self.size, -self.size, self.size)
+        glTexCoord2f(0, 1)
+        glVertex3f(-self.size, self.size, self.size)
+        glTexCoord2f(1, 1)
+        glVertex3f(self.size, self.size, self.size)
 
         glEnd()
         glDisable(GL_TEXTURE_2D)

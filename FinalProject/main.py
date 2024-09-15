@@ -51,7 +51,7 @@ glfw.make_context_current(window)
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
 tron_background.create_background()
-skybox = Skybox(size=1000)
+skybox = Skybox(size=10000)
 
 
 #Cubo
@@ -106,7 +106,7 @@ while not glfw.window_should_close(window):
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 5000)
+        gluPerspective(45, width / height, 0.1, 20000)
         gluLookAt(*moto1.calculate_camera_params())
 
         # Desenha a SkyBox
@@ -145,7 +145,7 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 5000)
+        gluPerspective(45, width / height, 0.1, 20000)
         gluLookAt(*moto2.calculate_camera_params())
 
         # Desenha a SkyBox
