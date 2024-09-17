@@ -71,8 +71,8 @@ moto1 = Moto(100, 200, x_size=100, y_size=100, id=1)
 moto2 = Moto(id=2)
 
 # Trajetória
-trajetoria1 = Trajetoria(max_points=30, interval=0.1)
-trajetoria2 = Trajetoria(max_points=30, interval=0.1)
+trajetoria1 = Trajetoria(max_points=60, interval=0.1)
+trajetoria2 = Trajetoria(max_points=60, interval=0.1)
 
 # Obstacles
 obstacles = []
@@ -132,7 +132,7 @@ while not glfw.window_should_close(window):
         tron_background.draw()
 
         trajetoria2.draw(color=[1, 1, 0])
-        trajetoria1.draw(color=[0, 0, 1])
+        trajetoria1.draw(color=[0, 1, 1])
 
         # Desenha o cubo
         cubo.desenhar()
@@ -184,7 +184,7 @@ while not glfw.window_should_close(window):
         tron_background.draw()
 
         trajetoria2.draw(color=[1, 1, 0])
-        trajetoria1.draw(color=[0, 0, 1])
+        trajetoria1.draw(color=[0, 1, 1])
 
         # Desenha o cubo
         cubo.desenhar()
