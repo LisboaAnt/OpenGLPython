@@ -148,6 +148,7 @@ while not glfw.window_should_close(window):
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
 
+
         # Renderizar o placar de HP no canto superior esquerdo
          # Pode ser atualizado conforme o jogo progride
         render_text(f"HP: {HP2}", 10, 550)
