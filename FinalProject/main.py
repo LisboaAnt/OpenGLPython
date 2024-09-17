@@ -9,9 +9,13 @@ from Cubo import Cubo
 from Moto import Moto
 from Obstacles import Obstacle
 
+from Trajetoria import Trajetoria
+
+# MAPA
 from Background import TronBackground
 from Skybox import Skybox
 
+# Menu
 from Menu import MainMenu  # Importa a classe MainMenu
 
 
@@ -26,7 +30,7 @@ if not window:
 
 
 # Definir o ícone da janela
-icon_path = "./imgs/icon.png"  # Substitua pelo caminho para sua imagem de ícone
+icon_path = "./imgs/icon.png"
 glfw.set_window_icon(window, 1, Image.open(icon_path))
 
 def framebuffer_size_callback(window, fb_width, fb_height):
@@ -50,6 +54,10 @@ glfw.make_context_current(window)
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
 tron_background.create_background()
+
+# Instancia o Skybox
+skybox = Skybox(size=10000)
+
 #Cubo
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
 cubo.transladar(200.0, 200.0, 20.0)
@@ -62,6 +70,9 @@ cubo2.transladar(500.0, 500.0, 20.0)
 moto1 = Moto(100, 200, x_size=100, y_size=100, id=1)
 moto2 = Moto(id=2)
 
+#Trajetoria
+trajetoria1 = Trajetoria(max_points=30, interval=0.1)
+trajetoria2 = Trajetoria(max_points=30, interval=0.1)
 
 # Obstacles
 obstacles = []
@@ -96,17 +107,24 @@ while not glfw.window_should_close(window):
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
 
+
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 1000)
+        gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto1.calculate_camera_params())
 
+        # Desenha a SkyBox
+        skybox.draw()
 
         # Desenhar fundo
         tron_background.draw()
+
+        trajetoria1.draw(color=[1, 1, 0])
+        trajetoria2.draw(color=[0, 0, 1])
+
 
         # Desenha o cubo
         cubo.desenhar()
@@ -126,8 +144,18 @@ while not glfw.window_should_close(window):
         moto1.movimento(window, False, obstacles)
         moto1.desenha()
 
+        # Adicionar o ponto da parte de trás do quadrado na trajetória
+        back_x, back_y = moto1.get_back_position()
+        trajetoria1.add_point(back_x, back_y)
+
         # Desenha moto 2
         moto2.desenha()
+
+        # Verificar colisão do quadrado com a trajetória
+        if trajetoria1.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
+            print("Colisão detectada 1!")
+        if trajetoria2.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
+            print("Colisão detectada 1!")
 
         # Desabilita o blending e desativa a textura
         glDisable(GL_BLEND)
@@ -138,11 +166,17 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(45, width / height, 0.1, 1000)
+        gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto2.calculate_camera_params())
+
+        # Desenha a SkyBox
+        skybox.draw()
 
         # Desenhar fundo
         tron_background.draw()
+
+        trajetoria1.draw(color=[1, 1, 0])
+        trajetoria2.draw(color=[0, 0, 1])
 
         # Desenha o cubo
         cubo.desenhar()
@@ -156,8 +190,23 @@ while not glfw.window_should_close(window):
         moto2.movimento(window, True, obstacles)
         moto2.desenha()
 
+        # Adicionar o ponto da parte de trás do quadrado na trajetória
+        back_x, back_y = moto2.get_back_position()
+        trajetoria2.add_point(back_x, back_y)
+
         # Desenha MOTO 1
         moto1.desenha()
+
+        # Verificar colisão do quadrado com a trajetória
+        if trajetoria2.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
+            print("Colisão detectada 2!")
+
+        if trajetoria1.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
+            print("Colisão detectada 2!")
+
+
+
+
 
         menu.paused()
         # Desabilita o blending e desativa a textura

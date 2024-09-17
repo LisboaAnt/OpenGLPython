@@ -1,134 +1,97 @@
 import glfw
 from OpenGL.GL import *
-from OpenGL.GL.shaders import compileProgram, compileShader
-from PIL import Image
 import numpy as np
 import math
 
-# Vertex shader
-VERTEX_SHADER = """
-#version 330 core
-layout(location = 0) in vec3 position;
-layout(location = 1) in vec2 texCoords;
-out vec2 TexCoords;
-void main()
-{
-    gl_Position = vec4(position, 1.0);
-    TexCoords = texCoords;
-}
-"""
-
-# Fragment shader
-FRAGMENT_SHADER = """
-#version 330 core
-in vec2 TexCoords;
-out vec4 color;
-uniform sampler2D texture1;
-void main()
-{
-    color = texture(texture1, TexCoords);
-}
-"""
-
-def create_mesh():
-    # Cria uma malha paramétrica (grid simples)
-    vertices = []
-    tex_coords = []
-    size = 1.0
-    divisions = 50
-    for i in range(divisions + 1):
-        for j in range(divisions + 1):
-            x = -size + 2 * size * i / divisions
-            y = -size + 2 * size * j / divisions
-            vertices.append([x, y, 0])
-            tex_coords.append([i / divisions, j / divisions])
-
-    vertices = np.array(vertices, dtype=np.float32)
-    tex_coords = np.array(tex_coords, dtype=np.float32)
-
-    indices = []
-    for i in range(divisions):
-        for j in range(divisions):
-            start = i * (divisions + 1) + j
-            indices.extend([start, start + 1, start + divisions + 1])
-            indices.extend([start + 1, start + divisions + 2, start + divisions + 1])
-
-    indices = np.array(indices, dtype=np.uint32)
-    return vertices, tex_coords, indices
-
-def load_texture(path):
-    # Carrega a textura usando Pillow
-    image = Image.open(path)
-    image = image.transpose(Image.FLIP_TOP_BOTTOM)
-    img_data = np.array(image, dtype=np.uint8)
-
-    texture = glGenTextures(1)
-    glBindTexture(GL_TEXTURE_2D, texture)
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, image.width, image.height, 0, GL_RGB, GL_UNSIGNED_BYTE, img_data)
-    glGenerateMipmap(GL_TEXTURE_2D)
-
-    return texture
-
-def main():
-    # Inicializa GLFW
+# Inicializar a janela GLFW
+def init_window(width, height, title):
     if not glfw.init():
-        return
-
-    window = glfw.create_window(800, 600, "Textura em Malha Paramétrica", None, None)
+        return None
+    window = glfw.create_window(width, height, title, None, None)
     if not window:
         glfw.terminate()
+        return None
+    glfw.make_context_current(window)
+    return window
+
+# Função para desenhar a linha (curva)
+def draw_curve():
+    glBegin(GL_LINE_STRIP)
+    for i in range(100):
+        t = i / 100.0
+        x = 0.5 * math.cos(2 * math.pi * t)  # Curva circular para exemplo
+        y = 0.5 * math.sin(2 * math.pi * t)
+        glVertex2f(x, y)
+    glEnd()
+
+# Função para desenhar um quadrado
+def draw_square(x, y, size):
+    half_size = size / 2
+    glBegin(GL_QUADS)
+    glVertex2f(x - half_size, y - half_size)
+    glVertex2f(x + half_size, y - half_size)
+    glVertex2f(x + half_size, y + half_size)
+    glVertex2f(x - half_size, y + half_size)
+    glEnd()
+
+# Função para mover o quadrado com teclas WASD
+def handle_input(window, x, y, speed):
+    if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
+        y += speed
+    if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
+        y -= speed
+    if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
+        x -= speed
+    if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
+        x += speed
+    return x, y
+
+# Função para verificar colisão (simples para este exemplo)
+def check_collision(square_x, square_y, square_size, curve_points):
+    half_size = square_size / 2
+    for (cx, cy) in curve_points:
+        if (square_x - half_size <= cx <= square_x + half_size) and (square_y - half_size <= cy <= square_y + half_size):
+            return True
+    return False
+
+# Função principal
+def main():
+    window = init_window(800, 600, "OpenGL Line and Square Collision")
+    if not window:
         return
 
-    glfw.make_context_current(window)
+    # Configuração inicial
+    glClearColor(0.0, 0.0, 0.0, 1.0)
+    square_x, square_y = 0.0, 0.0  # Posição inicial do quadrado
+    square_size = 0.1
+    speed = 0.0001
 
-    # Compila e linka os shaders
-    shader = compileProgram(
-        compileShader(VERTEX_SHADER, GL_VERTEX_SHADER),
-        compileShader(FRAGMENT_SHADER, GL_FRAGMENT_SHADER)
-    )
+    # Gerar pontos da curva
+    curve_points = [(0.5 * math.cos(2 * math.pi * t), 0.5 * math.sin(2 * math.pi * t)) for t in np.linspace(0, 1, 100)]
 
-    # Cria a malha e carrega a textura
-    vertices, tex_coords, indices = create_mesh()
-    texture = load_texture("path_to_your_texture.jpg")
-
-    # Criação de VBOs, VAO e EBO
-    VAO = glGenVertexArrays(1)
-    VBOs = glGenBuffers(2)
-    EBO = glGenBuffers(1)
-
-    glBindVertexArray(VAO)
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBOs[0])
-    glBufferData(GL_ARRAY_BUFFER, vertices.nbytes, vertices, GL_STATIC_DRAW)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * vertices.itemsize, ctypes.c_void_p(0))
-    glEnableVertexAttribArray(0)
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBOs[1])
-    glBufferData(GL_ARRAY_BUFFER, tex_coords.nbytes, tex_coords, GL_STATIC_DRAW)
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * tex_coords.itemsize, ctypes.c_void_p(0))
-    glEnableVertexAttribArray(1)
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO)
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.nbytes, indices, GL_STATIC_DRAW)
-
-    # Configurações de textura
-    glUseProgram(shader)
-    glUniform1i(glGetUniformLocation(shader, "texture1"), 0)
-
+    # Loop principal
     while not glfw.window_should_close(window):
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+        glClear(GL_COLOR_BUFFER_BIT)
 
-        glBindTexture(GL_TEXTURE_2D, texture)
-        glBindVertexArray(VAO)
-        glDrawElements(GL_TRIANGLES, len(indices), GL_UNSIGNED_INT, None)
+        # Desenhar linha (curva)
+        glColor3f(0.0, 1.0, 0.0)
+        draw_curve()
 
+        # Desenhar quadrado
+        glColor3f(1.0, 0.0, 0.0)
+        draw_square(square_x, square_y, square_size)
+
+        # Atualizar posição do quadrado com teclas WASD
+        square_x, square_y = handle_input(window, square_x, square_y, speed)
+
+        # Verificar colisão
+        if check_collision(square_x, square_y, square_size, curve_points):
+            print("Colisão detectada!")
+
+        # Trocar os buffers
         glfw.swap_buffers(window)
         glfw.poll_events()
 
-    # Limpeza
-    glDeleteVertexArrays(1, [VAO])
-    glDeleteBuffers(2, VBOs)
-    glDeleteBuffers(1, [EBO])
     glfw.terminate()
 
 if __name__ == "__main__":
