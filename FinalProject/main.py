@@ -304,9 +304,6 @@ while not glfw.window_should_close(window):
             print(HP2)
 
 
-
-
-
         menu.paused()
         # Desabilita o blending e desativa a textura
         glDisable(GL_BLEND)
