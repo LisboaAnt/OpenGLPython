@@ -6,18 +6,23 @@ import numpy as np
 from PIL import Image
 import time
 
+# IMPORT ELEMENTOS
 from Cubo import Cubo
 from Moto import Moto
-from Obstacles import Obstacle
 
-from Trajetoria import Trajetoria
+
+# HIT BOXS
+from Obstacles import Obstacle          #HIT BOX QUADRADO -> QUADRADO 2D
+from Trajetoria import Trajetoria       #HIT BOX QUADRADO -> LINHAS 2D
+
 
 # MAPA
-from Background import TronBackground
-from Skybox import Skybox
+from Background import TronBackground   #CHÃO
+from Skybox import Skybox               #SKYBOX
+from Iluminacao import Iluminacao
 
 # Menu
-from Menu import MainMenu  # Importa a classe MainMenu
+from Menu import MainMenu               # MENU DO JOGO
 
 # Inicializando a biblioteca GLFW
 if not glfw.init():
@@ -32,7 +37,7 @@ if not window:
 icon_path = "./imgs/icon.png"
 glfw.set_window_icon(window, 1, Image.open(icon_path))
 
-
+# CONTROLHE DO BUFFER
 def framebuffer_size_callback(window, fb_width, fb_height):
     global width, height
     width, height = fb_width // 2, fb_height
@@ -45,11 +50,14 @@ def framebuffer_size_callback(window, fb_width, fb_height):
 
 glfw.set_framebuffer_size_callback(window, framebuffer_size_callback)
 
+# Configurar o contexto da janela criada
+glfw.make_context_current(window)
+
 # Criar o menu inicial
 menu = MainMenu(window)
 
-# Configurar o contexto da janela criada
-glfw.make_context_current(window)
+# Instancia Iluminacao
+iluminacao = Iluminacao()
 
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
@@ -57,6 +65,7 @@ tron_background.create_background()
 
 # Instancia o Skybox
 skybox = Skybox(size=10000)
+
 
 # Cubo
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
@@ -94,9 +103,20 @@ obstacles.append(
 previous_time = glfw.get_time()
 frame_count = 0
 
+# Defina uma constante para o limite de FPS
+FPS_LIMIT = 60
+FRAME_TIME = 1.0 / FPS_LIMIT  # Tempo por quadro em segundos
+
+
+glEnable(GL_LIGHTING)
+glEnable(GL_DEPTH_TEST)
+
+
 # Principal loop
 while not glfw.window_should_close(window):
     glfw.poll_events()
+    start_time = glfw.get_time()
+
 
     # Limpa o buffer de cores e de profundidade
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -118,6 +138,7 @@ while not glfw.window_should_close(window):
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
 
+
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
         glViewport(0, 0, width, height)
@@ -125,6 +146,8 @@ while not glfw.window_should_close(window):
         glLoadIdentity()
         gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto1.calculate_camera_params())
+
+        iluminacao.configure_lights()
 
         # Desenha a SkyBox
         skybox.draw()
@@ -229,8 +252,15 @@ while not glfw.window_should_close(window):
 
     if elapsed_time > 1.0:
         fps = frame_count / elapsed_time
+
         print(f"FPS: {fps:.2f}")
         frame_count = 0
         previous_time = current_time
+
+    # Calcule o tempo de execução e faça uma pausa para manter o FPS
+    end_time = glfw.get_time()  # Tempo de fim da iteração
+    frame_duration = end_time - start_time  # Duração da iteração
+    if frame_duration < FRAME_TIME:
+        time.sleep(FRAME_TIME - frame_duration)  # Pausa para manter o FPS
 
 glfw.terminate()

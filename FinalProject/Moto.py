@@ -28,8 +28,8 @@ class Moto:
         self.inclinacaoDaMoto = 0
         self.inclinacaoVelocidade = 0.05
 
-        self.moto_speed = 1.5  # Velocidade padrao de movimento
-        self.moto_speed_angle = 0.5    # Velocidade rotacao padrao
+        self.moto_speed = 5  # Velocidade padrao de movimento
+        self.moto_speed_angle = 1.5    # Velocidade rotacao padrao
         self.camera_distance = -250  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 80.0  # Altura da câmera
