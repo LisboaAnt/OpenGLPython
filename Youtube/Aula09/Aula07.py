@@ -1,117 +1,202 @@
-import glfw
 from OpenGL.GL import *
-import time
+import glm
+import glfw
+
+# Constants
+FPS = 30
+FLAT = 1
+GOURAUD = 2
+
+# Global variables
+janelaLargura = 500  # window width in pixels
+janelaAltura = 500  # window height in pixels
+cameraPosition = glm.vec3(20, -10, 20)  # camera position
+lightPosition = glm.vec3(5, 5, 5)  # light position
+lightSpin = True  # indicates if the light spins around the surface
+lightRotation = glm.rotate(glm.mat4(1.0), 0.01, glm.vec3(0, 0, 1))  # rotation matrix for light
+lightAmbient = glm.vec3(0.1)  # ambient light property
+lightDiffuse = glm.vec3(1.0)  # diffuse light property
+lightSpecular = glm.vec3(1.0)  # specular light property
+surfaceSize = 20.0  # size of the surface
+surfaceDivisions = 10  # number of subdivisions of the surface
+surfaceAmbient = glm.vec3(0.1)  # ambient property of the surface material
+surfaceDiffuse = glm.vec3(0, 1, 1)  # diffuse property of the surface material
+surfaceSpecular = glm.vec3(0.5)  # specular property of the surface material
+surfaceShine = 128  # specular property of the surface material
+shadingType = FLAT  # shading type
 
 
-# Inicializar a janela GLFW
-def init_window(width, height, title):
+# Initialization function
+def inicio():
+    glClearColor(0, 0, 0, 1)
+    glPointSize(5)
+    glLineWidth(1)  # change line width to 1 pixel
+    glEnable(GL_DEPTH_TEST)  # enable depth testing
+
+
+# Function to convert glm.mat4 to list<float>
+def mat2list(M):
+    return [list(M[i]) for i in range(4)]
+
+
+# Function to handle window resizing
+def alteraJanela(largura, altura):
+    global janelaLargura, janelaAltura
+    janelaLargura = largura
+    janelaAltura = altura
+    glViewport(0, 0, largura, altura)  # allocate the entire area of the window for drawing
+
+
+# Function to handle keyboard input
+def teclado(window, key, scancode, action, mods):
+    global surfaceDivisions, shadingType, lightSpin
+    if action == glfw.PRESS:
+        if key == glfw.KEY_D:
+            surfaceDivisions -= 1  # decrease surface subdivisions
+        elif key == glfw.KEY_UP:
+            surfaceDivisions += 1  # increase surface subdivisions
+        elif key == glfw.KEY_F:
+            shadingType = FLAT  # set shading to FLAT
+        elif key == glfw.KEY_G:
+            shadingType = GOURAUD  # set shading to GOURAUD
+        elif key == glfw.KEY_SPACE:
+            lightSpin = not lightSpin  # toggle light spin
+
+
+# Timer function for updating and redrawing
+def timer():
+    global lightPosition
+
+    if lightSpin:  # if light spinning is enabled
+        lightPosition = glm.vec3(lightRotation * glm.vec4(lightPosition, 1.0))  # apply rotation to light position
+
+    glfw.post_empty_event()  # trigger a redraw
+    glfw.set_time(0)  # reset timer for next frame
+
+
+# Phong shading calculation
+def shading(point, normal):
+    # Ambient reflection
+    shadeAmbient = lightAmbient * surfaceAmbient
+
+    # Diffuse reflection
+    l = glm.normalize(lightPosition - point)
+    n = glm.normalize(normal)
+    shadeDiffuse = lightDiffuse * surfaceDiffuse * glm.max(0.0, glm.dot(l, n))
+
+    # Specular reflection
+    v = glm.normalize(cameraPosition - point)
+    r = 2 * glm.dot(n, l) * n - l
+    shadeSpecular = lightSpecular * surfaceSpecular * glm.max(0, glm.dot(v, r) ** surfaceShine)
+
+    # Phong illumination model
+    shade = shadeAmbient + shadeDiffuse + shadeSpecular
+
+    return shade
+
+
+# Draw flat shaded surface
+def drawFlat():
+    delta = surfaceSize / surfaceDivisions  # distance between vertices
+    glBegin(GL_TRIANGLES)
+    for i in range(surfaceDivisions):
+        for j in range(surfaceDivisions):
+            p1 = glm.vec3(-surfaceSize / 2 + i * delta, -surfaceSize / 2 + j * delta, 0)
+            p2 = glm.vec3(-surfaceSize / 2 + (i + 1) * delta, -surfaceSize / 2 + j * delta, 0)
+            p3 = glm.vec3(-surfaceSize / 2 + (i + 1) * delta, -surfaceSize / 2 + (j + 1) * delta, 0)
+            p4 = glm.vec3(-surfaceSize / 2 + i * delta, -surfaceSize / 2 + (j + 1) * delta, 0)
+            normal = glm.vec3(0, 0, 1)  # normal for flat shading
+
+            # Draw triangles
+            for triangle in [(p1, p2, p3), (p1, p3, p4)]:
+                pc = (1.0 / 3.0) * (triangle[0] + triangle[1] + triangle[2])
+                cor = shading(pc, normal)
+                glColor3f(cor.r, cor.g, cor.b)
+                for vertex in triangle:
+                    glVertex3f(vertex.x, vertex.y, vertex.z)
+    glEnd()
+
+
+# Draw Gouraud shaded surface
+def drawGouraud():
+    delta = surfaceSize / surfaceDivisions  # distance between vertices
+    glBegin(GL_TRIANGLES)
+    for i in range(surfaceDivisions):
+        for j in range(surfaceDivisions):
+            p1 = glm.vec3(-surfaceSize / 2 + i * delta, -surfaceSize / 2 + j * delta, 0)
+            p2 = glm.vec3(-surfaceSize / 2 + (i + 1) * delta, -surfaceSize / 2 + j * delta, 0)
+            p3 = glm.vec3(-surfaceSize / 2 + (i + 1) * delta, -surfaceSize / 2 + (j + 1) * delta, 0)
+            p4 = glm.vec3(-surfaceSize / 2 + i * delta, -surfaceSize / 2 + (j + 1) * delta, 0)
+            normal = glm.vec3(0, 0, 1)  # normal for Gouraud shading
+
+            # Calculate shading for each vertex
+            cor1 = shading(p1, normal)
+            cor2 = shading(p2, normal)
+            cor3 = shading(p3, normal)
+            cor4 = shading(p4, normal)
+
+            # Draw triangles with vertex colors
+            for triangle in [(p1, p2, p3), (p1, p3, p4)]:
+                glColor3f(cor1.r, cor1.g, cor1.b)
+                glVertex3f(p1.x, p1.y, p1.z)
+                glColor3f(cor2.r, cor2.g, cor2.b)
+                glVertex3f(p2.x, p2.y, p2.z)
+                glColor3f(cor3.r, cor3.g, cor3.b)
+                glVertex3f(p3.x, p3.y, p3.z)
+
+                glColor3f(cor1.r, cor1.g, cor1.b)
+                glVertex3f(p1.x, p1.y, p1.z)
+                glColor3f(cor3.r, cor3.g, cor3.b)
+                glVertex3f(p3.x, p3.y, p3.z)
+                glColor3f(cor4.r, cor4.g, cor4.b)
+                glVertex3f(p4.x, p4.y, p4.z)
+    glEnd()
+
+
+# Function used to redraw the content of the frame buffer
+def desenha():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # Clear frame buffer and depth buffer
+
+    # Set projection
+    glMatrixMode(GL_PROJECTION)
+    aspectRatio = janelaLargura / janelaAltura
+    matrizProjecao = glm.perspective(glm.radians(45.0), aspectRatio, 0.1, 100.0)
+    glLoadMatrixf(mat2list(matrizProjecao))
+
+    # Set modelview
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+    glm.lookAt(cameraPosition, glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
+
+    # Draw surface based on shading type
+    if shadingType == FLAT:
+        drawFlat()
+    else:
+        drawGouraud()
+
+    glfw.swap_buffers(window)  # swap the front and back buffers
+
+
+# Main function to initialize GLFW and run the application
+if __name__ == "__main__":
     if not glfw.init():
-        return None
-    window = glfw.create_window(width, height, title, None, None)
+        raise Exception("GLFW can't be initialized!")
+
+    window = glfw.create_window(janelaLargura, janelaAltura, "OpenGL Window", None, None)
     if not window:
         glfw.terminate()
-        return None
+        raise Exception("GLFW window can't be created!")
+
     glfw.make_context_current(window)
-    return window
+    glfw.set_window_size_callback(window, alteraJanela)  # set window size callback
+    glfw.set_key_callback(window, teclado)  # set key callback
 
+    inicio()
 
-# Função para desenhar o quadrado
-def draw_square(x, y, size):
-    half_size = size / 2
-    glBegin(GL_QUADS)
-    glVertex2f(x - half_size, y - half_size)
-    glVertex2f(x + half_size, y - half_size)
-    glVertex2f(x + half_size, y + half_size)
-    glVertex2f(x - half_size, y + half_size)
-    glEnd()
-
-
-# Função para mover o quadrado com teclas WASD
-def handle_input(window, x, y, speed):
-    if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
-        y += speed
-    if glfw.get_key(window, glfw.KEY_S) == glfw.PRESS:
-        y -= speed
-    if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
-        x -= speed
-    if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
-        x += speed
-    return x, y
-
-
-# Função para desenhar a linha da trajetória
-def draw_trajectory(trajectory):
-    glBegin(GL_LINE_STRIP)
-    for (x, y) in trajectory:
-        glVertex2f(x, y)
-    glEnd()
-
-
-# Função para verificar colisão entre o quadrado e a trajetória (linha)
-def check_collision_square_line(square_x, square_y, square_size, trajectory):
-    half_size = square_size / 2
-    for (x, y) in trajectory:
-        # Verifica se qualquer ponto da linha está dentro da área do quadrado
-        if (square_x - half_size <= x <= square_x + half_size) and (square_y - half_size <= y <= square_y + half_size):
-            return True
-    return False
-
-
-# Função principal
-def main():
-    window = init_window(800, 600, "OpenGL Square and Line Collision")
-    if not window:
-        return
-
-    # Configuração inicial
-    glClearColor(0.0, 0.0, 0.0, 1.0)
-    square_x, square_y = 0.0, 0.0  # Posição inicial do quadrado
-    square_size = 0.1
-    speed = 0.0001
-    max_points = 30  # Limite máximo de pontos na linha
-    trajectory = []  # Lista de pontos para a trajetória do quadrado
-    last_position = (square_x, square_y)  # Armazena a última posição do quadrado
-    last_time = time.time()  # Temporizador para controlar a geração da linha
-
-    # Loop principal
+    # Main loop
     while not glfw.window_should_close(window):
-        glClear(GL_COLOR_BUFFER_BIT)
+        timer()
+        desenha()  # Draw the content
+        glfw.poll_events()  # process events
 
-        # Atualizar posição do quadrado com teclas WASD
-        new_square_x, new_square_y = handle_input(window, square_x, square_y, speed)
-
-        # Adicionar à trajetória se o quadrado se moveu significativamente a cada 0.1 segundo
-        current_time = time.time()
-        if (new_square_x, new_square_y) != last_position and (current_time - last_time) > 0.3:
-            trajectory.append((new_square_x, new_square_y))
-            last_position = (new_square_x, new_square_y)
-            last_time = current_time
-
-        # Limitar o tamanho da linha a 30 pontos
-        if len(trajectory) > max_points:
-            trajectory.pop(0)
-
-        # Desenhar trajetória do quadrado
-        glColor3f(0.0, 0.0, 1.0)
-        draw_trajectory(trajectory)
-
-        # Desenhar quadrado
-        glColor3f(1.0, 0.0, 0.0)
-        draw_square(new_square_x, new_square_y, square_size)
-
-        # Verificar colisão do quadrado com a linha que ele gerou
-        if check_collision_square_line(new_square_x, new_square_y, square_size, trajectory[:-1]):
-            print("Colisão detectada!")
-
-        # Atualizar posição do quadrado
-        square_x, square_y = new_square_x, new_square_y
-
-        # Trocar os buffers
-        glfw.swap_buffers(window)
-        glfw.poll_events()
-
-    glfw.terminate()
-
-
-if __name__ == "__main__":
-    main()
+    glfw.terminate()  # clean up and close the window

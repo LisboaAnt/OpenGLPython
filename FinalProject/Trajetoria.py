@@ -47,6 +47,7 @@ class Trajetoria:
             else:
                 # Desenha um retângulo para os outros segmentos
                 glBegin(GL_QUADS)  # Inicia o desenho de quadriláteros
+                glNormal3f(0.0, 1.0, 0.0)
                 glVertex3f(x1, y1, z)  # Vértice inferior esquerdo
                 glVertex3f(x2, y2, z)  # Vértice inferior direito
                 glVertex3f(x2, y2, z + height)  # Vértice superior direito

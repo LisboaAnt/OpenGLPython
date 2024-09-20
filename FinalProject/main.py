@@ -107,6 +107,7 @@ while not glfw.window_should_close(window):
         glEnable(GL_BLEND)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  # Configuração para blending
 
+
         menu.handle_events()  # Manipular eventos do menu
         menu.draw()  # Desenhar o menu
 
