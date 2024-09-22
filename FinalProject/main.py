@@ -19,43 +19,18 @@ from Skybox import Skybox
 
 # Menu
 from Menu import MainMenu  # Importa a classe MainMenu
+# Texto
+from TextRenderer import TextRenderer  # Importar a nova classe
 
 pygame.init()
 pygame.font.init()
 
-# Carregar uma fonte
-font = pygame.font.SysFont("Arial", 48)
-HP1 = 100
-HP2 = 100
+# Instancia o renderizador de texto
+text_renderer = TextRenderer()
 
-#intervalo para decrescer de HP
+# HP inicial
+HP1, HP2 = 100, 100
 intervalo_atualizacao = 0.0000000000001
-
-
-def render_text(text, x, y):
-    # Renderizar o texto em uma superfície do pygame
-    text_surface = font.render(text, True, (255, 255, 255), (0, 0, 0))
-    text_data = pygame.image.tostring(text_surface, "RGBA", True)
-    width, height = text_surface.get_size()
-
-    # Configurar a projeção ortográfica para renderizar em 2D
-    glMatrixMode(GL_PROJECTION)
-    glPushMatrix()
-    glLoadIdentity()
-    gluOrtho2D(0, 800, 0, 600)  # Aqui definimos uma tela de 800x600
-    glMatrixMode(GL_MODELVIEW)
-    glPushMatrix()
-    glLoadIdentity()
-
-    # Renderizar a textura do texto
-    glRasterPos2f(x, y)
-    glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, text_data)
-
-    # Restaurar a matriz original
-    glMatrixMode(GL_PROJECTION)
-    glPopMatrix()
-    glMatrixMode(GL_MODELVIEW)
-    glPopMatrix()
 
 
 # Inicializando a biblioteca GLFW
@@ -149,9 +124,7 @@ while not glfw.window_should_close(window):
         glEnable(GL_DEPTH_TEST)
 
 
-        # Renderizar o placar de HP no canto superior esquerdo
-         # Pode ser atualizado conforme o jogo progride
-        render_text(f"HP: {HP2}", 10, 550)
+
 
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
@@ -161,6 +134,9 @@ while not glfw.window_should_close(window):
         gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto1.calculate_camera_params())
 
+        # Renderizar o placar de HP no canto superior esquerdo
+         # Pode ser atualizado conforme o jogo progride
+        text_renderer.render_text(f"HP: {HP1}", 10, 550)
         # Desenha a SkyBox
         skybox.draw()
 
@@ -209,7 +185,7 @@ while not glfw.window_should_close(window):
             tempo_atual = time.time()
             if tempo_atual - tempo_ultima_atualizacao >= intervalo_atualizacao:
                 HP1 -= 1
-                render_text(f"HP: {HP1}", 10, 550)
+                text_renderer.render_text(f"HP: {HP1}", 10, 550)
                 moto1 = Moto(100, 100)
                 trajetoria1 = Trajetoria(max_points=30, interval=0.1)
 
@@ -221,7 +197,7 @@ while not glfw.window_should_close(window):
             tempo_atual = time.time()
             if tempo_atual - tempo_ultima_atualizacao >= intervalo_atualizacao:
                 HP1 -= 1
-                render_text(f"HP: {HP1}", 10, 550)
+                text_renderer.render_text(f"HP: {HP1}", 10, 550)
                 moto1 = Moto(100, 100)
                 trajetoria1 = Trajetoria(max_points=30, interval=0.1)
             if HP1 < 0:
@@ -234,9 +210,7 @@ while not glfw.window_should_close(window):
         glDisable(GL_BLEND)
         glDisable(GL_TEXTURE_2D)
 
-        # Renderizar o placar de HP no canto superior esquerdo
-         # Pode ser atualizado conforme o jogo progride
-        render_text(f"HP: {HP1}", 10, 550)
+
 
 
         #CAMERA 2 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -246,6 +220,10 @@ while not glfw.window_should_close(window):
         glLoadIdentity()
         gluPerspective(60, width / height, 0.1, 20000)
         gluLookAt(*moto2.calculate_camera_params())
+
+        # Renderizar o placar de HP no canto superior esquerdo
+         # Pode ser atualizado conforme o jogo progride
+        text_renderer.render_text(f"HP: {HP2}", 10, 550)
 
         # Desenha a SkyBox
         skybox.draw()
@@ -284,7 +262,7 @@ while not glfw.window_should_close(window):
             tempo_atual = time.time()
             if tempo_atual - tempo_ultima_atualizacao >= intervalo_atualizacao:
                 HP2 -= 1
-                render_text(f": {HP2}", 10, 550)
+                text_renderer.render_text(f"HP: {HP2}", 10, 550)
                 moto2 = Moto(500, 500)
                 trajetoria2 = Trajetoria(max_points=30, interval=0.1)
             if HP2 < 0:
@@ -296,7 +274,7 @@ while not glfw.window_should_close(window):
             tempo_atual = time.time()
             if tempo_atual - tempo_ultima_atualizacao >= intervalo_atualizacao:
                 HP2 -= 1
-                render_text(f"HP: {HP2}", 10, 550)
+                text_renderer.render_text(f"HP: {HP2}", 10, 550)
                 moto2 = Moto(500, 500)
                 trajetoria2 = Trajetoria(max_points=30, interval=0.1)
             if HP2 < 0:
