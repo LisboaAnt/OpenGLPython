@@ -62,9 +62,9 @@ moto2 = Moto( x_size=70, y_size=70, id=2)
 
 # Instancia Iluminacao
 iluminacao = Iluminacao()
-iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=1.0, distance=500, color=[1, 1, 0],
+iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=100, color=[1, 1, 0],
                         light_id=GL_LIGHT1)
-iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=1.0, distance=500, color=[0, 1, 1],
+iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=100, color=[0, 1, 1],
                         light_id=GL_LIGHT2)
 
 
@@ -109,6 +109,15 @@ obstacles.append(
     Obstacle(moto2.moto_position[0] - moto2.x_size / 2, moto2.moto_position[1] - moto2.y_size / 2, moto2.x_size,
              moto2.y_size, id=moto2.id))
 
+obstacles.extend([
+    Obstacle(2500, -2500, 100, 5000, id=3),
+    Obstacle(-2600, -2500, 100, 5000, id=3),
+    Obstacle(-2500, -2600, 5000, 100, id=3),
+    Obstacle(-2500, 2500, 5000, 100, id=3),
+
+])
+
+
 # Variaveis para calcular FPS
 previous_time = glfw.get_time()
 frame_count = 0
@@ -117,7 +126,8 @@ frame_count = 0
 FPS_LIMIT = 60
 FRAME_TIME = 1.0 / FPS_LIMIT  # Tempo por quadro em segundos
 
-
+glEnable(GL_LIGHTING)
+glEnable(GL_DEPTH_TEST)
 
 # Principal loop
 while not glfw.window_should_close(window):
@@ -200,9 +210,7 @@ while not glfw.window_should_close(window):
         if trajetoria2.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
             print("Colisão detectada 1!")
 
-        # Desabilita o blending e desativa a textura
-        glDisable(GL_BLEND)
-        glDisable(GL_TEXTURE_2D)
+
 
         # CAMERA 2 //////////////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar CAMERA 2
@@ -251,9 +259,7 @@ while not glfw.window_should_close(window):
 
         menu.paused()
 
-        # Desabilita o blending e desativa a textura
-        glDisable(GL_BLEND)
-        glDisable(GL_TEXTURE_2D)
+
 
         # Troca os buffers e atualiza a janela
         glfw.swap_buffers(window)
