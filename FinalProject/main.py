@@ -21,8 +21,9 @@ from Background import TronBackground   #CHÃO
 from Skybox import Skybox               #SKYBOX
 from Iluminacao import Iluminacao
 
-# Menu
+# Menu e Placar de Vidas
 from Menu import MainMenu               # MENU DO JOGO
+from PlacarDeVida import PlacarDeVida
 
 # Inicializando a biblioteca GLFW
 if not glfw.init():
@@ -67,8 +68,8 @@ iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance
 iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=60, color=[0, 1, 1],
                         light_id=GL_LIGHT2)
 
-
-
+# Instancia Placar de Vida
+PlacarDeVida = PlacarDeVida()
 
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
@@ -76,7 +77,6 @@ tron_background.create_background()
 
 # Instancia o Skybox
 skybox = Skybox(size=5000)
-
 
 # Cubo
 cubo = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
@@ -86,11 +86,10 @@ cubo.transladar(200.0, 200.0, 20.0)
 cubo2 = Cubo(tamanho=50.0, cor=(0.5, 0.5, 1))
 cubo2.transladar(500.0, 500.0, 20.0)
 
-
-
 # Trajetória
 trajetoria1 = Trajetoria(max_points=60, interval=0.1)
 trajetoria2 = Trajetoria(max_points=60, interval=0.1)
+
 
 # Obstacles
 obstacles = []
@@ -101,15 +100,14 @@ obstacles.append(
 obstacles.append(
     Obstacle(cubo2.posicao[0] - cubo2.tamanho, cubo2.posicao[1] - cubo2.tamanho, cubo2.tamanho * 2, cubo2.tamanho * 2))
 
-# Adiciona as motos como obstáculos
+# Adiciona as motos como obstaculos
 obstacles.append(
     Obstacle(moto1.moto_position[0] - moto1.x_size / 2, moto1.moto_position[1] - moto1.y_size / 2, moto1.x_size,
              moto1.y_size, id=moto1.id))
 obstacles.append(
     Obstacle(moto2.moto_position[0] - moto2.x_size / 2, moto2.moto_position[1] - moto2.y_size / 2, moto2.x_size,
              moto2.y_size, id=moto2.id))
-
-obstacles.extend([
+obstacles.extend([ #PAREDES LATERAIS
     Obstacle(2500, -2500, 100, 5000, id=3),
     Obstacle(-2600, -2500, 100, 5000, id=3),
     Obstacle(-2500, -2600, 5000, 100, id=3),
@@ -125,6 +123,7 @@ frame_count = 0
 FPS_LIMIT = 60
 FRAME_TIME = 1.0 / FPS_LIMIT  # Tempo por quadro em segundos
 
+#Liga a Luz, no meio do código eu ligo ela várias vezes kkk
 glEnable(GL_LIGHTING)
 glEnable(GL_DEPTH_TEST)
 
