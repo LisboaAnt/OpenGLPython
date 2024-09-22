@@ -26,12 +26,13 @@ class Moto:
         self.moto_angle = 0.0  # Ângulo da moto X/Y
         self.moto_position = [x, y]  # Posicao
         self.inclinacaoDaMoto = 0
+        self.inclinacaoVelocidade = 0.05
 
-        self.moto_speed = 1.5  # Velocidade padrao de movimento
-        self.moto_speed_angle = 0.5    # Velocidade rotacao padrao
-        self.camera_distance = -250  # Distância da câmera ao moto
+        self.moto_speed = 5  # Velocidade padrao de movimento
+        self.moto_speed_angle = 1.5    # Velocidade rotacao padrao
+        self.camera_distance = -280  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
-        self.camera_height = 80.0  # Altura da câmera
+        self.camera_height = 120.0  # Altura da câmera
         self.id = id  # Identificador único para a moto
         self.x_size = x_size
         self.y_size = y_size
@@ -39,7 +40,7 @@ class Moto:
     def movimento(self, window, dois, obstacles):
         moved = False  # Flag para indicar se a moto se
         DiminuirRotacao = False  # Diminue a velocidade de rotacionar a moto
-        self.inclinacaoDaMoto = 0
+        target_inclinacao = 0  # Valor alvo da inclinação
 
         # Sempre se movimenta para frente
         new_x = self.moto_position[0] + self.moto_speed * math.cos(math.radians(self.moto_angle))
@@ -58,46 +59,45 @@ class Moto:
                     self.moto_position[1] = new_y
                     moved = True
                     DiminuirRotacao = True
-            if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:   # Gira a moto para a esquerda
-                if DiminuirRotacao:
-                    self.moto_angle += self.moto_speed_angle / 2
-                    self.inclinacaoDaMoto = 5
-                else:
-                    self.moto_angle += self.moto_speed_angle
-                    self.inclinacaoDaMoto = 10
+            if glfw.get_key(window, glfw.KEY_LEFT) == glfw.PRESS:
+                self.moto_angle += self.moto_speed_angle / (2 if DiminuirRotacao else 1)
+                target_inclinacao = 5 if DiminuirRotacao else 10
 
-            if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:   # Gira a moto para a direita
-                if DiminuirRotacao:
-                    self.moto_angle -= self.moto_speed_angle / 2
-                    self.inclinacaoDaMoto = -5
-                else:
-                    self.moto_angle -= self.moto_speed_angle
-                    self.inclinacaoDaMoto = -10
+            if glfw.get_key(window, glfw.KEY_RIGHT) == glfw.PRESS:
+                self.moto_angle -= self.moto_speed_angle / (2 if DiminuirRotacao else 1)
+                target_inclinacao = -5 if DiminuirRotacao else -10
 
-        else:   # MOTO TELA 1 WAD
-            if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:  # AUMENTA VELOCIDADE
+
+        else:  # Controle com teclas W, A, D
+
+            if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
+
                 new_x = self.moto_position[0] + (self.moto_speed / 1) * math.cos(math.radians(self.moto_angle))
+
                 new_y = self.moto_position[1] + (self.moto_speed / 1) * math.sin(math.radians(self.moto_angle))
+
                 if not self.check_collision(new_x, new_y, obstacles):
                     self.moto_position[0] = new_x
-                    self.moto_position[1] = new_y
-                    moved = True
-                    DiminuirRotacao = True
-            if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:  # Gira a moto para a esquerda
-                if DiminuirRotacao:
-                    self.moto_angle += self.moto_speed_angle / 2
-                    self.inclinacaoDaMoto = 5
-                else:
-                    self.moto_angle += self.moto_speed_angle
-                    self.inclinacaoDaMoto = 10
 
-            if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:  # Gira a moto para a direita
-                if DiminuirRotacao:
-                    self.moto_angle -= self.moto_speed_angle / 2
-                    self.inclinacaoDaMoto = -5
-                else:
-                    self.moto_angle -= self.moto_speed_angle
-                    self.inclinacaoDaMoto = -10
+                    self.moto_position[1] = new_y
+
+                    moved = True
+
+                    DiminuirRotacao = True
+
+            if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
+                self.moto_angle += self.moto_speed_angle / (2 if DiminuirRotacao else 1)
+
+                target_inclinacao = 5 if DiminuirRotacao else 10
+
+            if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
+                self.moto_angle -= self.moto_speed_angle / (2 if DiminuirRotacao else 1)
+
+                target_inclinacao = -5 if DiminuirRotacao else -10
+
+        # Suaviza a inclinação da moto
+
+        self.inclinacaoDaMoto += (target_inclinacao - self.inclinacaoDaMoto) * self.inclinacaoVelocidade
 
         if moved:
             self.atualizar_obstaculos(obstacles)  # Atualiza obstáculos apenas se a moto se moveu
@@ -115,27 +115,19 @@ class Moto:
         return False
 
     def desenha(self):
-        # Desenha a moto
         glPushMatrix()
 
-        # Translada a moto para sua posição
-        glTranslatef(self.moto_position[0], self.moto_position[1], 1)
 
-        # Ajusta a escala da moto, se necessário
+        # Translada e escala a moto
+        glTranslatef(self.moto_position[0], self.moto_position[1], 20)
         glScalef(20, 20, 20)
-
-        # Rotaciona a moto de acordo com o ângulo armazenado em self.moto_angle no eixo Z
         glRotatef(-90, 0, 1, 0)
         glRotatef(-90, 0, 0, 1)
-        glRotatef(self.moto_angle, 0, 1, 0)  # Usa self.moto_angle para rotação no eixo Z
-
-        # Desenha o modelo da moto
-        # Aplica a inclinação
+        glRotatef(self.moto_angle, 0, 1, 0)
         glRotatef(self.inclinacaoDaMoto, 0, 0, 1)
-        pywavefront.visualization.draw(self.moto_texture)
 
-        # Restaura a cor padrão
-        glColor3f(1, 1, 1)
+        # Desenha a moto
+        pywavefront.visualization.draw(self.moto_texture)
 
         glPopMatrix()
 

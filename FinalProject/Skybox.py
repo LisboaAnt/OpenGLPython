@@ -16,18 +16,8 @@ class Skybox:
         self.id = 1
 
     def load_texture(self, number):
-        # Carregar uma única textura para o Skybox (em vez de 6 imagens)
-        """
-        texture_path = [
-                        './imgs/Box_Right.bmp',  # R
-                        './imgs/Box_Back.bmp',
-                        './imgs/Box_Front.bmp',
-                        './imgs/Box_Left.bmp',
-                        './imgs/Box_Bottom.bmp', # 3
-                        './imgs/Box_Top.bmp', # 4
-                        ]
+        # Carrega textura para o Skybox
 
-        """
         texture_path = [
                         './imgs/skybox/skyboxF.png',
                         './imgs/skybox/skyboxBack.png',
@@ -57,6 +47,7 @@ class Skybox:
 
     def draw(self):
         # Lado1
+        glDisable(GL_LIGHTING)
         glPushMatrix()
         glEnable(GL_TEXTURE_2D)
         glBindTexture(GL_TEXTURE_2D, self.texture0)
@@ -153,4 +144,4 @@ class Skybox:
         glEnd()
         glDisable(GL_TEXTURE_2D)
         glPopMatrix()
-
+        glEnable(GL_LIGHTING)

@@ -9,7 +9,6 @@ class Cubo:
 
     def desenhar(self):
         r, g, b = self.cor
-        x, y, z = self.posicao
         self.desenhar_cubo(self.tamanho, r, g, b)
 
     def transladar(self, x, y, z):
@@ -20,14 +19,24 @@ class Cubo:
         glColor3f(r, g, b)
 
         vertices = [
-            [-1, -1, -1],
-            [1, -1, -1],
-            [1, 1, -1],
-            [-1, 1, -1],
-            [-1, -1, 1],
-            [1, -1, 1],
-            [1, 1, 1],
-            [-1, 1, 1]
+            [-1, -1, -1],  # Vértice 0
+            [1, -1, -1],   # Vértice 1
+            [1, 1, -1],    # Vértice 2
+            [-1, 1, -1],   # Vértice 3
+            [-1, -1, 1],   # Vértice 4
+            [1, -1, 1],    # Vértice 5
+            [1, 1, 1],     # Vértice 6
+            [-1, 1, 1]     # Vértice 7
+        ]
+
+        # Normais para cada face
+        normais = [
+            [0, 0, -1],   # Normal da face frontal (eixo Z negativo)
+            [1, 0, 0],    # Normal da face direita (eixo X positivo)
+            [0, 0, 1],    # Normal da face traseira (eixo Z positivo)
+            [-1, 0, 0],   # Normal da face esquerda (eixo X negativo)
+            [0, 1, 0],    # Normal da face superior (eixo Y positivo)
+            [0, -1, 0]    # Normal da face inferior (eixo Y negativo)
         ]
 
         faces = [
@@ -39,9 +48,21 @@ class Cubo:
             [4, 5, 1, 0]   # Face inferior
         ]
 
-        # Começa a desenhar o cubo
-        for face in faces:
+        ambient = [1, 1, 1, 1]  # Cor ambiente (roxo)
+        diffuse = [1, 1, 1, 1]  # Cor difusa (roxo)
+        specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branco)
+        shininess = 1.0  # Brilho do material
+
+        # Define o material
+        glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)
+        glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse)
+        glMaterialfv(GL_FRONT, GL_SPECULAR, specular)
+        glMaterialf(GL_FRONT, GL_SHININESS, shininess)
+
+        # Desenhar o cubo com normais
+        for i, face in enumerate(faces):
             glBegin(GL_QUADS)
+            glNormal3fv(normais[i])  # Define a normal da face atual
             for vertice_index in face:
                 glVertex3f(
                     self.posicao[0] + vertices[vertice_index][0] * lado / 2,

@@ -14,9 +14,19 @@ class Obstacle:
         glPushMatrix()
         glTranslatef(self.x, self.y, 0.5)
 
-        # Define a cor do obstáculo
-        glColor3f(*self.color)
+        # Define as propriedades do material do obstáculo
+        ambient = [1, 0.2, 0.2, 1.0]  # Cor ambiente (cinza escuro)
+        diffuse = self.color  # Cor difusa do obstáculo
+        specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branco)
+        shininess = 50.0  # Brilho do material
 
+        # Define o material
+        glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)
+        glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse)
+        glMaterialfv(GL_FRONT, GL_SPECULAR, specular)
+        glMaterialf(GL_FRONT, GL_SHININESS, shininess)
+
+        # Desenha o obstáculo
         glBegin(GL_QUADS)
         glVertex2f(0, 0)
         glVertex2f(self.width, 0)
@@ -26,19 +36,3 @@ class Obstacle:
 
         glPopMatrix()
 
-    def desenhar_hitbox(self):
-        glPushMatrix()
-        glTranslatef(self.x, self.y, 5)
-
-        # Define a cor da hitbox (cor preta para contraste)
-        glColor3f(0.0, 0.0, 0.0)  # Preto
-
-        # Desenha a hitbox como um retângulo com linhas
-        glBegin(GL_LINE_LOOP)
-        glVertex2f(0, 0)
-        glVertex2f(self.width, 0)
-        glVertex2f(self.width, self.height)
-        glVertex2f(0, self.height)
-        glEnd()
-
-        glPopMatrix()
