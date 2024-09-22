@@ -58,8 +58,9 @@ glfw.make_context_current(window)
 menu = MainMenu(window)
 
 # Moto
-moto1 = Moto(100, 200, x_size=70, y_size=70, id=1)
-moto2 = Moto( x_size=70, y_size=70, id=2)
+moto1 = Moto(2000, 0, x_size=70, y_size=70, moto_angle=180, id=1)
+
+moto2 = Moto(-2000, 0, x_size=70, y_size=70, id=2)
 
 # Instancia Iluminacao
 iluminacao = Iluminacao()
@@ -69,7 +70,9 @@ iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance
                         light_id=GL_LIGHT2)
 
 # Instancia Placar de Vida
-PlacarDeVida = PlacarDeVida()
+placarDeVida = PlacarDeVida()
+HP1 = 3
+HP2 = 3
 
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
@@ -165,6 +168,11 @@ while not glfw.window_should_close(window):
         gluPerspective(70, width / height, 0.1, 15000)
         gluLookAt(*moto1.calculate_camera_params())
 
+        placarwidth = width/2.3
+        if width > 900:
+            placarwidth = (width / 2.7)
+         # Placar 1
+        placarDeVida.render_text(f"HP: {HP1}", placarwidth, 550)
 
         iluminacao.show_lights()
 
@@ -204,9 +212,23 @@ while not glfw.window_should_close(window):
 
         # Verificar colisão do quadrado com a trajetória
         if trajetoria1.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
-            print("Colisão detectada 1!")
+            HP1 -= 1
+            moto1.moto_position = [2000, 0]
+            moto1.moto_angle = 180
+            trajetoria1 = Trajetoria(max_points=30, interval=0.1)
+            if HP1 < 0:
+                HP1 = 0
+
         if trajetoria2.check_collision(moto1.moto_position[0], moto1.moto_position[1], moto1.x_size):
-            print("Colisão detectada 1!")
+            HP1 -= 1
+            moto1.moto_position = [2000, 0]
+            moto1.moto_angle = 180
+            trajetoria1 = Trajetoria(max_points=30, interval=0.1)
+            if HP1 < 0:
+                HP1 = 0
+
+
+
 
 
 
@@ -218,7 +240,15 @@ while not glfw.window_should_close(window):
         gluPerspective(70, width / height, 0.1, 15000)
         gluLookAt(*moto2.calculate_camera_params())
 
+        # Iluminacao
         iluminacao.show_lights()
+
+        # Placar
+        placarwidth = width/2.3
+        if width > 900:
+            placarwidth = (width / 2.7)
+         # Placar 1
+        placarDeVida.render_text(f"HP: {HP2}", placarwidth, 550)
 
         # Desenha a SkyBox
         skybox.draw()
@@ -248,12 +278,25 @@ while not glfw.window_should_close(window):
         # Desenha MOTO 1
         moto1.desenha()
 
-        # Verificar colisão do quadrado com a trajetória
-        if trajetoria2.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
-            print("Colisão detectada 2!")
 
+        # Verificar colisão do quadrado com a trajetória
         if trajetoria1.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
-            print("Colisão detectada 2!")
+            tempo_atual = time.time()
+            HP2 -= 1
+            moto2.moto_position = [-2000, 0]
+            moto2.moto_angle = 0
+            trajetoria2 = Trajetoria(max_points=30, interval=0.1)
+            if HP2 < 0:
+                HP2 = 0
+
+        if trajetoria2.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
+            HP2 -= 1
+            moto2.moto_position = [-2000, 0]
+            moto2.moto_angle = 0
+            trajetoria2 = Trajetoria(max_points=30, interval=0.1)
+            if HP2 < 0:
+                HP2 = 0
+
 
         menu.paused()
 
