@@ -16,9 +16,10 @@ class TronBackground:
         glLineWidth(1.0)  # Espessura das linhas
 
     def draw_background(self):
-        glLineWidth(1)
+        glDisable(GL_LIGHTING)
+        glLineWidth(2)
         glBegin(GL_LINES)
-        glColor3f(0, 0, 1)  # Cor azul brilhante
+        glColor3f(0, 0.5, 0.5)  # Cor azul brilhante
         # Desenhar linhas verticais
         for i in range(-self.width // 2, self.width // 2, self.grid_size):
             glVertex2f(i, -self.height // 2)
@@ -28,6 +29,7 @@ class TronBackground:
             glVertex2f(-self.width // 2, i)
             glVertex2f(self.width // 2, i)
         glEnd()
+        glEnable(GL_LIGHTING)
 
     def draw(self):
         self.draw_background()

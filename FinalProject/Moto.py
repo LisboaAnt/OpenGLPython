@@ -30,9 +30,9 @@ class Moto:
 
         self.moto_speed = 5  # Velocidade padrao de movimento
         self.moto_speed_angle = 1.5    # Velocidade rotacao padrao
-        self.camera_distance = -250  # Distância da câmera ao moto
+        self.camera_distance = -280  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
-        self.camera_height = 80.0  # Altura da câmera
+        self.camera_height = 120.0  # Altura da câmera
         self.id = id  # Identificador único para a moto
         self.x_size = x_size
         self.y_size = y_size
@@ -115,27 +115,19 @@ class Moto:
         return False
 
     def desenha(self):
-        # Desenha a moto
         glPushMatrix()
 
-        # Translada a moto para sua posição
-        glTranslatef(self.moto_position[0], self.moto_position[1], 1)
 
-        # Ajusta a escala da moto, se necessário
+        # Translada e escala a moto
+        glTranslatef(self.moto_position[0], self.moto_position[1], 20)
         glScalef(20, 20, 20)
-
-        # Rotaciona a moto de acordo com o ângulo armazenado em self.moto_angle no eixo Z
         glRotatef(-90, 0, 1, 0)
         glRotatef(-90, 0, 0, 1)
-        glRotatef(self.moto_angle, 0, 1, 0)  # Usa self.moto_angle para rotação no eixo Z
-
-        # Desenha o modelo da moto
-        # Aplica a inclinação
+        glRotatef(self.moto_angle, 0, 1, 0)
         glRotatef(self.inclinacaoDaMoto, 0, 0, 1)
-        pywavefront.visualization.draw(self.moto_texture)
 
-        # Restaura a cor padrão
-        glColor3f(1, 1, 1)
+        # Desenha a moto
+        pywavefront.visualization.draw(self.moto_texture)
 
         glPopMatrix()
 

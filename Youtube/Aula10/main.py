@@ -2,6 +2,14 @@ import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
+import sys
+import os
+
+sys.path.append(os.path.abspath('../../FinalProject'))
+from Iluminacao import Iluminacao
+
+# Instancia Iluminacao
+iluminacao = Iluminacao()
 
 if not glfw.init():
     raise Exception("Falha ao iniciar")
@@ -206,39 +214,6 @@ configure_material()
 cube_vertices = create_cube()
 
 
-def configure_lights():
-    # Posição da primeira luz
-    light_position1 = [10.0, 10.0, 1.0, 1.0]
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position1)
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, [1.0, 1.0, 1.0, 1.0])
-    glLightfv(GL_LIGHT0, GL_SPECULAR, [1.0, 1.0, 1.0, 1.0])
-    glEnable(GL_LIGHT0)
-
-    # Posição da segunda luz
-    light_position2 = [-5.0, 5.0, 2.0, 1.0]
-    glLightfv(GL_LIGHT1, GL_POSITION, light_position2)
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, [0.0, 0.0, 1.0, 1.0])  # Azul
-    glLightfv(GL_LIGHT1, GL_SPECULAR, [1.0, 1.0, 1.0, 1.0])
-    glEnable(GL_LIGHT1)
-
-    # Desenha um pequeno cubo na posição da primeira luz para visualização
-    glPushMatrix()
-    glTranslatef(*light_position1[:3])  # Move para a posição da primeira luz
-    glColor3f(1, 0, 0)  # Cor do cubo (vermelho)
-
-    quadric = gluNewQuadric()
-    gluSphere(quadric, 2, 32, 32)  # Raio, slices, stacks
-    glPopMatrix()
-
-    # Desenha um pequeno cubo na posição da segunda luz para visualização
-    glPushMatrix()
-    glTranslatef(*light_position2[:3])  # Move para a posição da segunda luz
-    glColor3f(0, 0, 1)  # Cor do cubo (azul)
-
-    quadric = gluNewQuadric()
-    gluSphere(quadric, 2, 32, 32)  # Raio, slices, stacks
-    glPopMatrix()
-
 
 # No loop principal, certifique-se de chamar configure_lights() após configurar a câmera.
 while not glfw.window_should_close(window):
@@ -250,7 +225,7 @@ while not glfw.window_should_close(window):
     glLoadIdentity()
     camera()
 
-    configure_lights()  # Configure a luz
+    iluminacao.configure_lights()  # Configure a luz
 
     glTranslatef(0.0, 0.0, -5)
     glPushMatrix()

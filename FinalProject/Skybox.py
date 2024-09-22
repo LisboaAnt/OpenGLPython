@@ -57,6 +57,9 @@ class Skybox:
 
     def draw(self):
         # Lado1
+
+
+
         glPushMatrix()
         glEnable(GL_TEXTURE_2D)
         glBindTexture(GL_TEXTURE_2D, self.texture0)

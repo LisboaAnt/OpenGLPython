@@ -26,12 +26,17 @@ class Trajetoria:
     import numpy as np
 
     def draw(self, color):
-        glColor4f(color[0], color[1], color[2], 0.2)  # Define a cor dos retângulos
-        z = 0  # Rastro em relação com a coordenada Z
-        height = 20  # Altura do retângulo
+        # Desabilita a iluminação
+        glDisable(GL_LIGHTING)
 
-        if len(self.points) < 2:
-            return  # Não há pontos suficientes para desenhar retângulos
+        # Habilita o modo de mistura
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+
+        # Define a cor com transparência
+        glColor4f(color[0], color[1], color[2], 0.8)
+        z = 0  # Rastro em relação com a coordenada Z
+        height = 40  # Altura do retângulo
 
         for i in range(len(self.points) - 1):
             (x1, y1) = self.points[i]
@@ -40,6 +45,7 @@ class Trajetoria:
             if i == 0:
                 # Desenha um triângulo para o primeiro segmento
                 glBegin(GL_TRIANGLES)  # Inicia o desenho de triângulos
+                glNormal3f(0.0, 0.0, 1.0)
                 glVertex3f(x1, y1, z)  # Vértice inferior esquerdo
                 glVertex3f(x2, y2, z)  # Vértice inferior direito
                 glVertex3f(x2, y2, z + height)  # Vértice superior
@@ -47,7 +53,7 @@ class Trajetoria:
             else:
                 # Desenha um retângulo para os outros segmentos
                 glBegin(GL_QUADS)  # Inicia o desenho de quadriláteros
-                glNormal3f(0.0, 1.0, 0.0)
+                glNormal3f(0.0, 0.0, 1.0)  # Normal da superfície
                 glVertex3f(x1, y1, z)  # Vértice inferior esquerdo
                 glVertex3f(x2, y2, z)  # Vértice inferior direito
                 glVertex3f(x2, y2, z + height)  # Vértice superior direito
@@ -56,10 +62,15 @@ class Trajetoria:
 
                 glLineWidth(10.0)
                 glBegin(GL_LINES)
-                glVertex3f(x1, y1, height/2)
-                glVertex3f(x2, y2, height/2)
+                glNormal3f(0.0, 0.0, 1.0)
+                glVertex3f(x1, y1, height / 2)
+                glVertex3f(x2, y2, height / 2)
                 glEnd()
                 glLineWidth(1.0)
+
+        # Desabilita a mistura e habilita novamente a iluminação
+        glDisable(GL_BLEND)
+        glEnable(GL_LIGHTING)
 
     def check_collision(self, square_x, square_y, square_size):
         half_size = square_size / 2
