@@ -16,7 +16,7 @@ class Iluminacao:
         # Configuração do material da superfície
         material_diffuse = [0.5, 0.5, 0.5, 1.0]  # Cor difusa
         material_specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branca)
-        shininess = 100.0  # Superfície polida
+        shininess = 1.0  # Superfície polida
         glMaterialfv(GL_FRONT, GL_DIFFUSE, material_diffuse)
         glMaterialfv(GL_FRONT, GL_SPECULAR, material_specular)
         glMaterialf(GL_FRONT, GL_SHININESS, shininess)

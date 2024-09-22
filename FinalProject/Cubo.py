@@ -51,7 +51,7 @@ class Cubo:
         ambient = [1, 1, 1, 1]  # Cor ambiente (roxo)
         diffuse = [1, 1, 1, 1]  # Cor difusa (roxo)
         specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branco)
-        shininess = 100.0  # Brilho do material
+        shininess = 1.0  # Brilho do material
 
         # Define o material
         glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)

@@ -19,26 +19,51 @@ class TronBackground:
 
     def draw_background(self):
         glDisable(GL_LIGHTING)
-        glLineWidth(2)
+        glLineWidth(1)
+
+        # Tamanho de cada quadrado
+        tamanho = int(self.grid_size*1.5)  # Tamanho de cada quadrado
+
+        # Tamanho da malha em termos de quadrados
+        self.grid_count = (self.width // tamanho, self.height // tamanho)
+
+        # Desenhar linhas
         glBegin(GL_LINES)
         glColor3f(0, 0.5, 0.5)  # Cor azul brilhante
+
         # Desenhar linhas verticais
-        for i in range(-self.width // 2, self.width // 2, self.grid_size):
+        for i in range(-self.width // 2, self.width // 2 + tamanho, tamanho):
             glVertex2f(i, -self.height // 2)
             glVertex2f(i, self.height // 2)
+
         # Desenhar linhas horizontais
-        for i in range(-self.height // 2, self.height // 2, self.grid_size):
+        for i in range(-self.height // 2, self.height // 2 + tamanho, tamanho):
             glVertex2f(-self.width // 2, i)
             glVertex2f(self.width // 2, i)
         glEnd()
+
         glEnable(GL_LIGHTING)
+        glNormal3fv([0, 0, 1])
+        posicaoz = -10  # Z em -10
+        tamanho = 400
+        # Desenhar a malha de quadrados
+        for x in range(-self.width // 2, self.width // 2, tamanho):
+            for y in range(-self.height // 2, self.height // 2, tamanho):
+                glBegin(GL_QUADS)
+                self.configurar_material(color=[1, 1, 1])  # Configurar material
+                glVertex3f(x, y, posicaoz)  # Inferior esquerdo
+                glVertex3f(x + tamanho, y, posicaoz)  # Inferior direito
+                glVertex3f(x + tamanho, y + tamanho, posicaoz)  # Superior direito
+                glVertex3f(x, y + tamanho, posicaoz)  # Superior esquerdo
+                glEnd()
+
 
     def configurar_material(self, color, alpha=0.6):
         # Define a cor do material (RGBA) com transparência
         ambient = [color[0] * 0.2, color[1] * 0.2, color[2] * 0.2, alpha]  # Cor ambiente
         diffuse = [color[0], color[1], color[2], alpha]  # Cor difusa
         specular = [color[0] * 2.0, color[1] * 2.0, color[2] * 2.0, 1.0]  # Aumenta a cor especular
-        shininess = [100.0]  # Brilho do material mais alto para reflexão intensa
+        shininess = [1.0]  # Brilho do material mais alto para reflexão intensa
 
         # Configura os materiais
         glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)
@@ -116,12 +141,12 @@ class TronBackground:
         self.draw_background()
 
         # Grades em diferentes posições Z
-        self.desenhar_grade_retangulos(-2500, 2500, 0, 5000, 150, 20, [1.0, 1.0, 1.0], [0.0, -1.0, 0.0])  # Frente
-        self.desenhar_grade_retangulos(-2500, -2500, 0, 5000, 150, 20, [1.0, 1.0, 1.0], [0.0, 1.0, 0.0])  # Atrás
+        self.desenhar_grade_retangulos(-2500, 2500, 0, 5000, 150, 10, [1.0, 1.0, 1.0], [0.0, -1.0, 0.0])  # Frente
+        self.desenhar_grade_retangulos(-2500, -2500, 0, 5000, 150, 10, [1.0, 1.0, 1.0], [0.0, 1.0, 0.0])  # Atrás
 
         # Retângulos laterais
-        self.desenhar_grade_retangulos2(-2500, -2500, 0, 5000, 150, 20, [1.0, 1.0, 1.0],
+        self.desenhar_grade_retangulos2(-2500, -2500, 0, 5000, 150, 10, [1.0, 1.0, 1.0],
                                         [1.0, 0.0, 0.0])  # Lado esquerdo
-        self.desenhar_grade_retangulos2(2500, -2500, 0, 5000, 150, 20, [1.0, 1.0, 1.0],
+        self.desenhar_grade_retangulos2(2500, -2500, 0, 5000, 150, 10, [1.0, 1.0, 1.0],
                                         [-1.0, 0.0, 0.0])  # Lado direito
 

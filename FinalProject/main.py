@@ -62,9 +62,9 @@ moto2 = Moto( x_size=70, y_size=70, id=2)
 
 # Instancia Iluminacao
 iluminacao = Iluminacao()
-iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=100, color=[1, 1, 0],
+iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=60, color=[1, 1, 0],
                         light_id=GL_LIGHT1)
-iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=100, color=[0, 1, 1],
+iluminacao.create_light(position=[0.0, 0.0, 10.0, 1.0], intensity=30.0, distance=60, color=[0, 1, 1],
                         light_id=GL_LIGHT2)
 
 
@@ -75,7 +75,7 @@ tron_background = TronBackground(5000, 5000, 100)
 tron_background.create_background()
 
 # Instancia o Skybox
-skybox = Skybox(size=10000)
+skybox = Skybox(size=5000)
 
 
 # Cubo
@@ -114,7 +114,6 @@ obstacles.extend([
     Obstacle(-2600, -2500, 100, 5000, id=3),
     Obstacle(-2500, -2600, 5000, 100, id=3),
     Obstacle(-2500, 2500, 5000, 100, id=3),
-
 ])
 
 
@@ -164,7 +163,7 @@ while not glfw.window_should_close(window):
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(60, width / height, 0.1, 20000)
+        gluPerspective(70, width / height, 0.1, 10000)
         gluLookAt(*moto1.calculate_camera_params())
 
 
@@ -217,7 +216,7 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(60, width / height, 0.1, 20000)
+        gluPerspective(70, width / height, 0.1, 10000)
         gluLookAt(*moto2.calculate_camera_params())
 
         iluminacao.show_lights()
