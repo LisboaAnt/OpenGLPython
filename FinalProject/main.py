@@ -10,19 +10,17 @@ import time
 from Cubo import Cubo
 from Moto import Moto
 
-
 # HIT BOXS
-from Obstacles import Obstacle          #HIT BOX QUADRADO -> QUADRADO 2D
-from Trajetoria import Trajetoria       #HIT BOX QUADRADO -> LINHAS 2D
-
+from Obstacles import Obstacle  #HIT BOX QUADRADO -> QUADRADO 2D
+from Trajetoria import Trajetoria  #HIT BOX QUADRADO -> LINHAS 2D
 
 # MAPA
-from Background import TronBackground   #CHÃO
-from Skybox import Skybox               #SKYBOX
+from Background import TronBackground  #CHÃO
+from Skybox import Skybox  #SKYBOX
 from Iluminacao import Iluminacao
 
 # Menu e Placar de Vidas
-from Menu import MainMenu               # MENU DO JOGO
+from Menu import MainMenu  # MENU DO JOGO
 from PlacarDeVida import PlacarDeVida
 
 # Inicializando a biblioteca GLFW
@@ -37,6 +35,7 @@ if not window:
 # Definir o ícone da janela
 icon_path = "./imgs/icon.png"
 glfw.set_window_icon(window, 1, Image.open(icon_path))
+
 
 # CONTROLHE DO BUFFER
 def framebuffer_size_callback(window, fb_width, fb_height):
@@ -93,7 +92,6 @@ cubo2.transladar(500.0, 500.0, 20.0)
 trajetoria1 = Trajetoria(max_points=60, interval=0.1)
 trajetoria2 = Trajetoria(max_points=60, interval=0.1)
 
-
 # Obstacles
 obstacles = []
 
@@ -110,13 +108,12 @@ obstacles.append(
 obstacles.append(
     Obstacle(moto2.moto_position[0] - moto2.x_size / 2, moto2.moto_position[1] - moto2.y_size / 2, moto2.x_size,
              moto2.y_size, id=moto2.id))
-obstacles.extend([ #PAREDES LATERAIS
+obstacles.extend([  #PAREDES LATERAIS
     Obstacle(2500, -2500, 100, 5000, id=3),
     Obstacle(-2600, -2500, 100, 5000, id=3),
     Obstacle(-2500, -2600, 5000, 100, id=3),
     Obstacle(-2500, 2500, 5000, 100, id=3),
 ])
-
 
 # Variaveis para calcular FPS
 previous_time = glfw.get_time()
@@ -147,7 +144,6 @@ while not glfw.window_should_close(window):
         glEnable(GL_BLEND)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  # Configuração para blending
 
-
         menu.handle_events()  # Manipular eventos do menu
         menu.draw()  # Desenhar o menu
 
@@ -159,7 +155,6 @@ while not glfw.window_should_close(window):
         glEnable(GL_DEPTH_TEST)
         iluminacao.configure_environment()
 
-
         #   CAMERA 1 ////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar Camera 1
         glViewport(0, 0, width, height)
@@ -168,11 +163,11 @@ while not glfw.window_should_close(window):
         gluPerspective(70, width / height, 0.1, 15000)
         gluLookAt(*moto1.calculate_camera_params())
 
-        placarwidth = width/2.3
+        placarwidth = width / 2.3
         if width > 900:
             placarwidth = (width / 2.7)
-         # Placar 1
-        placarDeVida.render_text(f"HP: {HP1}", placarwidth, 550)
+        # Placar 1
+        placarDeVida.render_text(f"HP: {HP1}", placarwidth, 550, color=[0, 255, 255])
 
         iluminacao.show_lights()
 
@@ -202,7 +197,6 @@ while not glfw.window_should_close(window):
         moto1.movimento(window, False, obstacles)
         moto1.desenha()
 
-
         # Adicionar o ponto da parte de trás do quadrado na trajetória
         back_x, back_y = moto1.get_back_position()
         trajetoria1.add_point(back_x, back_y)
@@ -227,11 +221,6 @@ while not glfw.window_should_close(window):
             if HP1 < 0:
                 HP1 = 0
 
-
-
-
-
-
         # CAMERA 2 //////////////////////////////////////////////////////////////////////////////////////////////////////////
         # Desenhar CAMERA 2
         glViewport(width, 0, width, height)
@@ -244,11 +233,11 @@ while not glfw.window_should_close(window):
         iluminacao.show_lights()
 
         # Placar
-        placarwidth = width/2.3
+        placarwidth = width / 2.3
         if width > 900:
             placarwidth = (width / 2.7)
-         # Placar 1
-        placarDeVida.render_text(f"HP: {HP2}", placarwidth, 550)
+        # Placar 1
+        placarDeVida.render_text(f"HP: {HP2}", placarwidth, 550, color=[255, 255, 0])
 
         # Desenha a SkyBox
         skybox.draw()
@@ -278,7 +267,6 @@ while not glfw.window_should_close(window):
         # Desenha MOTO 1
         moto1.desenha()
 
-
         # Verificar colisão do quadrado com a trajetória
         if trajetoria1.check_collision(moto2.moto_position[0], moto2.moto_position[1], moto2.x_size):
             tempo_atual = time.time()
@@ -297,10 +285,7 @@ while not glfw.window_should_close(window):
             if HP2 < 0:
                 HP2 = 0
 
-
         menu.paused()
-
-
 
         # Troca os buffers e atualiza a janela
         glfw.swap_buffers(window)

@@ -83,8 +83,6 @@ class MainMenu:
             self.game_pause = False
 
         if self.game_pause:
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-            glMatrixMode(GL_PROJECTION)
             self.draw_text(100, 500, "TRON")
             while self.game_pause:
                 glfw.poll_events()
