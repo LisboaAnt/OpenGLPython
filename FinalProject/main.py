@@ -163,7 +163,7 @@ while not glfw.window_should_close(window):
         glViewport(0, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(70, width / height, 0.1, 10000)
+        gluPerspective(70, width / height, 0.1, 15000)
         gluLookAt(*moto1.calculate_camera_params())
 
 
@@ -216,7 +216,7 @@ while not glfw.window_should_close(window):
         glViewport(width, 0, width, height)
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
-        gluPerspective(70, width / height, 0.1, 10000)
+        gluPerspective(70, width / height, 0.1, 15000)
         gluLookAt(*moto2.calculate_camera_params())
 
         iluminacao.show_lights()
