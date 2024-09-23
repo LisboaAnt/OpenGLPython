@@ -67,8 +67,6 @@ iluminacao.create_light(position=[0.0, 0.0, 15.0, 1.0], intensity=30.0, distance
                         light_id=GL_LIGHT1)
 iluminacao.create_light(position=[0.0, 0.0, 15.0, 1.0], intensity=30.0, distance=60, color=[0, 1, 1],
                         light_id=GL_LIGHT2)
-iluminacao.create_light(position=[0.0, 0.0, 15.0, 1.0], intensity=30.0, distance=60, color=[1, 1, 1],
-                        light_id=GL_LIGHT3)
 
 # Instancia a classe TronBackground
 tron_background = TronBackground(5000, 5000, 100)
@@ -78,12 +76,15 @@ tron_background.create_background()
 skybox = Skybox(size=5000)
 
 # Trajetória
-trajetoria1 = Trajetoria(max_points=60, interval=0.1)
-trajetoria2 = Trajetoria(max_points=60, interval=0.1)
+trajetoria1 = Trajetoria(max_points=100, interval=0.1)
+trajetoria2 = Trajetoria(max_points=100, interval=0.1)
+
 
 # Moto
 moto1 = Moto(2000, 0, x_size=70, y_size=70, moto_angle=180, HP=HP1, trajetoria=trajetoria1, id=1)
 moto2 = Moto(-2000, 0, x_size=70, y_size=70, HP=HP2, trajetoria=trajetoria2, id=2)
+
+
 
 # Cubo
 cubo = Cubo(tamanho=50.0, textura_path="./imgs/troncube.jpg")
@@ -137,10 +138,6 @@ def verificar_colisao_e_redefinir(trajetoria, moto, HP):
             moto.moto_position = [-2000, 0]
             moto.moto_angle = 0
 
-        # Garante que o HP não seja menor que 0
-        if HP[0] < 0:
-            HP[0] = 0
-
 
 ganhou = 0
 
@@ -154,7 +151,6 @@ while not glfw.window_should_close(window):
 
     iluminacao.move_light(GL_LIGHT2, moto1.get_back_position() + tuple([80, 1]))
     iluminacao.move_light(GL_LIGHT1, moto2.get_back_position() + tuple([80, 1]))
-    iluminacao.move_light(GL_LIGHT3, [50, -25, 150] + [80, 1])
 
     if not menu.game_started:
         ganhou = 0

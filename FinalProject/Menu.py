@@ -23,12 +23,6 @@ class MainMenu:
 
         # Inicializar opções do menu
         self.controls = ['Start']
-        self.settings = {
-            'Back': 99,  # Adiciona a opção "Voltar" com índice 0
-            'Up': 273,
-            'Down': 274,
-            'Left': 276,
-        }
         self.current_menu = 'menu'
         self.selected_option = 0
         self.last_key_press_time = 0
@@ -54,8 +48,6 @@ class MainMenu:
     def get_current_menu_options(self):
         if self.current_menu == 'menu':
             return self.controls
-        elif self.current_menu == 'settings':
-            return list(self.settings.keys())
 
     def select_option(self):
         options = self.get_current_menu_options()
@@ -65,15 +57,7 @@ class MainMenu:
             if self.selected_option == 0:  # Start
                 glfw.set_window_size(self.window, self.width*2, self.height)
                 self.game_started = True
-            elif self.selected_option == 1:  # Settings
-                self.current_menu = 'settings'
                 self.selected_option = -1
-        elif self.current_menu == 'settings':
-            if selected_key == 'Back':
-                self.current_menu = 'menu'
-                self.selected_option = -1
-            else:
-                print("Não implementado")
 
     def paused(self):
         if glfw.get_key(self.window, glfw.KEY_P) == glfw.PRESS:

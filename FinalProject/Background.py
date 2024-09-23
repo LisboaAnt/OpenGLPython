@@ -72,8 +72,6 @@ class TronBackground:
         glMaterialfv(GL_FRONT, GL_SHININESS, shininess)
 
 
-
-
     def desenhar_retangulo(self, posicaox, posicaoy, posicaoz, tamanhx, tamanhy, color, normal):
         # Define os vértices da face frontal do retângulo
         vertices = np.array([

@@ -1,7 +1,6 @@
 from OpenGL.GL import *
 from OpenGL.GLU import *
 import math
-from PIL import Image
 import numpy as np
 import glfw
 import pywavefront
@@ -21,8 +20,8 @@ class Moto:
             texture = pywavefront.Wavefront('load_obj/LightCycleIA.obj', collect_faces=True)
         return texture
 
-    def __init__(self, x=width / 2, y=height / 2, x_size=100, y_size=100,HP = 0,trajetoria = 0, moto_angle=0.0, id=None):
-        self.moto_texture = Moto.load_texture(id)  # Renomeado para moto_texture
+    def __init__(self, x=width / 2, y=height / 2, x_size=100, y_size=100,HP = 0,trajetoria = 0, alturaCam=120, moto_angle=0.0, id=None):
+        self.moto_texture = Moto.load_texture(id)  # TEXTURA
         self.moto_angle = moto_angle  # Ângulo da moto X/Y
         self.moto_position = [x, y]  # Posicao
         self.inclinacaoDaMoto = 0
@@ -32,10 +31,12 @@ class Moto:
         self.moto_speed_angle = 1.5  # Velocidade rotacao padrao
         self.camera_distance = -280  # Distância da câmera ao moto
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
-        self.camera_height = 120.0  # Altura da câmera
+        self.camera_height = alturaCam  # Altura da câmera
         self.id = id  # Identificador único para a moto
 
-        self.trajetoria= trajetoria
+        self.cameraType = True
+
+        self.trajetoria = trajetoria
         self.hp = HP
         self.x_size = x_size
         self.y_size = y_size
@@ -70,6 +71,13 @@ class Moto:
                 self.moto_angle -= self.moto_speed_angle / (2 if DiminuirRotacao else 1)
                 target_inclinacao = -5 if DiminuirRotacao else -10
 
+            if glfw.get_key(window, glfw.KEY_V) == glfw.PRESS:
+                self.cameraType = not self.cameraType
+                if self.cameraType:
+                    self.camera_height = 3000
+                else:
+                    self.camera_height = 120
+
 
         else:  # Controle com teclas W, A, D
 
@@ -89,6 +97,14 @@ class Moto:
             if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
                 self.moto_angle -= self.moto_speed_angle / (2 if DiminuirRotacao else 1)
                 target_inclinacao = -5 if DiminuirRotacao else -10
+
+            if glfw.get_key(window, glfw.KEY_C) == glfw.PRESS:
+                self.cameraType = not self.cameraType
+                if self.cameraType:
+                    self.camera_height = 3000
+                else:
+                    self.camera_height = 120
+
         # Suaviza a inclinação da moto
         self.inclinacaoDaMoto += (target_inclinacao - self.inclinacaoDaMoto) * self.inclinacaoVelocidade
         if moved:
