@@ -61,7 +61,7 @@ class Trajetoria:
                 glEnd()  # Finaliza o desenho do quadrilátero
 
                 glLineWidth(10.0)
-                glBegin(GL_LINES)
+                glBegin(GL_LINE_STRIP)
                 glNormal3f(0.0, 0.0, 1.0)
                 glVertex3f(x1, y1, height / 2)
                 glVertex3f(x2, y2, height / 2)
