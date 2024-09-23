@@ -22,7 +22,7 @@ class MainMenu:
         self.height = height
 
         # Inicializar opções do menu
-        self.controls = ['Start', 'Settings']
+        self.controls = ['Start']
         self.settings = {
             'Back': 99,  # Adiciona a opção "Voltar" com índice 0
             'Up': 273,

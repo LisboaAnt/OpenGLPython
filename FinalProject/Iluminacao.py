@@ -52,11 +52,24 @@ class Iluminacao:
 
             glEnable(light_id)  # Habilita a luz
 
-            """
-            # Visualiza a posição da luz como uma esfera
-            glPushMatrix()
-            glTranslatef(position[0], position[1], position[2])  # Move para a posição da luz
-            quadric = gluNewQuadric()
-            gluSphere(quadric, 5, 32, 32)  # RAIO, PAREDES
-            glPopMatrix()
-            """
+            if index == 2:
+                glPushMatrix()
+                glTranslatef(position[0], position[1], position[2])  # Move para a posição da luz
+
+                # Define as propriedades do material do objeto
+                ambient = [0.7, 0.7, 1.0, 1.0]  # Cor ambiente (branco)
+                diffuse = [0.7, 0.7, 1.0, 1.0]  # Cor difusa (branco)
+                specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branco)
+                shininess = 50.0  # Brilho do material
+
+                # Define o material
+                glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)
+                glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse)
+                glMaterialfv(GL_FRONT, GL_SPECULAR, specular)
+                glMaterialf(GL_FRONT, GL_SHININESS, shininess)
+
+                # Desenha a esfera
+                quadric = gluNewQuadric()
+                gluSphere(quadric, 50, 32, 32)  # RAIO, PAREDES
+
+                glPopMatrix()

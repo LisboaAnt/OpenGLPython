@@ -78,3 +78,6 @@ class Trajetoria:
             if (square_x - half_size <= x <= square_x + half_size) and (square_y - half_size <= y <= square_y + half_size):
                 return True
         return False
+
+    def reset_points(self):
+        self.points = []

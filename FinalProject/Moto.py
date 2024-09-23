@@ -21,7 +21,7 @@ class Moto:
             texture = pywavefront.Wavefront('load_obj/LightCycleIA.obj', collect_faces=True)
         return texture
 
-    def __init__(self, x=width / 2, y=height / 2, x_size=100, y_size=100, moto_angle=0.0, id=None):
+    def __init__(self, x=width / 2, y=height / 2, x_size=100, y_size=100,HP = 0,trajetoria = 0, moto_angle=0.0, id=None):
         self.moto_texture = Moto.load_texture(id)  # Renomeado para moto_texture
         self.moto_angle = moto_angle  # Ângulo da moto X/Y
         self.moto_position = [x, y]  # Posicao
@@ -34,6 +34,9 @@ class Moto:
         self.camera_angle = 45.0  # Ângulo de inclinação da câmera
         self.camera_height = 120.0  # Altura da câmera
         self.id = id  # Identificador único para a moto
+
+        self.trajetoria= trajetoria
+        self.hp = HP
         self.x_size = x_size
         self.y_size = y_size
 
@@ -71,34 +74,23 @@ class Moto:
         else:  # Controle com teclas W, A, D
 
             if glfw.get_key(window, glfw.KEY_W) == glfw.PRESS:
-
                 new_x = self.moto_position[0] + (self.moto_speed / 1) * math.cos(math.radians(self.moto_angle))
-
                 new_y = self.moto_position[1] + (self.moto_speed / 1) * math.sin(math.radians(self.moto_angle))
-
                 if not self.check_collision(new_x, new_y, obstacles):
                     self.moto_position[0] = new_x
-
                     self.moto_position[1] = new_y
-
                     moved = True
-
                     DiminuirRotacao = True
 
             if glfw.get_key(window, glfw.KEY_A) == glfw.PRESS:
                 self.moto_angle += self.moto_speed_angle / (2 if DiminuirRotacao else 1)
-
                 target_inclinacao = 5 if DiminuirRotacao else 10
 
             if glfw.get_key(window, glfw.KEY_D) == glfw.PRESS:
                 self.moto_angle -= self.moto_speed_angle / (2 if DiminuirRotacao else 1)
-
                 target_inclinacao = -5 if DiminuirRotacao else -10
-
         # Suaviza a inclinação da moto
-
         self.inclinacaoDaMoto += (target_inclinacao - self.inclinacaoDaMoto) * self.inclinacaoVelocidade
-
         if moved:
             self.atualizar_obstaculos(obstacles)  # Atualiza obstáculos apenas se a moto se moveu
 
@@ -107,9 +99,26 @@ class Moto:
             if obstacle.id == self.id:
                 continue  # Ignora a colisão com a própria moto
 
+            if obstacle.id == 5:
+                if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
+                        new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
+                    self.trajetoria.max_points = 90
+                    return False
+
             # Verifica a colisão com obstáculos
             if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
                     new_y + self.y_size / 2 >= obstacle.y and new_y - self.y_size / 2 <= obstacle.y + obstacle.height):
+
+                if self.id == 1:
+                    self.moto_angle = 180
+                    self.hp[0] = self.hp[0] - 1
+                    self.moto_position = [2000, 0]
+                    self.trajetoria.reset_points()
+                else:
+                    self.moto_angle = 0
+                    self.hp[0] = self.hp[0] - 1
+                    self.moto_position = [-2000, 0]
+                    self.trajetoria.reset_points()
                 return True
         return False
 

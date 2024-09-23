@@ -1,23 +1,44 @@
 from OpenGL.GL import *
 from OpenGL.GLU import *
+from PIL import Image
 
 class Cubo:
-    def __init__(self, tamanho=1.0, cor=(1.0, 1.0, 1.0)):
+    def __init__(self, tamanho=1.0, textura_path="./imgs/skybox/skyboxF.png"):
         self.tamanho = tamanho
-        self.cor = cor
+        self.textura_id = None
+        if textura_path:
+            self.textura_id = self.load_texture(textura_path)  # Carrega a textura se o caminho for fornecido
         self.posicao = [500.0, 500.0, 0.0]
 
+    def load_texture(self, path):
+        img = Image.open(path)
+        img = img.transpose(Image.FLIP_TOP_BOTTOM)  # Inverte a imagem verticalmente
+        img_data = img.convert("RGBA").tobytes()  # Converte a imagem para bytes
+
+        texture_id = glGenTextures(1)
+        glBindTexture(GL_TEXTURE_2D, texture_id)
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.width, img.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+
+        # Define parâmetros da textura
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+
+        return texture_id
+
     def desenhar(self):
-        r, g, b = self.cor
-        self.desenhar_cubo(self.tamanho, r, g, b)
+        glEnable(GL_TEXTURE_2D)  # Ativa o uso de texturas
+        glBindTexture(GL_TEXTURE_2D, self.textura_id)  # Aplica a textura
+
+        self.desenhar_cubo(self.tamanho)
+
+        glDisable(GL_TEXTURE_2D)  # Desativa o uso de texturas
 
     def transladar(self, x, y, z):
         self.posicao = [x, y, z]
 
-    def desenhar_cubo(self, lado, r, g, b):
-        # Define a cor do cubo
-        glColor3f(r, g, b)
-
+    def desenhar_cubo(self, lado):
         vertices = [
             [-1, -1, -1],  # Vértice 0
             [1, -1, -1],   # Vértice 1
@@ -48,22 +69,11 @@ class Cubo:
             [4, 5, 1, 0]   # Face inferior
         ]
 
-        ambient = [1, 1, 1, 1]  # Cor ambiente (roxo)
-        diffuse = [1, 1, 1, 1]  # Cor difusa (roxo)
-        specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branco)
-        shininess = 1.0  # Brilho do material
-
-        # Define o material
-        glMaterialfv(GL_FRONT, GL_AMBIENT, ambient)
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse)
-        glMaterialfv(GL_FRONT, GL_SPECULAR, specular)
-        glMaterialf(GL_FRONT, GL_SHININESS, shininess)
-
-        # Desenhar o cubo com normais
         for i, face in enumerate(faces):
             glBegin(GL_QUADS)
             glNormal3fv(normais[i])  # Define a normal da face atual
             for vertice_index in face:
+                glTexCoord2f((vertice_index % 2), (vertice_index // 2))  # Define coordenadas de textura
                 glVertex3f(
                     self.posicao[0] + vertices[vertice_index][0] * lado / 2,
                     self.posicao[1] + vertices[vertice_index][1] * lado / 2,
