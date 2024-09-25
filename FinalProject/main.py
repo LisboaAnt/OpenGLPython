@@ -79,23 +79,32 @@ skybox = Skybox(size=5000)
 trajetoria1 = Trajetoria(max_points=100, interval=0.1)
 trajetoria2 = Trajetoria(max_points=100, interval=0.1)
 
-
 # Moto
 moto1 = Moto(2000, 0, x_size=70, y_size=70, moto_angle=180, HP=HP1, trajetoria=trajetoria1, id=1)
 moto2 = Moto(-2000, 0, x_size=70, y_size=70, HP=HP2, trajetoria=trajetoria2, id=2)
 
-
-
 # Cubo
-cubo = Cubo(tamanho=50.0, textura_path="./imgs/troncube.jpg")
-cubo.transladar(50.0, -27.0, 20.0)
+cubo1 = Cubo(tamanho=50.0, textura_path="./imgs/Red_X.jpg")
+cubo1.transladar(1000, -1000, 20.0)
+cubo2 = Cubo(tamanho=50.0, textura_path="./imgs/Red_X.jpg")
+cubo2.transladar(1000, 1000, 20.0)
+cubo3 = Cubo(tamanho=50.0, textura_path="./imgs/Red_X.jpg")
+cubo3.transladar(-1000, 1000, 20.0)
+cubo4 = Cubo(tamanho=50.0, textura_path="./imgs/Red_X.jpg")
+cubo4.transladar(-1000, -1000, 20.0)
 
 # Obstacles
 obstacles = []
 
 # Adicione os cubos
 obstacles.append(
-    Obstacle(cubo.posicao[0] - cubo.tamanho/ 2, cubo.posicao[1] - cubo.tamanho/ 2, cubo.tamanho, cubo.tamanho))
+    Obstacle(cubo1.posicao[0] - cubo1.tamanho / 2, cubo1.posicao[1] - cubo1.tamanho / 2, cubo1.tamanho, cubo1.tamanho))
+obstacles.append(
+    Obstacle(cubo2.posicao[0] - cubo2.tamanho / 2, cubo2.posicao[1] - cubo2.tamanho / 2, cubo2.tamanho, cubo2.tamanho))
+obstacles.append(
+    Obstacle(cubo3.posicao[0] - cubo3.tamanho / 2, cubo3.posicao[1] - cubo3.tamanho / 2, cubo3.tamanho, cubo3.tamanho))
+obstacles.append(
+    Obstacle(cubo4.posicao[0] - cubo4.tamanho / 2, cubo4.posicao[1] - cubo4.tamanho / 2, cubo4.tamanho, cubo4.tamanho))
 
 # Adiciona as motos como obstaculos
 obstacles.append(
@@ -157,7 +166,7 @@ while not glfw.window_should_close(window):
         moto1.moto_position = [2000, 0]
         moto1.moto_angle = 180
         moto2.moto_angle = 0
-        moto2.moto_position= [-2000, 0]
+        moto2.moto_position = [-2000, 0]
         trajetoria1.reset_points()
         trajetoria2.reset_points()
         HP1[0], HP2[0] = 3, 3
@@ -173,9 +182,9 @@ while not glfw.window_should_close(window):
         glfw.poll_events()
 
     else:
-        if HP1[0] < 0:
+        if HP1[0] <= 0:
             ganhou = 2
-        if HP2[0] < 0:
+        if HP2[0] <= 0:
             ganhou = 1
         glClearColor(0.0, 0.0, 0.0, 1.0)  # preto
         glEnable(GL_DEPTH_TEST)
@@ -209,8 +218,10 @@ while not glfw.window_should_close(window):
         trajetoria1.draw(color=[0, 1, 1])
 
         # Desenha o cubo
-        cubo.desenhar()
-
+        cubo1.desenhar()
+        cubo2.desenhar()
+        cubo3.desenhar()
+        cubo4.desenhar()
 
         # Textura
         glEnable(GL_BLEND)
@@ -248,7 +259,7 @@ while not glfw.window_should_close(window):
         placarDeVida.render_text(f"HP: {HP2[0]}", placarwidth, 550, color=[255, 255, 0])
         if ganhou == 1: placarDeVida.mostrar_vencedor(vencedor=f"DERROTA", color=[255, 0, 0])
         if ganhou == 2: placarDeVida.mostrar_vencedor(vencedor=f"VITORIA", color=[0, 255, 0])
-        
+
         # Desenha a SkyBox
         skybox.draw()
 
@@ -259,7 +270,10 @@ while not glfw.window_should_close(window):
         trajetoria1.draw(color=[0, 1, 1])
 
         # Desenha o cubo
-        cubo.desenhar()
+        cubo1.desenhar()
+        cubo2.desenhar()
+        cubo3.desenhar()
+        cubo4.desenhar()
 
         glEnable(GL_TEXTURE_2D)
         glEnable(GL_BLEND)  # Habilita o blending para suportar transparência

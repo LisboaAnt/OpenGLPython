@@ -21,6 +21,10 @@ class Iluminacao:
         glMaterialfv(GL_FRONT, GL_SPECULAR, material_specular)
         glMaterialf(GL_FRONT, GL_SHININESS, shininess)
 
+        # Configurar luz ambiente global
+        global_ambient = [0.1, 0.1, 0.1, 1.0]
+        glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient)
+
     def create_light(self, position, intensity, distance, color, light_id):
         """Configura a luz e a armazena na lista de luzes."""
         # Armazena os dados da luz em vez de configurar imediatamente

@@ -113,7 +113,7 @@ class Moto:
     def check_collision(self, new_x, new_y, obstacles):
         for obstacle in obstacles:
             if obstacle.id == self.id:
-                continue  # Ignora a colisão com a própria moto
+                continue
 
             if obstacle.id == 5:
                 if (new_x + self.x_size / 2 >= obstacle.x and new_x - self.x_size / 2 <= obstacle.x + obstacle.width and
