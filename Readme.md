@@ -4,15 +4,7 @@ Este repositório contém dois projetos principais desenvolvidos utilizando Open
 
 **Nota:** Lembre-se de entrar na pasta do projeto específica!
 
-## Tanque OpenGL_2D_3D
-
-Este projeto é uma série de iterações de um modelo de tanque que evolui de um simples design 2D para uma versão 3D completa com sombras e detalhes aprimorados. Cada versão do projeto demonstra um avanço progressivo nas técnicas de computação gráfica e renderização.
-- `v1`: Implementação inicial do tanque em 2D com pygame.
-- `v2`: Implementação inicial do tanque em 2D sem pygame.
-- `v3`: Implementação movimento de câmera em top view.
-- `v4`: Implementação câmera tank 3° pessoa.
-
-## Computacao_Grafica_Project
+## TRON GAME
 
 Este projeto é um trabalho complexo desenvolvido para a disciplina de Computação Gráfica. Ele abrange uma ampla gama de técnicas e conceitos de computação gráfica, incluindo modelagem, iluminação, texturização e animação.
 
@@ -20,8 +12,6 @@ Este projeto é um trabalho complexo desenvolvido para a disciplina de Computaç
 - Sistemas de iluminação e sombreamento.
 - Animações interativas e simulações.
 
-# BasicCodes
-Este projeto apresentas códigos básicos, de formas e cores
 
 ## Requisitos
 
