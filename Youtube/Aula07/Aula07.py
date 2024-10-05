@@ -73,8 +73,6 @@ def process_input():
         glfw.set_input_mode(window, glfw.CURSOR, mode)
         esc_pressed = True
         first_mouse = cursor_disabled
-        if not cursor_disabled:
-            glfw.set_cursor_pos(window, last_x, last_y)
     elif glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.RELEASE:
         esc_pressed = False
 

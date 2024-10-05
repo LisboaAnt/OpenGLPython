@@ -1,31 +1,37 @@
 import glfw
-import numpy as np
 from OpenGL.GL import *
 from OpenGL.GLU import *
+import numpy as np
+
 
 class Camera:
     def __init__(self, width, height):
-        self.camera_pos = np.array([0.0, 0.0, 3.0])
+        self.camera_pos = np.array([0.0, 0.0, 3])
         self.camera_front = np.array([0.0, 0.0, -1.0])
         self.camera_up = np.array([0.0, 1.0, 0.0])
-        self.yaw, self.pitch = -90.0, 0.0
+        self.yaw, self.pitch = -90.0, 0.0  # Ângulos de orientação da câmera
 
         self.camera_speed = 0.005
-        self.sensitivity = 0.1
-
         self.keys = {}
-        self.cursor_disabled = False
-        self.first_mouse = True
-        self.esc_pressed = False
-        self.last_x = width / 2
-        self.last_y = height / 2
 
-    def update_view(self):
+        # Variáveis Do Mause
+        self.first_mouse = True  # Indicador para verificar se é a primeira vez que o mouse é movido
+        self.cursor_disabled = False  # Indicador se o cursor está desativado
+        self.esc_pressed = False  # Indicador se a tecla ESC está pressionada
+        self.sensitivity = 0.1
+        self.last_x, self.last_y = width / 2, height / 2
+
+    def update_camera(self):
         glLoadIdentity()
         camera_target = self.camera_pos + self.camera_front
-        gluLookAt(self.camera_pos[0], self.camera_pos[1], self.camera_pos[2],
-                  camera_target[0], camera_target[1], camera_target[2],
-                  self.camera_up[0], self.camera_up[1], self.camera_up[2])
+        gluLookAt(self.camera_pos[0], self.camera_pos[1], self.camera_pos[2], camera_target[0], camera_target[1],
+                       camera_target[2], self.camera_up[0], self.camera_up[1], self.camera_up[2])
+
+    def key_callback(self, window, key, scancode, action, mods):
+        if action == glfw.PRESS:
+            self.keys[key] = True
+        elif action == glfw.RELEASE:
+            self.keys[key] = False
 
     def process_input(self, window):
         if self.keys.get(glfw.KEY_W, False):
@@ -46,13 +52,9 @@ class Camera:
         elif glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.RELEASE:
             self.esc_pressed = False
 
-    def key_callback(self, window, key, scancode, action, mods):
-        if action == glfw.PRESS:
-            self.keys[key] = True
-        elif action == glfw.RELEASE:
-            self.keys[key] = False
-
     def mouse_callback(self, window, xpos, ypos):
+
+        # Se o cursor não estiver desativado, não faz nada com o movimento do mouse
         if not self.cursor_disabled:
             return
 
@@ -61,17 +63,23 @@ class Camera:
             self.last_y = ypos
             self.first_mouse = False
 
+        # Calcula o deslocamento do mouse em relação à última posição conhecida
         xoffset = xpos - self.last_x
         yoffset = self.last_y - ypos
+
+        # Atualiza as últimas coordenadas do mouse
         self.last_x = xpos
         self.last_y = ypos
 
+        # Aplica a sensibilidade do mouse aos deslocamentos
         xoffset *= self.sensitivity
         yoffset *= self.sensitivity
 
+        # Atualiza os ângulos de orientação da câmera com base no deslocamento do mouse
         self.yaw += xoffset
         self.pitch += yoffset
 
+        # Limita o ângulo 'pitch' para não ultrapassar os limites superiores e inferiores
         if self.pitch > 89.0:
             self.pitch = 89.0
         if self.pitch < -89.0:
