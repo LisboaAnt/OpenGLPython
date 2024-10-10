@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="" />
+    <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/Mesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/cubo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula10/Mesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula10/hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula09/Aula07.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula10/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula10/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,19 +40,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Aula07 (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula07.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula08.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eee.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/Documents/GitHub/OpenGLPython&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Aula07 (2).executor": "Run",
+    "Python.Aula07.executor": "Run",
+    "Python.Aula08.executor": "Run",
+    "Python.Aula09.executor": "Run",
+    "Python.Mesh.executor": "Run",
+    "Python.camera.executor": "Run",
+    "Python.cubo.executor": "Run",
+    "Python.eee.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mesh.executor": "Run",
+    "Python.pp.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula09"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula09" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula10" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Aula07 (2)" type="PythonConfigurationType" factoryName="Python" activateToolWindowBeforeRun="false" temporary="true" nameIsGenerated="true">
       <option name="ENV_FILES" value="$PROJECT_DIR$/.venv" />

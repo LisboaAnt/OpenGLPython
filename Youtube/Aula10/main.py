@@ -1,242 +1,77 @@
 import glfw
 from OpenGL.GL import *
-from OpenGL.GLU import *
 import numpy as np
-import sys
-import os
-
-sys.path.append(os.path.abspath('../../FinalProject'))
-from Iluminacao import Iluminacao
-
-# Instancia Iluminacao
-iluminacao = Iluminacao()
-
-if not glfw.init():
-    raise Exception("Falha ao iniciar")
-
-# Habilita o buffer de profundidade
-glfw.window_hint(glfw.DEPTH_BITS, 24)
-
-width, height = 800, 600
-window = glfw.create_window(width, height, "Aula 3", None, None)
-if not window:
-    raise Exception("Falha ao criar a janela")
 
 
-glfw.make_context_current(window)
+def init_glfw():
+    if not glfw.init():
+        return None
+    window = glfw.create_window(800, 600, "Iluminação Simples", None, None)
+    if not window:
+        glfw.terminate()
+        return None
+    glfw.make_context_current(window)
+    return window
 
 
+def setup_lighting():
+    # Ativar iluminação
+    glEnable(GL_LIGHTING)
+    glEnable(GL_LIGHT0)
 
-glMatrixMode(GL_PROJECTION)
-glLoadIdentity()
-gluPerspective(45, width / height, 0.1, 50.0)
-glMatrixMode(GL_MODELVIEW)
+    # Configurar a posição da luz
+    light_pos = [1.0, 1.0, 1.0, 0.0]  # Luz direcional
+    glLightfv(GL_LIGHT0, GL_POSITION, light_pos)
 
-#Variáveis da câmera
-camera_pos = np.array([0.0, 0.0, 3])
-camera_front = np.array([0.0, 0.0, -1.0])
-camera_up = np.array([0.0, 1.0, 0.0])
-yaw, pitch = -90.0, 0.0  # Ângulos de orientação da câmera
+    # Configurar a cor da luz
+    ambient_light = [0.2, 0.2, 0.2, 1.0]
+    diffuse_light = [1.0, 1.0, 1.0, 1.0]
+    specular_light = [1.0, 1.0, 1.0, 1.0]
 
-camera_speed = 0.005
-keys = {}
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_light)
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_light)
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular_light)
 
-#Variáveis Do Mause
-first_mouse = True  # Indicador para verificar se é a primeira vez que o mouse é movido
-cursor_disabled = False  # Indicador se o cursor está desativado
-esc_pressed = False  # Indicador se a tecla ESC está pressionada
-sensitivity = 0.1
-last_x, last_y = width / 2, height / 2
-
-
-def camera():
-    global camera_pos, camera_front, camera_up
-    glLoadIdentity()
-    camera_target = camera_pos + camera_front
-    gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2], camera_target[0], camera_target[1], camera_target[2],
-              camera_up[0], camera_up[1], camera_up[2])
+    # Configurar material
+    material_color = [0.8, 0.2, 0.2, 1.0]  # Cor do material
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, material_color)
 
 
-def key_callback(window, key, scancode, action, mods):
-    if action == glfw.PRESS:
-        keys[key] = True
-    elif action == glfw.RELEASE:
-        keys[key] = False
-
-
-def process_input():
-    global camera_pos, camera_front, camera_up, camera_speed, cursor_disabled, esc_pressed, first_mouse
-    if keys.get(glfw.KEY_W, False):
-        camera_pos += camera_speed * camera_front
-    if keys.get(glfw.KEY_S, False):
-        camera_pos -= camera_speed * camera_front
-    if keys.get(glfw.KEY_A, False):
-        camera_pos -= np.cross(camera_front, camera_up) * camera_speed
-    if keys.get(glfw.KEY_D, False):
-        camera_pos += np.cross(camera_front, camera_up) * camera_speed
-
-    if glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.PRESS and not esc_pressed:
-        cursor_disabled = not cursor_disabled
-        mode = glfw.CURSOR_DISABLED if cursor_disabled else glfw.CURSOR_NORMAL
-        glfw.set_input_mode(window, glfw.CURSOR, mode)
-        esc_pressed = True
-        first_mouse = cursor_disabled
-        if not cursor_disabled:
-            glfw.set_cursor_pos(window, last_x, last_y)
-    elif glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.RELEASE:
-        esc_pressed = False
-
-
-def mouse_callback(window, xpos, ypos):
-    global yaw, pitch, last_x, last_y, first_mouse, camera_front, cursor_disabled, sensitivity
-
-    # Se o cursor não estiver desativado, não faz nada com o movimento do mouse
-    if not cursor_disabled:
-        return
-
-    if first_mouse:
-        last_x = xpos
-        last_y = ypos
-        first_mouse = False
-
-    # Calcula o deslocamento do mouse em relação à última posição conhecida
-    xoffset = xpos - last_x
-    yoffset = last_y - ypos
-
-    # Atualiza as últimas coordenadas do mouse
-    last_x = xpos
-    last_y = ypos
-
-    # Aplica a sensibilidade do mouse aos deslocamentos
-    xoffset *= sensitivity
-    yoffset *= sensitivity
-
-    # Atualiza os ângulos de orientação da câmera com base no deslocamento do mouse
-    yaw += xoffset
-    pitch += yoffset
-
-    # Limita o ângulo 'pitch' para não ultrapassar os limites superiores e inferiores
-    if pitch > 89.0:
-        pitch = 89.0
-    if pitch < -89.0:
-        pitch = -89.0
-
-    direction = np.array([
-        np.cos(np.radians(yaw)) * np.cos(np.radians(pitch)),
-        np.sin(np.radians(pitch)),
-        np.sin(np.radians(yaw)) * np.cos(np.radians(pitch))
-    ])
-    camera_front = direction / np.linalg.norm(direction)
-
-
-
-
-glClearColor(0, 0.2, 0.5, 1)
-glfw.set_key_callback(window, key_callback)
-glfw.set_cursor_pos_callback(window, mouse_callback)
-
-
-def create_cube():
-    vertices = [
-        # Front face
-        -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0, -1.0, 1.0, 1.0,
-        # Back face
-        -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0,
-        # Left face
-        -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, -1.0,
-        # Right face
-        1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0,
-        # Top face
-        -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0,
-        # Bottom face
-        -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, -1.0, -1.0, 1.0,
-    ]
-    return np.array(vertices, dtype='float32')
-
-
-
-
-
-def configure_material():
-    material_diffuse = [0.5, 0.5, 0.5, 1.0]  # Cor difusa
-    material_specular = [1.0, 1.0, 1.0, 1.0]  # Cor especular (branca)
-    shininess = 100.0  # Superfície polida
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, material_diffuse)
-    glMaterialfv(GL_FRONT, GL_SPECULAR, material_specular)
-    glMaterialf(GL_FRONT, GL_SHININESS, shininess)
-
-
-def draw_cube(vertices):
+def draw_cube():
     glBegin(GL_QUADS)
-    normals = [
-        (0.0, 0.0, 1.0), (0.0, 0.0, -1.0),
-        (-1.0, 0.0, 0.0), (1.0, 0.0, 0.0),
-        (0.0, 1.0, 0.0), (0.0, -1.0, 0.0)
-    ]
 
-    colors = [
-        [1.0, 0.0, 0.0, 1.0],  # Vermelho
-        [0.0, 1.0, 0.0, 1.0],  # Verde
-        [0.0, 0.0, 1.0, 1.0],  # Azul
-        [1.0, 1.0, 0.0, 1.0],  # Amarelo
-        [1.0, 0.5, 0.0, 1.0],  # Laranja
-        [0.5, 0.0, 0.5, 1.0]  # Roxo
-    ]
+    # Frente
+    glNormal3f(0.0, 0.0, 1.0)
+    glVertex3f(-1.0, -1.0, 1.0)
+    glVertex3f(1.0, -1.0, 1.0)
+    glVertex3f(1.0, 1.0, 1.0)
+    glVertex3f(-1.0, 1.0, 1.0)
 
-    for i, normal in enumerate(normals):
-        glNormal3f(*normal)
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, colors[i])  # Aplica a cor do material correspondente à face
-
-        for j in range(4):
-            idx = i * 4 + j
-            glVertex3f(vertices[idx * 3], vertices[idx * 3 + 1], vertices[idx * 3 + 2])
+    # Outras faces...
+    # Adicione mais faces aqui para criar um cubo completo
 
     glEnd()
 
 
-def draw_light_cube(vertices):
-    glPushMatrix()
-    glTranslatef(1.0, 1.0, -2.0)
-    glScalef(0.1, 0.1, 0.1)
-    glBegin(GL_QUADS)
-    for i in range(0, 24, 3):
-        glVertex3f(vertices[i], vertices[i + 1], vertices[i + 2])
-    glEnd()
-    glPopMatrix()
-
-
-glEnable(GL_LIGHTING)
-glEnable(GL_DEPTH_TEST)
-
-
-configure_material()
-
-cube_vertices = create_cube()
-
-
-
-# No loop principal, certifique-se de chamar configure_lights() após configurar a câmera.
-while not glfw.window_should_close(window):
+def main():
+    window = init_glfw()
     glEnable(GL_DEPTH_TEST)
-    glfw.poll_events()
-    process_input()
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    setup_lighting()
 
-    glLoadIdentity()
-    camera()
+    while not glfw.window_should_close(window):
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+        glLoadIdentity()
 
-    iluminacao.configure_lights()  # Configure a luz
+        # Posição da câmera
+        glTranslatef(0.0, 0.0, -5.0)
 
-    glTranslatef(0.0, 0.0, -5)
-    glPushMatrix()
-    draw_cube(cube_vertices)
-    glPopMatrix()
+        draw_cube()
 
-    glTranslatef(2, 1, 1)
-    glPushMatrix()
-    draw_cube(cube_vertices)
-    glPopMatrix()
+        glfw.swap_buffers(window)
+        glfw.poll_events()
 
-    glfw.swap_buffers(window)
+    glfw.terminate()
 
-glfw.terminate()
+
+if __name__ == "__main__":
+    main()
