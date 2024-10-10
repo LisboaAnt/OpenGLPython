@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/cubo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula09/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula10/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula10/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula09/Aula07.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula10/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula10/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

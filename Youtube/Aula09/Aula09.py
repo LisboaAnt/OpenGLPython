@@ -30,7 +30,7 @@ camera = Camera(width, height)
 
 cubo = Cubo()
 
-glClearColor(0, 0.2, 0.5, 1)
+glClearColor(0, 0, 0, 1)
 glfw.set_key_callback(window, camera.key_callback)
 glfw.set_cursor_pos_callback(window, camera.mouse_callback)
 
@@ -133,13 +133,13 @@ while not glfw.window_should_close(window):
     glLoadIdentity()
     camera.update_camera()
 
-    cubo.draw(0, 0, 0)
+    #cubo.draw(0, 0, 0)
 
-    configurar_luz_potual(GL_LIGHT2, [2, 1, 0], [0.6, 0.2, 0.2], 0.1)
+    #configurar_luz_potual(GL_LIGHT2, [2, 1, 0], [0.6, 0.2, 0.2], 0.1)
 
-    configurar_luz_potual(GL_LIGHT3, [0, 1, 2], [0.2, 0.2, 1], 0.1)
+    #configurar_luz_potual(GL_LIGHT3, [0, 1, 2], [0.2, 0.2, 1], 0.1)
 
-    configurar_luz_potual(GL_LIGHT4, [0, 1, -2], [0.2, 0.6, 0.2], 0.1)
+    #configurar_luz_potual(GL_LIGHT4, [0, 1, -2], [0.2, 0.6, 0.2], 0.1)
 
     configurar_luz_direcional(GL_LIGHT5, [1, 1, 1], [0.5, 0.5, 0.5], 0.2)
 
