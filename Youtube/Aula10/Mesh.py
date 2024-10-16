@@ -2,7 +2,6 @@ import glfw
 from OpenGL.GL import *
 import numpy as np
 
-
 class Mesh:
     def __init__(self, start_pos, end_pos, normal, total_polygons):
         self.vertices = []

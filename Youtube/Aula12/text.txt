@@ -1,0 +1,9 @@
+glfw.window_hint(glfw.SAMPLES, 4) #N amostras para o MSAA
+glLightModelfv(GL_LIGHT_MODEL_LOCAL_VIEWER, [1.0]) # Ajeita o reflexo da luz
+
+glShadeModel(GL_SMOOTH) # Sombreamento Suave
+display_list = glGenLists(1)
+glNewList(display_list, GL_COMPILE)
+
+# Coloque o código de renderização do objeto aqui
+glEndList()
