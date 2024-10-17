@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/AtlasMinecrfat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/Aula12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/TextureAtlasLoader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/V0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/cubo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/esfera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/iluminacao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/sss.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/world.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/Mesh1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/Mesh2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/Aula11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/iluminacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/iluminacao.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +43,7 @@
     "Python.Aula08.executor": "Run",
     "Python.Aula09.executor": "Run",
     "Python.Aula10.executor": "Run",
+    "Python.Aula11.executor": "Run",
     "Python.Aula12.executor": "Run",
     "Python.Esfera.executor": "Run",
     "Python.Mesh.executor": "Run",
@@ -70,16 +58,16 @@
     "Python.pp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula13"
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula11"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula10" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula09" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />

@@ -9,9 +9,6 @@ class Iluminacao:
         glEnable(GL_LIGHTING)
         glEnable(GL_DEPTH_TEST)
 
-        glEnable(GL_CULL_FACE)  # Habilita o culling
-        glCullFace(GL_FRONT)
-
         glLightModelfv(GL_LIGHT_MODEL_AMBIENT, luzAmbiente)
 
     def configurar_luz_potual(self, light_id, position, color, intensity):
