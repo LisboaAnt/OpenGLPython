@@ -5,9 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula11/grass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula11/textureAtlas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/MC-Torch/MC-Torch/MC-Torch/material/Diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/MC-Torch/MC-Torch/MC-Torch/model/obj/Torch.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/MC-Torch/MC-Torch/MC-Torch/model/obj/Torch.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/Minecraft_steve_skin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/Torch.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/Torch.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/minecraft_steve.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula12/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/AtlasMinecrfat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/Aula11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/cubo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/esfera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/iluminacao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/Aula11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/iluminacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/iluminacao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/AtlasMinecrfat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/minecraft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/Aula11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/Aula11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/TextureAtlasLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/TextureAtlasLoader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula11/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula11/cubo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/Aula12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/Mesh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/cubo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/iluminacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/iluminacao.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +88,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula14" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula10" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula09" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />

@@ -7,12 +7,8 @@ import time  # Importa o módulo de tempo
 
 from cubo import Cubo
 from esfera import Esfera
-
 from TextureAtlasLoader import TextureAtlasLoader
-from modelos import Model
-
 from camera import Camera
-
 from iluminacao import Iluminacao
 
 if not glfw.init():
@@ -48,7 +44,7 @@ camera = Camera(width, height)
 
 luz = Iluminacao()
 
-esfera = Esfera()
+#esfera = Esfera()
 
 #Carrega o Loader
 atlas_loader = TextureAtlasLoader('AtlasMinecrfat.jpg', (32, 16))
@@ -97,11 +93,6 @@ display_list = gerar_lista_de_exibicao(lista_de_cubos)
 frame_count = 0
 start_time = time.time()
 
-
-model = Model(r"C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12\MC-Torch\MC-Torch\MC-Torch\model\obj\Torch.obj")
-
-
-
 while not glfw.window_should_close(window):
     glfw.poll_events()
     camera.process_input(window)
@@ -111,8 +102,7 @@ while not glfw.window_should_close(window):
 
     glCallList(display_list)
 
-    model.draw()
-    esfera.draw(3, 4, 0)
+    #esfera.draw(3, 4, 0)
 
     #luz.configurar_luz_potual(GL_LIGHT2, [2, 1, 0], [0.6, 0.2, 0.2], 0.1)
     #luz.configurar_luz_potual(GL_LIGHT3, [0, 3, 2], [0.2, 0.2, 1], 0.5)

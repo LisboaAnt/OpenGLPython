@@ -3,26 +3,36 @@ from OpenGL.GLU import *
 import numpy as np
 from PIL import Image
 
+
 class Cubo:
-    def __init__(self, initial_position=[0.0, 0.0, 0.0],raio = 1, texture_atlas=None, texture_indices=[0, 1, 2, 3, 4, 5]):
-        self.position = initial_position
+    def __init__(self, inital_position=[0.0, 0.0, 0.0],raio = 1, texture_atlas=None, texture_indices=[0,1,2,3,4,5]):
         self.texture_atlas = texture_atlas
         self.texture_indices = texture_indices
         self.raio = raio
+        self.position = inital_position
+        self.texture_id = None
 
-    def draw(self, x=0, y=0, z=0):
+
+    def draw(self, x, y, z):
         vertices = [
-            [-self.raio, -self.raio, -self.raio], [self.raio, -self.raio, -self.raio], [self.raio, self.raio, -self.raio], [-self.raio, self.raio, -self.raio],
-            [-self.raio, -self.raio, self.raio], [self.raio, -self.raio, self.raio], [self.raio, self.raio, self.raio], [-self.raio, self.raio, self.raio]
+            [-self.raio, -self.raio, -self.raio],
+            [-self.raio, self.raio, -self.raio],
+            [self.raio, self.raio, -self.raio],
+            [self.raio, -self.raio, -self.raio],
+            [-self.raio, -self.raio, self.raio],
+            [-self.raio, self.raio, self.raio],
+            [self.raio, self.raio, self.raio],
+            [self.raio, -self.raio, self.raio],
         ]
         faces = [
-            [0, 1, 2, 3],  # Face frontal
-            [1, 5, 6, 2],  # Face direita
-            [5, 4, 7, 6],  # Face traseira
-            [4, 0, 3, 7],  # Face esquerda
-            [3, 2, 6, 7],  # Face superior
-            [4, 5, 1, 0]  # Face inferior
+            [3, 0, 1, 2],  # front
+            [7, 3, 2, 6],  # dir
+            [4, 7, 6, 5],  # tras
+            [0, 4, 5, 1],  # esq
+            [1, 5, 6, 2],  # sup
+            [4, 0, 3, 7],  # inf
         ]
+
         normais = [
             [0, 0, -1],
             [1, 0, 0],
@@ -31,6 +41,7 @@ class Cubo:
             [0, 1, 0],
             [0, -1, 0]
         ]
+
 
         glPushMatrix()
         glTranslatef(self.position[0] + x, self.position[1] + y, self.position[2] + z)
@@ -50,5 +61,4 @@ class Cubo:
 
         if self.texture_atlas:
             glDisable(GL_TEXTURE_2D)
-
         glPopMatrix()
