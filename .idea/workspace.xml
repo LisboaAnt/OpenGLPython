@@ -7,10 +7,15 @@
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Youtube/Aula12/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/Aula12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/camera.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Youtube/Aula12/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/cubo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/skybox.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/skybox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/skybox_atlas2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/esfera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/esfera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/grass.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/images/grass.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/images/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/minecraft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/images/minecraft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/skybox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/skybox_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/images/skybox_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/textureAtlas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/textureAtlas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula12/world.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula12/images/world.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +80,7 @@
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula10" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12\images" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
     </key>
   </component>
