@@ -14,50 +14,26 @@ class Camera:
         self.camera_speed = 0.1
         self.keys = {}
 
-        # Variáveis do mouse
+        # Variáveis Do Mause
         self.first_mouse = True  # Indicador para verificar se é a primeira vez que o mouse é movido
         self.cursor_disabled = False  # Indicador se o cursor está desativado
         self.esc_pressed = False  # Indicador se a tecla ESC está pressionada
         self.sensitivity = 0.1
         self.last_x, self.last_y = width / 2, height / 2
 
-        # Variáveis de projeção
-        self.width = width
-        self.height = height
-        self.update_projection()
-
-    def update_projection(self):
-        """Atualiza a matriz de projeção com base no tamanho atual da janela."""
-        glMatrixMode(GL_PROJECTION)
-        glLoadIdentity()
-        gluPerspective(45, self.width / self.height, 0.1, 50000.0)
-        glMatrixMode(GL_MODELVIEW)
-
-    def update_window_size(self, new_width, new_height):
-        """Atualiza o tamanho da janela e a matriz de projeção."""
-        self.width = new_width
-        self.height = new_height
-        self.update_projection()
-
     def update_camera(self):
-        """Atualiza a matriz de visualização da câmera."""
         glLoadIdentity()
         camera_target = self.camera_pos + self.camera_front
-        gluLookAt(
-            self.camera_pos[0], self.camera_pos[1], self.camera_pos[2],
-            camera_target[0], camera_target[1], camera_target[2],
-            self.camera_up[0], self.camera_up[1], self.camera_up[2]
-        )
+        gluLookAt(self.camera_pos[0], self.camera_pos[1], self.camera_pos[2], camera_target[0], camera_target[1],
+                       camera_target[2], self.camera_up[0], self.camera_up[1], self.camera_up[2])
 
     def key_callback(self, window, key, scancode, action, mods):
-        """Callback para eventos de teclado."""
         if action == glfw.PRESS:
             self.keys[key] = True
         elif action == glfw.RELEASE:
             self.keys[key] = False
 
     def process_input(self, window):
-        """Processa as entradas do teclado para mover a câmera."""
         if self.keys.get(glfw.KEY_W, False):
             self.camera_pos += self.camera_speed * self.camera_front
         if self.keys.get(glfw.KEY_S, False):
@@ -77,7 +53,8 @@ class Camera:
             self.esc_pressed = False
 
     def mouse_callback(self, window, xpos, ypos):
-        """Callback para eventos de movimento do mouse."""
+
+        # Se o cursor não estiver desativado, não faz nada com o movimento do mouse
         if not self.cursor_disabled:
             return
 
@@ -108,7 +85,6 @@ class Camera:
         if self.pitch < -89.0:
             self.pitch = -89.0
 
-        # Atualiza o vetor de direção da câmera
         direction = np.array([
             np.cos(np.radians(self.yaw)) * np.cos(np.radians(self.pitch)),
             np.sin(np.radians(self.pitch)),

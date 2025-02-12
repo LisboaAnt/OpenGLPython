@@ -13,17 +13,6 @@ from iluminacao import Iluminacao
 from textureAtlas import TextureAtlas
 from skybox import Skybox
 
-def framebuffer_size_callback(window, new_width, new_height):
-    global width, height, camera
-    width, height = new_width, new_height
-    glViewport(0, 0, width, height)  # Atualiza a viewport
-    glMatrixMode(GL_PROJECTION)
-    glLoadIdentity()
-    gluPerspective(45, width / height, 0.1, 50000.0)  # Atualiza a matriz de projeção
-    glMatrixMode(GL_MODELVIEW)
-    camera.update_window_size(width, height)  # Atualiza o tamanho da janela na câmera
-
-
 if not glfw.init():
     raise Exception("Falha ao iniciar")
 
@@ -43,19 +32,18 @@ glEnable(GL_DEPTH_TEST)
 glEnable(GL_BLEND)
 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
-glfw.set_framebuffer_size_callback(window, framebuffer_size_callback)
 
 
 glMatrixMode(GL_PROJECTION)
 glLoadIdentity()
-gluPerspective(45, width / height, 0.1, 50000.0)
+gluPerspective(45, width / height, 0.1, 5000.0)
 glMatrixMode(GL_MODELVIEW)
 
 camera = Camera(width, height)
 luz = Iluminacao()
 textura = TextureAtlas('minecraft.jpg', (32,16))
 esfera = Esfera()
-
+textura_Skybox = TextureAtlas('skybox_atlas.png', (3,2))
 
 lista_cubos = [
     Cubo(inital_position=[2*i, 0.0, 2*j],raio = 1, texture_atlas =textura, texture_indices=[3,3,3,3,2,50])
@@ -70,20 +58,18 @@ fornalha = [145,145,143,145,146,146]
 fornalha2 = [145,145,144,145,146,146]
 
 novos_cubos = [
+    Cubo(inital_position=[0, 0, 0], raio=1000, texture_atlas=textura_Skybox, texture_indices=[2,0,1,3,4,5], lighting=True),
+    Cubo(inital_position=[5, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=teia),
     Cubo(inital_position=[7, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=craftable),
     Cubo(inital_position=[9, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=fornalha),
     Cubo(inital_position=[11, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=fornalha2),
-    Cubo(inital_position=[5, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=teia)
 ]
-
-# Exemplo de uso
-skybox = Skybox(size=5000, day_atlas_path='skybox_atlas.png')
 
 lista_cubos.extend(novos_cubos)
 def listaExibicao(cubos):
     display_list = glGenLists(1)
     glNewList(display_list, GL_COMPILE)
-    skybox.draw()
+
     for cubo in lista_cubos:
         cubo.draw(0, 0, 0)
 
@@ -100,7 +86,6 @@ glfw.set_cursor_pos_callback(window, camera.mouse_callback)
 lista_de_exebicao = listaExibicao(lista_cubos)
 
 
-
 frame_count = 0
 start_time = time.time()
 
@@ -110,8 +95,6 @@ while not glfw.window_should_close(window):
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     camera.update_camera()
-
-
 
     glCallList(lista_de_exebicao)
 
@@ -124,7 +107,7 @@ while not glfw.window_should_close(window):
 
     luz.configurar_luz_potual(GL_LIGHT4, [2, 3, 0], [1, 0.2, 0.2], 0.1)
 
-    luz.configurar_luz_direcional(GL_LIGHT5, [-1, 1, 1], [0.9, 0.4, 0.4], 3)
+    luz.configurar_luz_direcional(GL_LIGHT5, [1, 1, 1], [0.5, 0.5, 0.5], 2)
 
     luz.configurar_luz_spot(GL_LIGHT6, [0, 5, 15], [1, -0.2, -1], [0.5, 0.5, 0.5], 100, 50, 20)
 
@@ -135,6 +118,8 @@ while not glfw.window_should_close(window):
         print(f"FPS: {frame_count}")
         frame_count = 0
         start_time = time.time()
+
+
     glfw.swap_buffers(window)
 
 glfw.terminate()

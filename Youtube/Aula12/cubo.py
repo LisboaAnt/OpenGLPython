@@ -5,15 +5,19 @@ from PIL import Image
 
 
 class Cubo:
-    def __init__(self, inital_position=[0.0, 0.0, 0.0],raio = 1, texture_atlas=None, texture_indices=[0,1,2,3,4,5]):
+    def __init__(self, inital_position=[0.0, 0.0, 0.0], raio=1, texture_atlas=None, texture_indices=[0, 1, 2, 3, 4, 5],
+                 lighting=False):
         self.texture_atlas = texture_atlas
         self.texture_indices = texture_indices
         self.raio = raio
         self.position = inital_position
         self.texture_id = None
-
+        self.lighting = lighting
 
     def draw(self, x, y, z):
+        if self.lighting:
+            glDisable(GL_LIGHTING)
+
         vertices = [
             [-self.raio, -self.raio, -self.raio],
             [-self.raio, self.raio, -self.raio],
@@ -29,7 +33,7 @@ class Cubo:
             [7, 3, 2, 6],  # dir
             [4, 7, 6, 5],  # tras
             [0, 4, 5, 1],  # esq
-            [1, 5, 6, 2],  # sup
+            [6, 2, 1, 5],  # sup
             [4, 0, 3, 7],  # inf
         ]
 
@@ -41,7 +45,6 @@ class Cubo:
             [0, 1, 0],
             [0, -1, 0]
         ]
-
 
         glPushMatrix()
         glTranslatef(self.position[0] + x, self.position[1] + y, self.position[2] + z)
@@ -62,3 +65,6 @@ class Cubo:
         if self.texture_atlas:
             glDisable(GL_TEXTURE_2D)
         glPopMatrix()
+
+        if self.lighting:
+            glEnable(GL_LIGHTING)
