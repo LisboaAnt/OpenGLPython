@@ -2,11 +2,10 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 from PIL import Image
-import math
+
 
 class Cubo:
-    def __init__(self, inital_position=[0.0, 0.0, 0.0], raio=0.99999, texture_atlas=None, texture_indices=[0, 1, 2, 3, 4, 5],
-                 lighting=False):
+    def __init__(self, inital_position=[0.0, 0.0, 0.0],raio = 0.99999, texture_atlas=None, texture_indices=[0,1,2,3,4,5], lighting = True):
         self.texture_atlas = texture_atlas
         self.texture_indices = texture_indices
         self.raio = raio
@@ -14,8 +13,9 @@ class Cubo:
         self.texture_id = None
         self.lighting = lighting
 
-    def draw(self, x, y, z, camera_pos=None):
-        if self.lighting:
+
+    def draw(self, x, y, z, camera_pos = None):
+        if not self.lighting:
             glDisable(GL_LIGHTING)
 
         vertices = [
@@ -30,11 +30,11 @@ class Cubo:
         ]
         faces = [
             [3, 0, 1, 2],  # front
-            [7, 3, 2, 6],  # right
-            [4, 7, 6, 5],  # back
-            [0, 4, 5, 1],  # left
-            [6, 2, 1, 5],  # top
-            [4, 0, 3, 7],  # bottom
+            [7, 3, 2, 6],  # dir
+            [4, 7, 6, 5],  # tras
+            [0, 4, 5, 1],  # esq
+            [6, 2, 1, 5],
+            [4, 0, 3, 7],  # inf
         ]
 
         normais = [
@@ -46,6 +46,7 @@ class Cubo:
             [0, -1, 0]
         ]
 
+
         glPushMatrix()
         glTranslatef(self.position[0] + x, self.position[1] + y, self.position[2] + z)
 
@@ -53,16 +54,13 @@ class Cubo:
             glEnable(GL_TEXTURE_2D)
             glBindTexture(GL_TEXTURE_2D, self.texture_atlas.texture_id)
 
-        # Ordena as faces se a câmera estiver definida
         if camera_pos is not None:
-            faces_ordenadas = self.ordenar_faces_pela_distancia(faces, vertices, self.position, x, y, z, camera_pos)
+            faces_ordenadas = self.ordenar_faces(faces, vertices, self.position, x, y, z, camera_pos)
 
-            # Habilita o blending e desativa a escrita no buffer de profundidade
             glEnable(GL_BLEND)
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
             glDepthMask(GL_FALSE)
         else:
-            # Se não for transparente, desenha as faces na ordem padrão
             faces_ordenadas = range(len(faces))
 
         glBegin(GL_QUADS)
@@ -79,7 +77,6 @@ class Cubo:
         glEnd()
 
         if camera_pos is not None:
-            # Restaura as configurações padrão
             glDepthMask(GL_TRUE)
             glDisable(GL_BLEND)
 
@@ -87,14 +84,13 @@ class Cubo:
             glDisable(GL_TEXTURE_2D)
         glPopMatrix()
 
-        if self.lighting:
+        if not self.lighting:
             glEnable(GL_LIGHTING)
 
-    def ordenar_faces_pela_distancia(self, faces, vertices, position, x, y, z, camera_pos):
+    def ordenar_faces(self, faces, vertices,position, x, y, z, camera_pos):
         def distancia_face_para_camera(face):
             centro = [0, 0, 0]
             for vertex_index in face:
-                # Acessa o vértice local e aplica a posição do cubo e os deslocamentos
                 vertex_local = vertices[vertex_index]
                 vertex_world = [
                     vertex_local[0] + position[0] + x,
