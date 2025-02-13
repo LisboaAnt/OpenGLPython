@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/cubo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/esfera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/iluminacao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/grass.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/minecraft.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/world.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/loadObjs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/bikini.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/bikini.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/naruto.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/naruto.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/textureAtlas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula09/Aula09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/Mesh1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/Mesh2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/Mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/skybox_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/images/skybox_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -50,7 +50,7 @@ glMatrixMode(GL_MODELVIEW)
 camera = Camera(width, height)
 luz = Iluminacao()
 textura = TextureAtlas('./images/minecraft.jpg', (32,16))
-minecraft = LoadObjs(obj_path="./objects/steve.obj",scale=(6, 6, 6), position=(10, 3.5, 10),)
+minecraft = LoadObjs(obj_path="./objects/naruto.obj",scale=(2, 2, 2), position=(10, 0, 10),)
 stive = LoadObjs(obj_path="./objects/bikini.obj",scale=(100, 100, 100), position=(0, -20, 10),)
 esfera = Esfera()
 
