@@ -1,0 +1,1332 @@
+# Blender 4.2.3 LTS MTL File: 'None'
+# www.blender.org
+
+newmtl mat_RB_ground_aqua
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/RB_ground_aqua.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/RB_ground_aqua.png
+
+newmtl mat_TreeOrangeTubeTop
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/TreeOrangeTubeTop.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/TreeOrangeTubeTop.png
+
+newmtl mat_Tv_shadshoals
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/Tv_shadshoals.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/Tv_shadshoals.png
+
+newmtl mat_airlock
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/airlock.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/airlock.png
+
+newmtl mat_bamboo_ends
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_ends.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_ends.png
+
+newmtl mat_bamboo_furniture1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_furniture.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_furniture.png
+
+newmtl mat_bamboo_swing
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_swing.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bamboo_swing.png
+
+newmtl mat_bb_lodtexture
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bb_lodtexture.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bb_lodtexture.png
+
+newmtl mat_bb_lodtexture_02
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bb_lodtexture_02.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bb_lodtexture_02.png
+
+newmtl mat_beach_chair
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/beach_chair.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/beach_chair.png
+
+newmtl mat_blanket
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/blanket.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/blanket.png
+
+newmtl mat_bowl_floor1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bowl_floor.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/bowl_floor.png
+
+newmtl mat_building_a
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_a.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_a.png
+
+newmtl mat_building_aqua
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_aqua.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_aqua.png
+
+newmtl mat_building_b
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_b.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_b.png
+
+newmtl mat_building_blue10
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue3.png
+
+newmtl mat_building_blue11
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue2.png
+
+newmtl mat_building_blue5
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue5.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_blue5.png
+
+newmtl mat_building_c
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_c.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_c.png
+
+newmtl mat_building_grey
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_grey3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_grey3.png
+
+newmtl mat_building_rust
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_rust.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_rust.png
+
+newmtl mat_building_wood_krusty
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_wood_krusty.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_wood_krusty.png
+
+newmtl mat_building_wood_krusty2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_wood_krusty2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/building_wood_krusty2.png
+
+newmtl mat_cannon_fd
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cannon_fd.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cannon_fd.png
+
+newmtl mat_chest_treasure_rev
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/chest_treasure_rev.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/chest_treasure_rev.png
+
+newmtl mat_cruiseshiprust
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cruiseshiprust.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cruiseshiprust.png
+
+newmtl mat_cruiseshipwindow01
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cruiseshipwindow01.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/cruiseshipwindow01.png
+
+newmtl mat_db_gumdrop_green
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/db_gumdrop_green.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/db_gumdrop_green.png
+
+newmtl mat_dumpster2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dumpster2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dumpster2.png
+
+newmtl mat_dutch_ground
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dutch_ground.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dutch_ground.png
+
+newmtl mat_dutch_groundgray
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dutch_groundgray.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/dutch_groundgray.png
+
+newmtl mat_electrical_pole_single
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/electrical_pole_single.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/electrical_pole_single.png
+
+newmtl mat_fountain_water
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/fountain.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/fountain.png
+
+newmtl mat_gold_statue
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gold_statue.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gold_statue.png
+
+newmtl mat_grass
+Ns 200.000000
+Ka 0.060000 0.060000 0.060000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 2.200000
+illum 3
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass.png
+
+newmtl mat_grass_clump
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass_clump.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass_clump.png
+
+newmtl mat_grass_edge_ver2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass_edge_ver2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/grass_edge_ver2.png
+
+newmtl mat_ground_cobble_ver2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_cobble_ver2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_cobble_ver2.png
+
+newmtl mat_ground_day
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day.png
+
+newmtl mat_ground_day2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day2.png
+
+newmtl mat_ground_day3
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day3.png
+
+newmtl mat_ground_day3_edge
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day3_edge.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_day3_edge.png
+
+newmtl mat_ground_street_alpha_lt
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_street_alpha_lt.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_street_alpha_lt.png
+
+newmtl mat_ground_street_lt
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_street_lt.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/ground_street_lt.png
+
+newmtl mat_gy_beam
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_beam.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_beam.png
+
+newmtl mat_gy_lava_green
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_lava_green.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_lava_green.png
+
+newmtl mat_gy_lodtextures
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_lodtextures.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_lodtextures.png
+
+newmtl mat_gy_planksA
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_planksA.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_planksA.png
+
+newmtl mat_gy_rock_wall_glow_darker
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_rock_wall_glow_darker.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_rock_wall_glow_darker.png
+
+newmtl mat_gy_rock_wall_green_darker
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_rock_wall_green_darker.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/gy_rock_wall_green_darker.png
+
+newmtl mat_hb01_shadow_KK
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/hb01_shadow_KK.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/hb01_shadow_KK.png
+
+newmtl mat_hb01_shadow_mesa
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/hb01_shadow_mesa.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/hb01_shadow_mesa.png
+
+newmtl mat_house_patrick_rock
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_patrick_rock.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_patrick_rock.png
+
+newmtl mat_house_patrick_rock1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_patrick_rock.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_patrick_rock.png
+
+newmtl mat_house_sb_flowers01
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_sb_flowers01.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_sb_flowers01.png
+
+newmtl mat_house_sb_flowers02
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_sb_flowers02.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/house_sb_flowers02.png
+
+newmtl mat_kelp_forest_sign01
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_forest_sign01.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_forest_sign01.png
+
+newmtl mat_kelp_platform
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_platform.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_platform.png
+
+newmtl mat_kelp_platform_top
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_platform_top.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kelp_platform_top.png
+
+newmtl mat_kf_lodtextures_fringes
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kf_lodtextures_fringes.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/kf_lodtextures_fringes.png
+
+newmtl mat_krustycrabdor
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabdor.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabdor.png
+
+newmtl mat_krustycrabflg
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabflg.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabflg.png
+
+newmtl mat_krustycrabsng1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabsng1.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabsng1.png
+
+newmtl mat_krustycrabsng2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabsng2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabsng2.png
+
+newmtl mat_krustycrabwd5
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwd5.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwd5.png
+
+newmtl mat_krustycrabwin
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin.png
+
+newmtl mat_krustycrabwin10
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin3.png
+
+newmtl mat_krustycrabwin11
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin4.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin4.png
+
+newmtl mat_krustycrabwin2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustycrabwin2.png
+
+newmtl mat_krustygill02
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustygill02.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustygill02.png
+
+newmtl mat_krustykrab_net
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustykrab_net.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/krustykrab_net.png
+
+newmtl mat_lagoon_water
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/lagoon_water.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/lagoon_water.png
+
+newmtl mat_leaf_pineapple
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/leaf_pineapple.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/leaf_pineapple.png
+
+newmtl mat_lift_seashell
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/lift_seashell.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/lift_seashell.png
+
+newmtl mat_light_street_rev
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/light_street_rev.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/light_street_rev.png
+
+newmtl mat_long_shadows
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/long_shadows.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/long_shadows.png
+
+newmtl mat_object_door_blue
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/object_door_blue.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/object_door_blue.png
+
+newmtl mat_object_door_blue02
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/object_door_blue02.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/object_door_blue02.png
+
+newmtl mat_path_grass_jfflds
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/path_grass_jfflds.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/path_grass_jfflds.png
+
+newmtl mat_pattern_tiki_purple1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/pattern_tiki_purple.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/pattern_tiki_purple.png
+
+newmtl mat_plant_flower_white
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/plant_flower_white.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/plant_flower_white.png
+
+newmtl mat_porthole_big_3
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/porthole_big_3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/porthole_big_3.png
+
+newmtl mat_rb_ground_aqua_trans
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rb_ground_aqua_trans.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rb_ground_aqua_trans.png
+
+newmtl mat_robot_headquarters
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/robot_headquarters.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/robot_headquarters.png
+
+newmtl mat_rock_gl
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_gl.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_gl.png
+
+newmtl mat_rock_purple
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple.png
+
+newmtl mat_rock_purple_ver10
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple_ver2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple_ver2.png
+
+newmtl mat_rock_purple_ver3
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple_ver3.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_purple_ver3.png
+
+newmtl mat_rock_sand_mtn_purple
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_sand_mtn_purple.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rock_sand_mtn_purple.png
+
+newmtl mat_roof_straw_fringe_ver2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/roof_straw_fringe_ver2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/roof_straw_fringe_ver2.png
+
+newmtl mat_roof_straw_ver2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/roof_straw_ver2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/roof_straw_ver2.png
+
+newmtl mat_rope
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rope.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/rope.png
+
+newmtl mat_sand_gl
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_gl.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_gl.png
+
+newmtl mat_sand_jfflds_wet
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_jfflds_wet.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_jfflds_wet.png
+
+newmtl mat_sand_patrick
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_patrick_1.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sand_patrick_1.png
+
+newmtl mat_sandydome
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sandydome.png
+
+newmtl mat_sign_bb_back
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_bb_back.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_bb_back.png
+
+newmtl mat_sign_bikini_btm
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_bikini_btm.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_bikini_btm.png
+
+newmtl mat_sign_exit_jf
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_exit_jf.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_exit_jf.png
+
+newmtl mat_sign_exit_sm01
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_exit_sm01.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_exit_sm01.png
+
+newmtl mat_sign_f_d_graveyard
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_f_d_graveyard.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_f_d_graveyard.png
+
+newmtl mat_sign_gl
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_gl.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_gl.png
+
+newmtl mat_sign_hub_sm
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_hub_sm.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_hub_sm.png
+
+newmtl mat_sign_jellyfish
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_jellyfish.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_jellyfish.png
+
+newmtl mat_sign_jellyfish_fields
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_jellyfish_fields.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_jellyfish_fields.png
+
+newmtl mat_sign_movie
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_movie.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_movie.png
+
+newmtl mat_sign_police_station
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_police_station.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_police_station.png
+
+newmtl mat_sign_rockbottom
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_rockbottom.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_rockbottom.png
+
+newmtl mat_sign_shadyshoals
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_shadyshoals.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_shadyshoals.png
+
+newmtl mat_sign_taxi
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_taxi.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sign_taxi.png
+
+newmtl mat_sm_peak
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/sm_peak.png
+
+newmtl mat_surface_chum
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_chum.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_chum.png
+
+newmtl mat_surface_chum2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_chum2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_chum2.png
+
+newmtl mat_surface_house_spongebob2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_house_spongebob2.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_house_spongebob2.png
+
+newmtl mat_surface_house_squidward
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_house_squidward.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_house_squidward.png
+
+newmtl mat_surface_wood_light
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_wood_light.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/surface_wood_light.png
+
+newmtl mat_toll_booth
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_booth.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_booth.png
+
+newmtl mat_toll_gate
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_gate.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_gate.png
+
+newmtl mat_toll_gate_arm
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_gate_arm.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_gate_arm.png
+
+newmtl mat_toll_paint_bucket
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_paint_bucket.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_paint_bucket.png
+
+newmtl mat_toll_paint_stroke
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_paint_stroke.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/toll_paint_stroke.png
+
+newmtl mat_treebark
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treebark.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treebark.png
+
+newmtl mat_treeleavealf
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treeleavealf.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treeleavealf.png
+
+newmtl mat_treeleaves
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treeleaves.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/treeleaves.png
+
+newmtl mat_tube_house
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house.png
+
+newmtl mat_tube_house10
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house10.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house10.png
+
+newmtl mat_tube_house_B
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house_B.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/tube_house_B.png
+
+newmtl mat_water
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/water.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/water.png
+
+newmtl mat_wood_bridge
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_bridge.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_bridge.png
+
+newmtl mat_wood_dutch05
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_dutch05.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_dutch05.png
+
+newmtl mat_wood_pounded_pillar
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_pounded_pillar.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_pounded_pillar.png
+
+newmtl mat_wood_pounded_pillar_edge
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_pounded_pillar_edge.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_pounded_pillar_edge.png
+
+newmtl mat_wood_purple
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_purple.png
+map_d C:/Users/anton/Downloads/bikini-bottom-map-3d-model/source/GameCube - SpongeBob SquarePants Battle for Bikini Bottom - Biki/Bikini Bottom Hub/hb01/wood_purple.png

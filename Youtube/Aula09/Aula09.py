@@ -143,7 +143,7 @@ while not glfw.window_should_close(window):
 
     configurar_luz_direcional(GL_LIGHT5, [1, 1, 1], [0.5, 0.5, 0.5], 0.2)
 
-    configurar_luz_spot(GL_LIGHT6, [0, 0, -5], [0, -1, 1], [0.5, 0.5, 0.5], 1, 50, 20)
+    #configurar_luz_spot(GL_LIGHT6, [0, 0, -5], [0, -1, 1], [0.5, 0.5, 0.5], 1, 50, 20)
 
     glTranslatef(0, -2, 0)
     glRotatef(90, 1, 0, 0)
