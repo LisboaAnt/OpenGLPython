@@ -1,5 +1,6 @@
-
-mtllib steve.mtl
+# Blender 4.2.3 LTS
+# www.blender.org
+mtllib Steve.mtl
 o Steve
 v -0.101600 -0.101600 0.050800
 v 0.101600 -0.101600 0.050800

@@ -2,30 +2,23 @@ from OpenGL.GL import *
 import pywavefront
 import pywavefront.visualization
 
-class LoadObjs:
+class LoasObjs:
     def __init__(self, obj_path, scale=(1, 1, 1), position=(0, 0, 0), rotation=(0, 0, 0)):
         self.obj_path = obj_path
         self.scale = scale
         self.position = position
         self.rotation = rotation
 
-        # Carrega o objeto usando pywavefront
         self.obj = pywavefront.Wavefront(self.obj_path, collect_faces=True)
 
     def draw(self):
-        if self.obj is None:
-            raise ValueError("Nenhum objeto foi carregado.")
-
         glPushMatrix()
+        glTranslatef(*self.position)
+        glScalef(*self.scale)
+        glRotatef(self.rotation[0], 1, 0, 0,)
+        glRotatef(self.rotation[1], 0, 1, 0,)
+        glRotatef(self.rotation[2], 0, 0, 1,)
 
-        # Aplica transformações
-        glTranslatef(*self.position)  # Posição
-        glScalef(*self.scale)  # Escala
-        glRotatef(self.rotation[0], 1, 0, 0)  # Rotação em X
-        glRotatef(self.rotation[1], 0, 1, 0)  # Rotação em Y
-        glRotatef(self.rotation[2], 0, 0, 1)  # Rotação em Z
-
-        # Desenha o objeto
         pywavefront.visualization.draw(self.obj)
 
         glPopMatrix()

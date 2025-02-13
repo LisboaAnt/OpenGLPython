@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/Aula13.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/Aula12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/loadObjs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/loadObjs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/steve.obj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +49,7 @@
     "Python.Aula10.executor": "Run",
     "Python.Aula11.executor": "Run",
     "Python.Aula12.executor": "Run",
+    "Python.Aula13.executor": "Run",
     "Python.Esfera.executor": "Run",
     "Python.Mesh.executor": "Run",
     "Python.Mesh1.executor": "Run",
@@ -59,16 +65,16 @@
     "Python.skybox.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula13"
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula13/objects"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula14" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula10" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />

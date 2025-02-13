@@ -11,7 +11,7 @@ class Camera:
         self.camera_up = np.array([0.0, 1.0, 0.0])
         self.yaw, self.pitch = -90.0, 0.0  # Ângulos de orientação da câmera
 
-        self.camera_speed = 0.5
+        self.camera_speed = 0.8
         self.keys = {}
 
         # Variáveis Do Mause
@@ -25,7 +25,7 @@ class Camera:
         glLoadIdentity()
         camera_target = self.camera_pos + self.camera_front
         gluLookAt(self.camera_pos[0], self.camera_pos[1], self.camera_pos[2], camera_target[0], camera_target[1],
-                  camera_target[2], self.camera_up[0], self.camera_up[1], self.camera_up[2])
+                       camera_target[2], self.camera_up[0], self.camera_up[1], self.camera_up[2])
 
     def key_callback(self, window, key, scancode, action, mods):
         if action == glfw.PRESS:
