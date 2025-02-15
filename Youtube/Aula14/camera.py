@@ -10,8 +10,9 @@ class Camera:
         self.camera_front = np.array([0.0, 0.0, -1.0])
         self.camera_up = np.array([0.0, 1.0, 0.0])
         self.yaw, self.pitch = -90.0, 0.0  # Ângulos de orientação da câmera
+        self.camera_target = None
 
-        self.camera_speed = 0.2
+        self.camera_speed = 0.8
         self.keys = {}
 
         # Variáveis Do Mause

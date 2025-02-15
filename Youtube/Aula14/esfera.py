@@ -5,7 +5,7 @@ from PIL import Image
 
 
 class Esfera:
-    def __init__(self, initial_position=[0.0, 0.0, 0.0], texture_file='world.jpg'):
+    def __init__(self, initial_position=[0.0, 0.0, 0.0], texture_file='./images/world.jpg'):
         self.position = initial_position
         self.texture_id = None
         if texture_file:

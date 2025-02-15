@@ -5,146 +5,176 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/RB_ground_aqua.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/TreeOrangeTubeTop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/Tv_shadshoals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/airlock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bamboo_ends.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bamboo_furniture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bamboo_swing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bb_lodtexture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bb_lodtexture_02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/beach_chair.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/blanket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/bowl_floor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_aqua.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_blue2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_blue3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_blue5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_grey3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_rust.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_wood_krusty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/building_wood_krusty2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/cannon_fd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/chest_treasure_rev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/cruiseshiprust.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/cruiseshipwindow01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/db_gumdrop_green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/dumpster2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/dutch_ground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/dutch_groundgray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/electrical_pole_single.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/fountain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gold_statue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/grass_clump.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/grass_edge_ver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_cobble_ver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_day.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_day2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_day3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_day3_edge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_street_alpha_lt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/ground_street_lt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_beam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_lava_green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_lodtextures.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_planksA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_rock_wall_glow_darker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/gy_rock_wall_green_darker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01.dae" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01_shadow_KK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/hb01_shadow_mesa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/house_patrick_rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/house_sb_flowers01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/house_sb_flowers02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/jf_sky_color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/jf_sky_flowers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/kelp_forest_sign01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/kelp_platform.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/kelp_platform_top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/kf_lodtextures_fringes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabdor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabflg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabsng1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabsng2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabwd5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabwin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabwin2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabwin3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustycrabwin4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustygill02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/krustykrab_net.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/lagoon_water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/leaf_pineapple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/lift_seashell.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/light_street_rev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/long_shadows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/object_door_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/object_door_blue02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/path_grass_jfflds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/pattern_tiki_purple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/plant_flower_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/porthole_big_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rb_ground_aqua_trans.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/robot_headquarters.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rock_gl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rock_purple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rock_purple_ver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rock_purple_ver3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rock_sand_mtn_purple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/roof_straw_fringe_ver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/roof_straw_ver2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/rope.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sand_gl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sand_jfflds_wet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sand_patrick_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sandydome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_bb_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_bikini_btm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_exit_jf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_exit_sm01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_f_d_graveyard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_gl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_hub_sm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_jellyfish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_jellyfish_fields.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_movie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_police_station.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_rockbottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_shadyshoals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sign_taxi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/sm_peak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/surface_chum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/surface_chum2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/surface_house_spongebob2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/surface_house_squidward.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/surface_wood_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/toll_booth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/toll_gate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/toll_gate_arm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/toll_paint_bucket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/toll_paint_stroke.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/treebark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/treeleavealf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/treeleaves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/tube_house.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/tube_house10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/tube_house_B.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/wood_bridge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/wood_dutch05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/wood_pounded_pillar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/wood_pounded_pillar_edge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/Aula13/images/bikini/wood_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/Aula12.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/Mesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/Parede.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/RB_ground_aqua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/TreeOrangeTubeTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/Tv_shadshoals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/airlock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bamboo_ends.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bamboo_furniture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bamboo_swing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bb_lodtexture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bb_lodtexture_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/beach_chair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/blanket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/bowl_floor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_aqua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_blue2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_blue3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_blue5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_grey3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_rust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_wood_krusty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/building_wood_krusty2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/cannon_fd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/chest_treasure_rev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/cruiseshiprust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/cruiseshipwindow01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/db_gumdrop_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/dumpster2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/dutch_ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/dutch_groundgray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/electrical_pole_single.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/fountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gold_statue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/grass_clump.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/grass_edge_ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_cobble_ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_day.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_day2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_day3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_day3_edge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_street_alpha_lt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/ground_street_lt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_beam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_lava_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_lodtextures.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_planksA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_rock_wall_glow_darker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/gy_rock_wall_green_darker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01.dae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01_shadow_KK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/hb01_shadow_mesa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/house_patrick_rock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/house_sb_flowers01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/house_sb_flowers02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/jf_sky_color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/jf_sky_flowers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/kelp_forest_sign01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/kelp_platform.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/kelp_platform_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/kf_lodtextures_fringes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabdor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabflg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabsng1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabsng2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabwd5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabwin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabwin2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabwin3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustycrabwin4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustygill02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/krustykrab_net.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/lagoon_water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/leaf_pineapple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/lift_seashell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/light_street_rev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/long_shadows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/object_door_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/object_door_blue02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/path_grass_jfflds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/pattern_tiki_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/plant_flower_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/porthole_big_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rb_ground_aqua_trans.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/robot_headquarters.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rock_gl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rock_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rock_purple_ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rock_purple_ver3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rock_sand_mtn_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/roof_straw_fringe_ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/roof_straw_ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/rope.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sand_gl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sand_jfflds_wet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sand_patrick_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sandydome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_bb_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_bikini_btm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_exit_jf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_exit_sm01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_f_d_graveyard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_gl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_hub_sm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_jellyfish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_jellyfish_fields.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_movie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_police_station.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_rockbottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_shadyshoals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sign_taxi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/sm_peak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/surface_chum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/surface_chum2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/surface_house_spongebob2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/surface_house_squidward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/surface_wood_light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/toll_booth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/toll_gate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/toll_gate_arm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/toll_paint_bucket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/toll_paint_stroke.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/treebark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/treeleavealf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/treeleaves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/tube_house.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/tube_house10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/tube_house_B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/wood_bridge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/wood_dutch05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/wood_pounded_pillar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/wood_pounded_pillar_edge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/bikini/wood_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/grass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/Tex_0433.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/Tex_0435.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/Tex_0437.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/Tex_0440.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/naruto bottom d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/naruto head  d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/naruto top d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/shoe naruto d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/naruto/sin_nombre (1).fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/skybox_atlas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/steve/internal_ground_ao_texture.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/steve/steve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/images/world.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/loadObjs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/bikini.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/bikini.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/naruto.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/naruto.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/steve.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/Aula14/objects/steve.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula13/objects/bikini.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula13/objects/bikini.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/AtlasMinecrfat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/images/minecraft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/Aula11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/TextureAtlasLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/textureAtlas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/cubo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/esfera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/esfera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/images/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +204,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Aula04.executor": "Run",
     "Python.Aula05.executor": "Run",
     "Python.Aula06.executor": "Run",
     "Python.Aula07 (2).executor": "Run",
@@ -187,6 +218,7 @@
     "Python.Esfera.executor": "Run",
     "Python.Mesh.executor": "Run",
     "Python.Mesh1.executor": "Run",
+    "Python.Parede.executor": "Run",
     "Python.camera.executor": "Run",
     "Python.cubeAtlas.executor": "Run",
     "Python.cubo.executor": "Run",
@@ -199,18 +231,18 @@
     "Python.skybox.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula13/images/bikini",
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula14",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula14" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\steve" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\naruto" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\bikini" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />
