@@ -6,7 +6,7 @@ import numpy as np
 
 class Camera:
     def __init__(self, width, height):
-        self.camera_pos = np.array([0.0, 0.0, 3])
+        self.camera_pos = np.array([5.0, 5.0, 3])
         self.camera_front = np.array([0.0, 0.0, -1.0])
         self.camera_up = np.array([0.0, 1.0, 0.0])
         self.yaw, self.pitch = -90.0, 0.0  # Ângulos de orientação da câmera

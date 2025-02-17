@@ -52,9 +52,9 @@ camera = Camera(width, height)
 luz = Iluminacao()
 textura = TextureAtlas('./images/minecraft.jpg', (32,16))
 esfera = Esfera()
-parede = Parede()
+parede = Parede(initial_position=[-10.0, -10.0, -5.0])
 
-steve = LoasObjs(obj_path="./objects/steve.obj", scale=(10, 10, 10), position=(10, 5, 10))
+steve = LoasObjs(obj_path="./objects/steve.obj", scale=(3, 3, 3), position=(10, 5, 10))
 bikini = LoasObjs(obj_path="./objects/bikini.obj", scale=(100, 100, 100), position=(10, -20, 10))
 naruto = LoasObjs(obj_path="./objects/naruto.obj", scale=(1, 1, 1), position=(5, 0, 10))
 
@@ -138,7 +138,7 @@ while not glfw.window_should_close(window):
     elapsed_time = time.time() - start_time
 
     cuboAranha.draw(0,0,0, camera.camera_pos)
-    steve.draw([camera.camera_pos[0],camera.camera_pos[1]-10,camera.camera_pos[2]])
+    steve.draw([camera.camera_pos[0],camera.camera_pos[1]-1,camera.camera_pos[2]], rotation= [0, -camera.yaw + 90, 0])
 
     if elapsed_time >= 1:
         print(f"FPS: {frame_count}")
