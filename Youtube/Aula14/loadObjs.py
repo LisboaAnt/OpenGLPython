@@ -11,13 +11,7 @@ class LoasObjs:
 
         self.obj = pywavefront.Wavefront(self.obj_path, collect_faces=True)
 
-    def draw(self, position=False,rotation=False):
-        if position is not False:
-            self.position = position
-        if rotation is not False:
-            self.rotation = rotation
-
-
+    def draw(self):
         glPushMatrix()
         glTranslatef(*self.position)
         glScalef(*self.scale)
