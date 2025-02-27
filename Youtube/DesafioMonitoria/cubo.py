@@ -5,22 +5,22 @@ from PIL import Image
 
 
 class Cubo:
-    def __init__(self, inital_position=[0.0, 0.0, 0.0], altura=1.0, largura=1.0, profundidade=1.0, 
-                 texture_atlas=None, texture_indices=[0,1,2,3,4,5], lighting=True, 
-                 cores_faces=None):
+    def __init__(self, inital_position=[0.0, 0.0, 0.0], altura=1.0, largura=1.0, profundidade=1.0,
+                 texture_atlas=None, texture_indices=[0, 1, 2, 3, 4, 5], lighting=True,
+                 cores_faces=None, rotation=None):
         self.texture_atlas = texture_atlas
         self.texture_indices = texture_indices
-        self.altura = altura/2
-        self.largura = largura/2
-        self.profundidade = profundidade/2
+        self.altura = altura / 2
+        self.largura = largura / 2
+        self.profundidade = profundidade / 2
         self.position = inital_position
         self.texture_id = None
         self.lighting = lighting
         # Se não houver cores definidas, usa branco para todas as faces
-        self.cores_faces = cores_faces if cores_faces else [[1.0, 1.0, 1.0, 1.0] for _ in range(6)]
+        self.cores_faces = cores_faces
+        self.rotation = rotation
 
-
-    def draw(self, x, y, z, camera_pos = None):
+    def draw(self, x, y, z, camera_pos=None):
         if not self.lighting:
             glDisable(GL_LIGHTING)
 
@@ -52,9 +52,12 @@ class Cubo:
             [0, -1, 0]
         ]
 
-
         glPushMatrix()
         glTranslatef(self.position[0] + x, self.position[1] + y, self.position[2] + z)
+        if self.rotation is not None:
+            glRotatef(self.rotation[0], 1, 0, 0)
+            glRotatef(self.rotation[1], 0, 1, 0)
+            glRotatef(self.rotation[2], 0, 0, 1)
 
         if self.texture_atlas:
             glEnable(GL_TEXTURE_2D)
@@ -73,14 +76,15 @@ class Cubo:
             if self.texture_atlas:
                 uvs = self.texture_atlas.get_uv_coords(self.texture_indices[i])
             else:
-                glMaterialfv(GL_FRONT, GL_DIFFUSE, self.cores_faces[i])
-                glMaterialfv(GL_FRONT, GL_SPECULAR, self.cores_faces[i])
-                glMaterialfv(GL_FRONT, GL_AMBIENT, self.cores_faces[i])
-                glMaterialfv(GL_FRONT, GL_SHININESS, 10.0)
+                cor = self.cores_faces[i]
+                glMaterialfv(GL_FRONT, GL_DIFFUSE, cor)
+                glMaterialfv(GL_FRONT, GL_SPECULAR, cor)
+                glMaterialfv(GL_FRONT, GL_AMBIENT, cor)
+                glMaterialfv(GL_FRONT, GL_SHININESS, 10)
 
             glBegin(GL_QUADS)
             glNormal3fv(normais[i])
-            
+
             if self.texture_atlas:
                 for j, vertex in enumerate(faces[i]):
                     glTexCoord2fv(uvs[j])
@@ -101,7 +105,7 @@ class Cubo:
         if not self.lighting:
             glEnable(GL_LIGHTING)
 
-    def ordenar_faces(self, faces, vertices,position, x, y, z, camera_pos):
+    def ordenar_faces(self, faces, vertices, position, x, y, z, camera_pos):
         def distancia_face_para_camera(face):
             centro = [0, 0, 0]
             for vertex_index in face:

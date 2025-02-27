@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/cilindro.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/Basquete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/Texturas_atlas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula15/Parede.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula15/Parede.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula15/Aula14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula15/Aula14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula15/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula15/cubo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +29,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Youtube/DesafioMonitoria/main.py" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -34,54 +46,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Aula04.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula05.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula06.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula07 (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula07.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula08.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula09.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula10.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula11.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula12.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula13.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula14.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Esfera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mesh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mesh1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Parede.executor&quot;: &quot;Run&quot;,
-    &quot;Python.camera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cubeAtlas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cubo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eee.executor&quot;: &quot;Run&quot;,
-    &quot;Python.iluminacao.executor&quot;: &quot;Run&quot;,
-    &quot;Python.loadObjs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mesh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.skybox.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/Aula14&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Aula04.executor": "Run",
+    "Python.Aula05.executor": "Run",
+    "Python.Aula06.executor": "Run",
+    "Python.Aula07 (2).executor": "Run",
+    "Python.Aula07.executor": "Run",
+    "Python.Aula08.executor": "Run",
+    "Python.Aula09.executor": "Run",
+    "Python.Aula10.executor": "Run",
+    "Python.Aula11.executor": "Run",
+    "Python.Aula12.executor": "Run",
+    "Python.Aula13.executor": "Run",
+    "Python.Aula14.executor": "Run",
+    "Python.Esfera.executor": "Run",
+    "Python.Mesh.executor": "Run",
+    "Python.Mesh1.executor": "Run",
+    "Python.Parede.executor": "Run",
+    "Python.camera.executor": "Run",
+    "Python.cubeAtlas.executor": "Run",
+    "Python.cubo.executor": "Run",
+    "Python.eee.executor": "Run",
+    "Python.iluminacao.executor": "Run",
+    "Python.loadObjs.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mesh.executor": "Run",
+    "Python.pp.executor": "Run",
+    "Python.skybox.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/DesafioMonitoria",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula14" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\steve" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\naruto" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\bikini" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria\images" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria\Imagens" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula15" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula12\images" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula11" />
     </key>
   </component>
   <component name="RunManager">

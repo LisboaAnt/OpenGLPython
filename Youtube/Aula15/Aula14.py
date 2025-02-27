@@ -59,11 +59,10 @@ bikini = LoasObjs(obj_path="objects/bikini.obj", scale=(100, 100, 100), position
 naruto = LoasObjs(obj_path="objects/naruto.obj", scale=(1, 1, 1), position=(5, 0, 10))
 
 lista_cubos = [
-    Cubo(inital_position=[2*i, 0.0, 2*j],raio = 1, texture_atlas =textura, texture_indices=[3,3,3,3,2,50])
+    Cubo(inital_position=[2*i, 0.0, 2*j], altura=1.0, largura=1.0, profundidade=1.0, texture_atlas=textura, texture_indices=[3,3,3,3,2,50])
     for i in range(10)
     for j in range(10)
 ]
-
 
 teia = [66, 66 , 66, 66, 66, 66]
 craftable = [141,142,141,142,140,140]
@@ -73,10 +72,10 @@ fornalha2 = [145,145,144,145,146,146]
 texture_Skybox = TextureAtlas('./images/skybox_atlas.png', (3,2))
 
 novos_cubos = [
-    Cubo(inital_position=[0, 0, 0], raio=2000, texture_atlas=texture_Skybox, texture_indices=[2,0,1,3,4,5], lighting = False),
-    Cubo(inital_position=[7, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=craftable),
-    Cubo(inital_position=[9, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=fornalha),
-    Cubo(inital_position=[11, 2.0, 7], raio=1, texture_atlas=textura, texture_indices=fornalha2),
+    Cubo(inital_position=[0, 0, 0], altura=4000.0, largura=4000.0, profundidade=4000.0, texture_atlas=texture_Skybox, texture_indices=[2,0,1,3,4,5], lighting=False),
+    Cubo(inital_position=[7, 2.0, 7], altura=1.0, largura=1.0, profundidade=1.0, texture_atlas=textura, texture_indices=craftable),
+    Cubo(inital_position=[9, 2.0, 7], altura=1.0, largura=1.0, profundidade=1.0, texture_atlas=textura, texture_indices=fornalha),
+    Cubo(inital_position=[11, 2.0, 7], altura=1.0, largura=1.0, profundidade=1.0, texture_atlas=textura, texture_indices=fornalha2),
 ]
 
 lista_cubos.extend(novos_cubos)
@@ -102,7 +101,14 @@ glfw.set_cursor_pos_callback(window, camera.mouse_callback)
 
 lista_de_exebicao = listaExibicao(lista_cubos)
 
-cuboAranha = Cubo(inital_position=[5, 2.0, 7], raio=0.995, texture_atlas=textura, texture_indices=teia)
+cuboAranha = Cubo(inital_position=[5, 2.0, 7], altura=1.0, largura=1.0, profundidade=1.0, cores_faces=[
+    [1.0, 0.0, 0.0],  # Frente - Vermelho
+    [0.0, 1.0, 0.0],  # Direita - Verde
+    [0.0, 0.0, 1.0],  # Trás - Azul
+    [1.0, 1.0, 0.0],  # Esquerda - Amarelo
+    [1.0, 0.0, 1.0],  # Superior - Magenta
+    [0.0, 1.0, 1.0],  # Inferior - Ciano
+])
 
 frame_count = 0
 start_time = time.time()
