@@ -1,10 +1,11 @@
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 from PIL import Image
 
 class Parede:
-    def __init__(self, initial_position=[0.0, 10.0, 0.0], direction=[1.0, 0.0, 0.0], texture_file="grass.jpg", width=100.0, height=100.0):
+    def __init__(self, initial_position=[0.0, 10.0, 0.0], direction=[1.0, 0.0, 0.0], texture_file="grass.jpg", width=10.0, height=10.0):
         self.position = initial_position
         self.direction = np.array(direction)  # Vetor de direção
         self.texture_id = None
@@ -91,7 +92,6 @@ class Parede:
         """Define a direção da parede (vetor)."""
         self.direction = np.array(direction)
 
-
     def render_reflection(self, lista_de_exebicao, cuboAranha, camera_position):
         """Renderiza a reflexão no framebuffer com o efeito de espelho."""
 
@@ -100,7 +100,15 @@ class Parede:
         glPushMatrix()  # Salvar a matriz de projeção atual
         glLoadIdentity()
 
-        # Configurar a matriz de visualização
+        # Ajustar o frustum com base no tamanho da parede
+        aspect_ratio = self.width / self.height
+        near_plane = 0.1
+        far_plane = 5000.0
+
+        # Usar glOrtho para uma projeção ortográfica (adequada para paredes planas)
+        glOrtho(-self.width / 2, self.width / 2, -self.height / 2, self.height / 2, near_plane, far_plane)
+
+        # Salvar o estado atual da matriz de visualização
         glMatrixMode(GL_MODELVIEW)
         glPushMatrix()  # Salvar a matriz de visualização atual
         glLoadIdentity()
@@ -109,30 +117,21 @@ class Parede:
         glBindFramebuffer(GL_FRAMEBUFFER, self.fbo)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-        # Calcular a posição refletida da câmera
-        distance_to_mirror = np.dot(camera_position - self.position, self.direction)
-        if distance_to_mirror < 1.0:  # Distância mínima permitida da câmera ao espelho
-            camera_position = self.position + self.direction * 1.0
-        reflection_position = camera_position - 2 * np.dot(camera_position - self.position, self.direction) * self.direction
-
-        # Definir a visão para o reflexo
+        # Calcular a posição para o "look_at" com base na direção da parede
         look_at_position = np.array(self.position) + self.direction
+
+        # Refletir a posição da câmera (simulando o espelho)
+        reflection_position = camera_position - 2 * np.dot(camera_position - self.position,
+                                                           self.direction) * self.direction
+
+        # Definir a visão para o reflexo (usando a posição refletida da câmera)
         gluLookAt(reflection_position[0], reflection_position[1], reflection_position[2],
-                  camera_position[0] + 10, camera_position[1], camera_position[2],
+                  look_at_position[0], look_at_position[1], look_at_position[2],
                   0, 1, 0)
 
-        # Definir o plano de recorte (coincide com o plano do espelho)
-        clip_plane = np.array([self.direction[0], self.direction[1], self.direction[2],
-                               -np.dot(self.direction, self.position)])
-        glClipPlane(GL_CLIP_PLANE0, clip_plane)
-        glEnable(GL_CLIP_PLANE0)
-
-        # Renderizar a cena refletida
+        # Chamar a lista de exibição e desenhar o cubo
         glCallList(lista_de_exebicao)
         cuboAranha.draw()
-
-        # Desabilitar o plano de recorte após a renderização
-        glDisable(GL_CLIP_PLANE0)
 
         # Restaurar o framebuffer padrão
         glBindFramebuffer(GL_FRAMEBUFFER, 0)
