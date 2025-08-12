@@ -5,7 +5,6 @@ from glApp.Triangle import *
 from glApp.Axes import *
 from glApp.Cube import *
 from glApp.LoadMesh import *
-from glApp.MovingCube import *
 
 
 vertex_shader = r'''
@@ -40,13 +39,29 @@ class MovingObjects(PyOGApp):
         super().__init__(850, 200, 1000, 800)
         self.axes = None
         self.moving_cube = None
+        self.teapot1 = None
+        self.teapot2 = None
 
 
     def initialise(self):
         self.program_id = create_program(vertex_shader, fragment_shader)
         self.axes = Axes(self.program_id, pygame.Vector3(0, 0, 0))
-        self.moving_cube = MovingCube(self.program_id, 
-                                        move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)))
+        self.moving_cube = Cube(self.program_id, location = pygame.Vector3(0, 0, 0),
+                                move_rotation=Rotation(1, pygame.Vector3(0, 1, 1)),
+                                scale=pygame.Vector3(0.1, 0.1, 0.1))
+        
+        self.teapot1 = LoadMesh("UdemyCurse/Section10/Engine2/models/teapot.obj", 
+                                self.program_id, 
+                                scale=pygame.Vector3(0.1, 0.1, 0.1),
+                                location=pygame.Vector3(0.5, 0, 0),
+                                move_rotation=Rotation(1, pygame.Vector3(1, 0, 0)))
+        
+        self.teapot2 = LoadMesh("UdemyCurse/Section10/Engine2/models/teapot.obj", 
+                                self.program_id, 
+                                scale=pygame.Vector3(0.1, 0.1, 0.1),
+                                location=pygame.Vector3(-0.5, 0, 0),
+                                move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)))
+        
         self.camera = Camera(self.program_id, self.screen_width, self.screen_height)
         glEnable(GL_DEPTH_TEST)
 
@@ -59,6 +74,8 @@ class MovingObjects(PyOGApp):
         self.camera.update()
         self.axes.draw()
         self.moving_cube.draw()
+        self.teapot1.draw()
+        self.teapot2.draw()
 
 
 

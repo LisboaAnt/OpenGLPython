@@ -2,7 +2,9 @@ from .Mesh import *
 from .Utils import *
 
 class Cube(Mesh):
-    def __init__(self, program_id, location = pygame.Vector3(0.0, 0.0, 0.0)):
+    def __init__(self, program_id, location = pygame.Vector3(0.0, 0.0, 0.0), 
+                move_rotation=Rotation(0, pygame.Vector3(0, 1, 0)),
+                scale=pygame.Vector3(1, 1, 1)):
         coordinates = [(0.5, -0.5, 0.5),
                         (-0.5, -0.5, 0.5),
                         (0.5, 0.5, 0.5),
@@ -38,4 +40,4 @@ class Cube(Mesh):
                        [0.0, 1.0, 1.0]]
         vertices = format_vertices(coordinates, triangles)
         colors = format_colors(base_colors, triangles)
-        super().__init__(program_id, vertices, colors, GL_TRIANGLES, location)
+        super().__init__(program_id, vertices, colors, GL_TRIANGLES, location, move_rotation=move_rotation, scale=scale)

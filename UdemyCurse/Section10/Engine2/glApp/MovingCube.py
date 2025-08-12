@@ -4,7 +4,7 @@ from .MovingMesh import *
 
 class MovingCube(MovingMesh):
     def __init__(self, program_id, 
-                location = pygame.Vector3(2.0, 1.0, 2.0),
+                location = pygame.Vector3(0.0, 1.0, 2.0),
                 move_rotation=Rotation(0, pygame.Vector3(0, 1, 0)),):
         coordinates = [(0.5, -0.5, 0.5),
                         (-0.5, -0.5, 0.5),
