@@ -26,6 +26,7 @@ class PyOGApp():
         pygame.display.set_caption('OpenGL in Python')
         self.camera = None
         self.program_id = None
+        self.clock = pygame.time.Clock()
 
     # def draw_world_axes(self):
     #     glLineWidth(4)
@@ -96,4 +97,5 @@ class PyOGApp():
             self.camera_init()
             self.display()
             pygame.display.flip()
+            self.clock.tick(60) 
         pygame.quit()
