@@ -1,4 +1,29 @@
 from OpenGL.GL import *
+import numpy as np
+
+
+def format_vertices(coordinates, triangles):
+    all_triangles = []
+    for t in range(0, len(triangles), 3):
+        all_triangles.append(coordinates[triangles[t]])
+        all_triangles.append(coordinates[triangles[t + 1]])
+        all_triangles.append(coordinates[triangles[t + 2]])
+    return np.array(all_triangles, np.float32)
+
+def format_colors(colors, triangles):
+    """Expande a lista de cores para ter um valor por vértice expandido.
+
+    - Se houver menos cores do que índices de vértices, usa-se módulo para repetir a paleta.
+    - Se as cores estiverem alinhadas por índice de coordenada, o mapeamento segue os índices de 'triangles'.
+    """
+    all_colors = []
+    if len(colors) == 0:
+        return np.zeros((len(triangles), 3), np.float32)
+    for t in range(0, len(triangles), 3):
+        all_colors.append(colors[triangles[t] % len(colors)])
+        all_colors.append(colors[triangles[t + 1] % len(colors)])
+        all_colors.append(colors[triangles[t + 2] % len(colors)])
+    return np.array(all_colors, np.float32)
 
 def compile_shader(shader_type, shader_source):
     shader_id = glCreateShader(shader_type)

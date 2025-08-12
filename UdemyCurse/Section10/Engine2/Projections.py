@@ -7,6 +7,9 @@ from glApp.Graphics_Data import *
 from glApp.Square import *
 from glApp.Triangle import *
 from glApp.Axes import *
+from glApp.Cube import *
+
+
 
 vertex_shader = r'''
 #version 330 core
@@ -44,7 +47,7 @@ class Projections(PyOGApp):
         self.square = None
         self.triangle = None
         self.axes = None
-
+        self.cube = None
 
 
     def initialise(self):
@@ -52,6 +55,7 @@ class Projections(PyOGApp):
         self.square = Square(self.program_id, pygame.Vector3(-0.5, 0.5, 0.0))
         self.triangle = Triangle(self.program_id, pygame.Vector3(0.5, -0.5, 0.0))
         self.axes = Axes(self.program_id, pygame.Vector3(0.0, 0.0, 0.0))
+        self.cube = Cube(self.program_id, pygame.Vector3(0.0, 0.0, 0.0))
         self.camera = Camera(self.program_id, self.screen_width, self.screen_height)
         glEnable(GL_DEPTH_TEST)
 
@@ -88,6 +92,7 @@ class Projections(PyOGApp):
         self.square.draw()
         self.triangle.draw()
         self.axes.draw()
+        self.cube.draw()
         # glDrawArrays(GL_LINE_LOOP, 0, self.vertex_count)
 
 Projections().mainloop()

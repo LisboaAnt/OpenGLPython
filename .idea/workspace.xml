@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/cubo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/monitoria.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/MyFirstShader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/GraphicsData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/PyOGApp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Square.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/refactor_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/Aula14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/Aula14.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/colisao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/colisao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/Projections.py" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/Projections.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/glApp/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/glApp/Utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,47 +45,48 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Aula04.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula05.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula06.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula07 (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula07.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula08.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula09.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula10.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula11.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula12.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula13.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Aula14.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Esfera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Formas_Primitivas_glfw.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mesh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mesh1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MyFirstShader.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Parede.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Simple_Triangulo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.camera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cubeAtlas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cubo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eee.executor&quot;: &quot;Run&quot;,
-    &quot;Python.iluminacao.executor&quot;: &quot;Run&quot;,
-    &quot;Python.loadObjs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mesh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.monitoria.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.refactor_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.skybox.executor&quot;: &quot;Run&quot;,
-    &quot;Python.textureAtlas.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/Documents/GitHub/OpenGLPython&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Aula04.executor": "Run",
+    "Python.Aula05.executor": "Run",
+    "Python.Aula06.executor": "Run",
+    "Python.Aula07 (2).executor": "Run",
+    "Python.Aula07.executor": "Run",
+    "Python.Aula08.executor": "Run",
+    "Python.Aula09.executor": "Run",
+    "Python.Aula10.executor": "Run",
+    "Python.Aula11.executor": "Run",
+    "Python.Aula12.executor": "Run",
+    "Python.Aula13.executor": "Run",
+    "Python.Aula14.executor": "Run",
+    "Python.Esfera.executor": "Run",
+    "Python.Formas_Primitivas_glfw.executor": "Run",
+    "Python.Mesh.executor": "Run",
+    "Python.Mesh1.executor": "Run",
+    "Python.MyFirstShader.executor": "Run",
+    "Python.Parede.executor": "Run",
+    "Python.Simple_Triangulo.executor": "Run",
+    "Python.camera.executor": "Run",
+    "Python.cubeAtlas.executor": "Run",
+    "Python.cubo.executor": "Run",
+    "Python.eee.executor": "Run",
+    "Python.iluminacao.executor": "Run",
+    "Python.loadObjs.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mesh.executor": "Run",
+    "Python.monitoria.executor": "Run",
+    "Python.pp.executor": "Run",
+    "Python.refactor_test.executor": "Run",
+    "Python.skybox.executor": "Run",
+    "Python.textureAtlas.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.scopes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\UdemyCurse\BasicCodes" />
