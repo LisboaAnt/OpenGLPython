@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/cilindro.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/Basquete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/Texturas_atlas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/cubo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/BasicCodes/monitoria.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/MyFirstShader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/GraphicsData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Mesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/PyOGApp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Square.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/Utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/glApp/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UdemyCurse/Section8/Engine2/refactor_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula15/Aula14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula15/Aula14.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Youtube/Aula15/cubo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula15/cubo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/Aula14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/Aula14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/Aula14/colisao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/Aula14/colisao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Youtube/DesafioMonitoria/Mesh.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,51 +51,62 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Aula04.executor": "Run",
-    "Python.Aula05.executor": "Run",
-    "Python.Aula06.executor": "Run",
-    "Python.Aula07 (2).executor": "Run",
-    "Python.Aula07.executor": "Run",
-    "Python.Aula08.executor": "Run",
-    "Python.Aula09.executor": "Run",
-    "Python.Aula10.executor": "Run",
-    "Python.Aula11.executor": "Run",
-    "Python.Aula12.executor": "Run",
-    "Python.Aula13.executor": "Run",
-    "Python.Aula14.executor": "Run",
-    "Python.Esfera.executor": "Run",
-    "Python.Mesh.executor": "Run",
-    "Python.Mesh1.executor": "Run",
-    "Python.Parede.executor": "Run",
-    "Python.camera.executor": "Run",
-    "Python.cubeAtlas.executor": "Run",
-    "Python.cubo.executor": "Run",
-    "Python.eee.executor": "Run",
-    "Python.iluminacao.executor": "Run",
-    "Python.loadObjs.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.mesh.executor": "Run",
-    "Python.pp.executor": "Run",
-    "Python.skybox.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/anton/Documents/GitHub/OpenGLPython/Youtube/DesafioMonitoria",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Aula04.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula05.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula06.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula07 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula07.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula08.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula09.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula10.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula11.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula12.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula13.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aula14.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Esfera.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Formas_Primitivas_glfw.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Mesh.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Mesh1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MyFirstShader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Parede.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Simple_Triangulo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.camera.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cubeAtlas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cubo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.eee.executor&quot;: &quot;Run&quot;,
+    &quot;Python.iluminacao.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loadObjs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mesh.executor&quot;: &quot;Run&quot;,
+    &quot;Python.monitoria.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.refactor_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.skybox.executor&quot;: &quot;Run&quot;,
+    &quot;Python.textureAtlas.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/Documents/GitHub/OpenGLPython&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\UdemyCurse\BasicCodes" />
+      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\UdemyCurse\Section8" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula14" />
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\steve" />
-      <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\images\naruto" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\DesafioMonitoria\images" />
@@ -97,7 +116,7 @@
       <recent name="C:\Users\anton\Documents\GitHub\OpenGLPython\Youtube\Aula13\objects" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Formas_Primitivas_glfw">
     <configuration name="Aula07 (2)" type="PythonConfigurationType" factoryName="Python" activateToolWindowBeforeRun="false" temporary="true" nameIsGenerated="true">
       <option name="ENV_FILES" value="$PROJECT_DIR$/.venv" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,7 +125,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (OpenGl)" />
       <option name="WORKING_DIRECTORY" value="C:\Users\anton\Documents\GitHub" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
@@ -129,7 +147,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (OpenGl)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Youtube/Aula08" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -137,6 +154,28 @@
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Youtube/Aula08/Aula08.py" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Formas_Primitivas_glfw" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CGProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UdemyCurse/BasicCodes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UdemyCurse/BasicCodes/Formas_Primitivas_glfw.py" />
+      <option name="PARAMETERS" value="python" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -152,7 +191,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (OpenGl)" />
       <option name="WORKING_DIRECTORY" value="C:\Users\anton\Documents\GitHub\OpenGLPython\.venv" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -200,7 +238,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (OpenGl)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Youtube/Aula07" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
@@ -216,6 +253,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Formas_Primitivas_glfw" />
       <item itemvalue="Python.Aula08" />
       <item itemvalue="Python.eee" />
       <item itemvalue="Python.main" />
@@ -246,5 +284,16 @@
       <updated>1728142672039</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
