@@ -5,6 +5,7 @@ from glApp.Triangle import *
 from glApp.Axes import *
 from glApp.Cube import *
 from glApp.LoadMesh import *
+from glApp.Light import *
 
 
 vertex_shader = r'''
@@ -18,11 +19,9 @@ uniform mat4 view_mat;
 out vec3 color;
 out vec3 normal;
 out vec3 fragpos;
-out vec3 light_pos;
 out vec3 view_pos;
 void main()
 {
-    light_pos = vec3(5, 5, 5);
     view_pos = vec3( inverse(model_mat) * vec4(view_mat[3][0], view_mat[3][1], view_mat[3][2], 1));
     gl_Position = projection_mat * inverse(view_mat) * model_mat * vec4(position,1);
     normal = mat3(transpose(inverse(model_mat))) * vertex_normal;
@@ -36,13 +35,13 @@ fragment_shader = r'''
 in vec3 color;
 in vec3 normal;
 in vec3 fragpos;
-in vec3 light_pos;
 in vec3 view_pos;
 out vec4 frag_color;
-void main()
-{
-    vec3 light_color = vec3(1, 0, 0);
+#define NUM_LIGHTS 2
+uniform vec3 light_pos[NUM_LIGHTS];
 
+vec4 Create_Light(vec3 light_pos, vec3 light_color, vec3 normal, vec3 fragpos, vec3 view_dir)
+{
     //ambient
     float a_strength = 0.2;
     vec3 ambient = a_strength * light_color;
@@ -55,12 +54,18 @@ void main()
     
     //specular
     float s_strength = 0.8;
-    vec3 view_dir = normalize(view_pos - fragpos);
-    vec3 reflect_dir = normalize(-light_dir - norm);
+    vec3 reflect_dir = reflect(-light_dir, norm);
     float spec = pow(max(dot(view_dir, reflect_dir), 0.0), 32);
     vec3 specular = s_strength * spec * light_color;
 
-    frag_color = vec4(color * (ambient + diffuse + specular), 1);
+    return vec4(color * (ambient + diffuse + specular), 1);
+}
+
+void main()
+{
+    vec3 view_dir = normalize(view_pos - fragpos);
+
+    frag_color = Create_Light(light_pos[0], vec3(1, 0, 0), normal, fragpos, view_dir);
 }
 '''
 
@@ -69,11 +74,9 @@ class ShadedObjects(PyOGApp):
 
     def __init__(self):
         super().__init__(850, 200, 1000, 800)
-        self.axes = None
-        self.moving_cube = None
-        self.teapot1 = None
-        self.teapot2 = None
 
+        self.teapot2 = None
+        self.light = None
 
     def initialise(self):
         self.program_id = create_program(vertex_shader, fragment_shader)
@@ -92,10 +95,11 @@ class ShadedObjects(PyOGApp):
         
         self.teapot2 = LoadMesh("UdemyCurse/Section10/Engine2/models/teapot.obj", 
                                 self.program_id, 
-                                location=pygame.Vector3(-0.5, 0, 0),
+                                location=pygame.Vector3(0, -1, 2),
                                 move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)),
                                 scale=pygame.Vector3(0.1, 0.1, 0.1))
-        
+        self.light = Light(self.program_id, pygame.Vector3(2, 1, 2), 0)
+
         self.camera = Camera(self.program_id, self.screen_width, self.screen_height)
         glEnable(GL_DEPTH_TEST)
 
@@ -106,9 +110,7 @@ class ShadedObjects(PyOGApp):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         glUseProgram(self.program_id)
         self.camera.update()
-        #self.axes.draw()
-        #self.moving_cube.draw()
-        #self.teapot1.draw()
+        self.light.update()
         self.teapot2.draw()
 
 
