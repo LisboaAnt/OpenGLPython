@@ -21,15 +21,15 @@ class LoadMesh(Mesh):
         vertex_uvs = format_vertices(uvs, uvs_ind)
         colors = []
         for i in range(len(vertices)):
-            colors.append(random.random())
-            colors.append(random.random())
-            colors.append(random.random())
-        super().__init__(program_id, vertices, vertex_normals, vertex_uvs, colors, draw_type, location, rotation, scale, 
+            colors.append(1)
+            colors.append(1)
+            colors.append(1)
+        super().__init__(program_id, vertices, colors, vertex_normals, vertex_uvs, draw_type, location, rotation, scale, 
                         move_rotation=move_rotation, 
                         move_translation=move_translation, 
-                        move_scale=move_scale,
-                        vertex_normals=vertex_normals,
-                        vertex_uvs=vertex_uvs)
+                        move_scale=move_scale)
+                        # vertex_normals=vertex_normals,  # REMOVIDO: estava causando duplicação de argumentos
+                        # vertex_uvs=vertex_uvs)          # REMOVIDO: estava causando duplicação de argumentos
 
     def load_drawing(self, filename):
         vertices = []

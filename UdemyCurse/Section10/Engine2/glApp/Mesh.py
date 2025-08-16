@@ -24,6 +24,8 @@ class Mesh:
         position.create_variable(program_id, "position")
         colors = Graphics_Data("vec3", vertex_colors)
         colors.create_variable(program_id, "vertex_color")
+        v_normals = Graphics_Data("vec3", vertex_normals)
+        v_normals.create_variable(program_id, "vertex_normal")
         self.transformation_mat = identity_matrix()
         self.transformation_mat = rotateA(self.transformation_mat, rotation.angle, rotation.axis)
         self.transformation_mat = translate(self.transformation_mat, translation.x, translation.y, translation.z)
