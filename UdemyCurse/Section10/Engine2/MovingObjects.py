@@ -54,7 +54,9 @@ class MovingObjects(PyOGApp):
                                 self.program_id, 
                                 scale=pygame.Vector3(0.1, 0.1, 0.1),
                                 location=pygame.Vector3(0.5, 0, 0),
-                                move_rotation=Rotation(1, pygame.Vector3(1, 0, 0)))
+                                move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)),
+                                move_translation=pygame.Vector3(0.5, 0, 0),
+                                move_scale=pygame.Vector3(1, 1, 1))
         
         self.teapot2 = LoadMesh("UdemyCurse/Section10/Engine2/models/teapot.obj", 
                                 self.program_id, 

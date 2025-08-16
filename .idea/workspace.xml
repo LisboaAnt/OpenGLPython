@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/Projections.py" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/Projections.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/glApp/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyCurse/Section10/Engine2/glApp/Utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="728601aa-ffd5-44c2-b384-2ba715ede013" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
