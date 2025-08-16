@@ -20,6 +20,7 @@ out vec3 color;
 out vec3 normal;
 out vec3 fragpos;
 out vec3 view_pos;
+
 void main()
 {
     view_pos = vec3( inverse(model_mat) * vec4(view_mat[3][0], view_mat[3][1], view_mat[3][2], 1));
@@ -37,8 +38,15 @@ in vec3 normal;
 in vec3 fragpos;
 in vec3 view_pos;
 out vec4 frag_color;
-#define NUM_LIGHTS 2
-uniform vec3 light_pos[NUM_LIGHTS];
+
+struct light
+{
+    vec3 position;
+    vec3 color;
+};
+
+#define NUM_LIGHTS 3
+uniform light light_data[NUM_LIGHTS];
 
 vec4 Create_Light(vec3 light_pos, vec3 light_color, vec3 normal, vec3 fragpos, vec3 view_dir)
 {
@@ -64,8 +72,10 @@ vec4 Create_Light(vec3 light_pos, vec3 light_color, vec3 normal, vec3 fragpos, v
 void main()
 {
     vec3 view_dir = normalize(view_pos - fragpos);
-
-    frag_color = Create_Light(light_pos[0], vec3(1, 0, 0), normal, fragpos, view_dir);
+    for(int i = 0; i < NUM_LIGHTS; i++)
+    {
+        frag_color += Create_Light(light_data[i].position, light_data[i].color, normal, fragpos, view_dir);
+    }
 }
 '''
 
@@ -77,6 +87,8 @@ class ShadedObjects(PyOGApp):
 
         self.teapot2 = None
         self.light = None
+        self.light2 = None
+        self.light3 = None
 
     def initialise(self):
         self.program_id = create_program(vertex_shader, fragment_shader)
@@ -98,7 +110,11 @@ class ShadedObjects(PyOGApp):
                                 location=pygame.Vector3(0, -1, 2),
                                 move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)),
                                 scale=pygame.Vector3(0.1, 0.1, 0.1))
-        self.light = Light(self.program_id, pygame.Vector3(2, 1, 2), 0)
+        
+        self.light = Light(self.program_id, pygame.Vector3(2, 1, 2), pygame.Vector3(1, 0, 0), 0)
+        self.light2 = Light(self.program_id, pygame.Vector3(-2, 1, 2), pygame.Vector3(0, 1, 0), 1)
+        self.light3 = Light(self.program_id, pygame.Vector3(0, 1, 0), pygame.Vector3(0, 0, 1), 2)
+
 
         self.camera = Camera(self.program_id, self.screen_width, self.screen_height)
         glEnable(GL_DEPTH_TEST)
@@ -111,6 +127,8 @@ class ShadedObjects(PyOGApp):
         glUseProgram(self.program_id)
         self.camera.update()
         self.light.update()
+        self.light2.update()
+        self.light3.update()
         self.teapot2.draw()
 
 
