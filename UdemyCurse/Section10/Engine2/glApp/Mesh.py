@@ -5,7 +5,7 @@ from .Transformation import *
 
 
 class Mesh:
-    def __init__(self, program_id, vertices, vertex_colors, draw_type,
+    def __init__(self, program_id, vertices, vertex_colors, vertex_normals, vertex_uvs, draw_type,
                 translation=pygame.Vector3(0, 0, 0),
                 rotation=Rotation(0, pygame.Vector3(0, 1, 0)),
                 scale=pygame.Vector3(1, 1, 1),
@@ -15,6 +15,8 @@ class Mesh:
                 ):
         self.program_id = program_id
         self.vertices = vertices
+        self.vertex_normals = vertex_normals
+        self.vertex_uvs = vertex_uvs
         self.draw_type = draw_type
         self.vao_ref = glGenVertexArrays(1)
         glBindVertexArray(self.vao_ref)
