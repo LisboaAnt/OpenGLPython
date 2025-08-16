@@ -6,6 +6,7 @@ from glApp.Axes import *
 from glApp.Cube import *
 from glApp.LoadMesh import *
 from glApp.Light import *
+from glApp.Transformation import *
 
 
 vertex_shader = r'''
@@ -107,7 +108,7 @@ class ShadedObjects(PyOGApp):
         
         self.teapot2 = LoadMesh("UdemyCurse/Section10/Engine2/models/teapot.obj", 
                                 self.program_id, 
-                                location=pygame.Vector3(0, -1, 2),
+                                location=pygame.Vector3(0, 0, 0),
                                 move_rotation=Rotation(1, pygame.Vector3(0, 1, 0)),
                                 scale=pygame.Vector3(0.1, 0.1, 0.1))
         
@@ -121,6 +122,10 @@ class ShadedObjects(PyOGApp):
 
     def camera_init(self):
         pass
+        # Posicionar câmera para olhar para o teapot
+        if not hasattr(self, '_camera_initialized'):
+            self.camera.transformation = translate(self.camera.transformation, -0.05, 0.5, 1)
+            self._camera_initialized = True
 
     def display(self):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
